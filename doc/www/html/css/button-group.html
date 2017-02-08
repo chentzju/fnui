@@ -1,0 +1,247 @@
+
+
+<h1 id="button-group">Button-group</h1>
+<hr />
+<p>组合 Button 元素。</p>
+<h2 id="基本使用">基本使用</h2>
+<p>
+	把一系列要使用的
+	<code>.fn-btn</code>
+	按钮放入
+	<code>.fn-btn-group</code>
+	。
+</p>
+<div>
+	<div class="fn-btn-group">
+		<button type="button" class="fn-btn fn-btn-default">左手</button>
+		<button type="button" class="fn-btn fn-btn-default">右手</button>
+	</div>
+	&nbsp;
+	<div class="fn-btn-group">
+		<button type="button" class="fn-btn fn-btn-primary fn-radius">左手</button>
+		<button type="button" class="fn-btn fn-btn-primary fn-radius">右手</button>
+	</div>
+	&nbsp;
+	<div class="fn-btn-group">
+		<button type="button" class="fn-btn fn-btn-success fn-round">左手</button>
+		<button type="button" class="fn-btn fn-btn-success fn-round">中间</button>
+		<button type="button" class="fn-btn fn-btn-success fn-round">右手</button>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-btn-group"&gt;
+ &lt;button type="button" class="fn-btn fn-btn-default"&gt;左手&lt;/button&gt;
+  ...
+&lt;/div&gt;
+
+&lt;div class="fn-btn-group"&gt;
+  &lt;button type="button" class="fn-btn fn-btn-primary fn-radius"&gt;左手&lt;/button&gt;
+  ...
+&lt;/div&gt;
+
+&lt;div class="fn-btn-group"&gt;
+  &lt;button type="button" class="fn-btn fn-btn-primary fn-round"&gt;左手&lt;/button&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+</div>
+<h2 id="按钮工具栏">按钮工具栏</h2>
+<p>
+	将
+	<code>.fn-btn-group</code>
+	放进
+	<code>.fn-btn-toolbar</code>
+	，实现工具栏效果。
+</p>
+<div>
+	<div class="fn-btn-toolbar">
+		<div class="fn-btn-group">
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-align-left"></i>
+			</button>
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-align-center"></i>
+			</button>
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-align-right"></i>
+			</button>
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-align-justify"></i>
+			</button>
+		</div>
+		<div class="fn-btn-group">
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-font"></i>
+			</button>
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-bold"></i>
+			</button>
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-italic"></i>
+			</button>
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-underline"></i>
+			</button>
+		</div>
+		<div class="fn-btn-group">
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-copy"></i>
+			</button>
+			<button type="button" class="fn-btn fn-btn-primary">
+				<i class="fn-icon-paste"></i>
+			</button>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+&lt;div class="fn-btn-toolbar"&gt;
+  &lt;div class="fn-btn-group"&gt;...&lt;/div&gt;
+  &lt;div class="fn-btn-group"&gt;...&lt;/div&gt;
+  &lt;div class="fn-btn-group"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+</div>
+<h2 id="按钮组大小">按钮组大小</h2>
+<p>
+	给
+	<code>.fn-btn-group</code>
+	增加 class
+	<code>.fn-btn-group-lg</code>
+	或
+	<code>.fn-btn-group-sm</code>
+	或
+	<code>.fn-btn-group-xs</code>
+	改变按钮大小。
+</p>
+<div>
+	<div class="fn-btn-toolbar">
+		<div class="fn-btn-group fn-btn-group-lg">
+			<button type="button" class="fn-btn fn-btn-default">左手 lg</button>
+			<button type="button" class="fn-btn fn-btn-default">中间 lg</button>
+			<button type="button" class="fn-btn fn-btn-default">右手 lg</button>
+		</div>
+	</div>
+	<br />
+	<div class="fn-btn-toolbar">
+		<div class="fn-btn-group">
+			<button type="button" class="fn-btn fn-btn-default">左手默认</button>
+			<button type="button" class="fn-btn fn-btn-default">猪手默认</button>
+			<button type="button" class="fn-btn fn-btn-default">右手默认</button>
+		</div>
+	</div>
+	<br />
+	<div class="fn-btn-toolbar">
+		<div class="fn-btn-group fn-btn-group-sm">
+			<button type="button" class="fn-btn fn-btn-default">左手 sm</button>
+			<button type="button" class="fn-btn fn-btn-default">中间 sm</button>
+			<button type="button" class="fn-btn fn-btn-default">右手 sm</button>
+		</div>
+	</div>
+	<br />
+	<div class="fn-btn-toolbar">
+		<div class="fn-btn-group fn-btn-group-xs">
+			<button type="button" class="fn-btn fn-btn-default">左手 xs</button>
+			<button type="button" class="fn-btn fn-btn-default">中间 xs</button>
+			<button type="button" class="fn-btn fn-btn-default">右手 xs</button>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+						<code>
+&lt;div class="fn-btn-toolbar"&gt;
+    &lt;div class="fn-btn-group fn-btn-group-lg"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="fn-btn-toolbar"&gt;
+    &lt;div class="fn-btn-group"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="fn-btn-toolbar"&gt;
+    &lt;div class="fn-btn-group fn-btn-group-sm"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="fn-btn-toolbar"&gt;
+    &lt;div class="fn-btn-group fn-btn-group-xs"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</code>
+					</pre>
+</div>
+<h2 id="垂直排列">垂直排列</h2>
+<p>
+	使用
+	<code>.fn-btn-group-stacked</code>
+	使按钮垂直排列显示。
+</p>
+<div>
+	<div class="fn-btn-group-stacked">
+		<button type="button" class="fn-btn fn-btn-default">按钮</button>
+		<button type="button" class="fn-btn fn-btn-default">按钮</button>
+		<button type="button" class="fn-btn fn-btn-default">按钮</button>
+		<button type="button" class="fn-btn fn-btn-default">按钮</button>
+	</div>
+</div>
+<div>
+	<pre>
+						<code>
+&lt;div class="fn-btn-group-stacked"&gt;
+  &lt;button type="button" class="fn-btn fn-btn-default"&gt;Button&lt;/button&gt;
+  ...
+&lt;/div&gt;
+
+</code>
+					</pre>
+</div>
+<h2 id="自适应宽度">自适应宽度</h2>
+<p>
+	添加
+	<code>.fn-btn-group-justify</code>
+	class 让按钮组里的按钮平均分布，填满容器宽度。
+</p>
+<p>
+	<strong>使用 <code>flexbox</code> 实现，只兼容 IE 10+ 及其他现代浏览器
+	</strong>。
+</p>
+<div>
+	<div class="fn-btn-group fn-btn-group-justify">
+		<a class="fn-btn fn-btn-default" role="button">左手</a> <a
+			class="fn-btn fn-btn-default" role="button">中间</a> <a
+			class="fn-btn fn-btn-default" role="button">右手</a>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-btn-group fn-btn-group-justify"&gt;
+  &lt;a class="fn-btn fn-btn-default" role="button"&gt;左手&lt;/a&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+</div>
+
+
+<h2 id="结合下拉组件使用">结合下拉组件Dropdown使用</h2>
+<p> 具体内部功能逻辑实现请参考dropdown js组件</p>
+<h3 id="按钮下拉菜单">按钮下拉菜单</h3>
+<div>
+	<div class="fn-btn-group">
+		<button class="fn-btn fn-btn-secondary">下拉按钮</button>
+		<div class="fn-dropdown" data-fn-dropdown>
+			<button class="fn-btn fn-btn-secondary fn-dropdown-toggle"
+				data-fn-dropdown-toggle>
+				<span class="fn-icon-caret-down"></span>
+			</button>
+			<ul class="fn-dropdown-content">
+				<li class="fn-dropdown-header">标题</li>
+				<li><a href="#">快乐的方式不只一种</a></li>
+				<li class="fn-active"><a href="#">最荣幸是</a></li>
+				<li><a href="#">谁都是造物者的光荣</a></li>
+				<li class="fn-disabled"><a href="#">就站在光明的角落</a></li>
+				<li class="fn-divider"></li>
+				<li><a href="#">天空海阔 要做最坚强的泡沫</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

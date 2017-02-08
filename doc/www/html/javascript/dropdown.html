@@ -1,0 +1,313 @@
+
+<!-- 因为是后再入模式 所以要调用一下初始化方法 -->
+<script>
+$(function(){
+	$('[data-fn-dropdown]').dropdown();
+})
+</script>
+<h1 id="dropdown">Dropdown</h1>
+<hr />
+<h2 id="使用演示">使用演示</h2>
+<h3 id="下拉列表">下拉列表</h3>
+<div>
+	<div class="fn-dropdown" data-fn-dropdown>
+		<button class="fn-btn fn-btn-primary fn-dropdown-toggle"
+			data-fn-dropdown-toggle>
+			下拉列表 <span class="fn-icon-caret-down"></span>
+		</button>
+		<ul class="fn-dropdown-content">
+			<li class="fn-dropdown-header">标题</li>
+			<li><a href="#">1</a></li>
+			<li class="fn-active"><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li class="fn-disabled"><a href="#">4</a></li>
+			<li class="fn-divider">5</li>
+			<li><a href="#">6</a></li>
+		</ul>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-dropdown" data-fn-dropdown&gt;
+	&lt;button class="fn-btn fn-btn-primary fn-dropdown-toggle"
+		data-fn-dropdown-toggle&gt;
+		下拉列表 &lt;span class="fn-icon-caret-down"&gt;&lt;/span&gt;
+	&lt;/button&gt;
+	&lt;ul class="fn-dropdown-content"&gt;
+		&lt;li class="fn-dropdown-header"&gt;标题&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="fn-active"&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="fn-disabled"&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="fn-divider"&gt;5&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;6&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+
+<h3 id="上拉列表">上拉列表</h3>
+<p>
+	在
+	<code>.fn-dropdown</code>上添加<code>.fn-dropdown-up</code>class，在上面弹出内容。
+</p>
+<div>
+	<div class="fn-dropdown fn-dropdown-up" data-fn-dropdown>
+		<button class="fn-btn fn-btn-danger fn-dropdown-toggle"
+			data-fn-dropdown-toggle>
+			上拉列表 <span class="fn-icon-caret-up"></span>
+		</button>
+		<ul class="fn-dropdown-content">
+			<li class="fn-dropdown-header">标题</li>
+			<li><a href="#">1</a></li>
+			<li class="fn-active"><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li class="fn-disabled"><a href="#">4</a></li>
+			<li class="fn-divider"></li>
+			<li><a href="#">5</a></li>
+		</ul>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-dropdown fn-dropdown-up" data-fn-dropdown&gt;
+
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<h3 id="下拉内容">下拉其他内容</h3>
+<div>
+	<div class="fn-dropdown" data-fn-dropdown>
+		<button class="fn-btn fn-btn-success fn-dropdown-toggle">
+			下拉内容 <span class="fn-icon-caret-down"></span>
+		</button>
+		<div class="fn-dropdown-content">
+			<h2>title</h2>
+			<p>content</p>
+		</div>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-dropdown" data-fn-dropdown&gt;
+	&lt;button class="fn-btn fn-btn-success fn-dropdown-toggle"&gt;
+		下拉内容 &lt;span class="fn-icon-caret-down"&gt;&lt;/span&gt;
+	&lt;/button&gt;
+	&lt;div class="fn-dropdown-content"&gt;
+		&lt;h2&gt;title&lt;/h2&gt;
+		&lt;p&gt;content&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+
+<h3 id="宽度适应">宽度适应</h3>
+<p>
+	下拉内容
+	<code>.fn-dropdown-content</code>
+	为绝对定位，宽度会根据内容缩放（最小为
+	<code>160px</code>
+	）。
+</p>
+<p>
+	在
+	<code>data-fn-dropdown</code>
+	里指定要适应到的元素如{justify: '#doc-dropdown-justify'}，下拉内容的宽度会设置为该元素的宽度。
+</p>
+<div>
+	<div id="doc-dropdown-justify">
+		<div class="fn-dropdown"
+			data-fn-dropdown="{justify: '#doc-dropdown-justify'}">
+			<button class="fn-btn fn-btn-success fn-dropdown-toggle">
+				宽度适应下拉 <span class="fn-icon-caret-down"></span>
+			</button>
+			<div class="fn-dropdown-content">
+				<h2>标题</h2>
+				<p>内容</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div id="doc-dropdown-justify"&gt;
+	&lt;div class="fn-dropdown"
+		data-fn-dropdown="{justify: '#doc-dropdown-justify'}"&gt;
+		&lt;button class="fn-btn fn-btn-success fn-dropdown-toggle"&gt;
+			宽度适应下拉 &lt;span class="fn-icon-caret-down"&gt;&lt;/span&gt;
+		&lt;/button&gt;
+		&lt;div class="fn-dropdown-content"&gt;
+			&lt;h2&gt;标题&lt;/h2&gt;
+			&lt;p&gt;内容&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+
+<h2 id="调用方式">调用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	如上面的演示所示，根据示例组织好 HTML 结构，然后在
+	<code>.fn-dropdown</code>
+	上添加
+	<code>data-fn-dropdown</code>
+	属性，相关选项可以设置在该属性的值里。
+</p>
+<h3 id="通过-js">通过 JS</h3>
+<p>
+	按照示例组织好 HTML 结构（不加
+	<code>data-fn-dropdown</code>
+	属性），然后通过 JS 来调用。
+</p>
+<div>
+	<div id="doc-dropdown-justify-js" style="width: 400px">
+		<div class="fn-dropdown" id="doc-dropdown-js">
+			<button class="fn-btn fn-btn-danger fn-dropdown-toggle">
+				通过 JS 调用 <span class="fn-icon-caret-down"></span>
+			</button>
+			<div class="fn-dropdown-content">
+				<h2>标题</h2>
+				<p>内容</p>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function() {
+			$("#doc-dropdown-js").dropdown({
+				justify : "#doc-dropdown-justify-js"
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+$(function() {
+	$("#doc-dropdown-js").dropdown({
+		justify : "#doc-dropdown-justify-js"
+	})
+});
+</code></pre>
+</div>
+
+<h4 id="方法">方法</h4>
+<ul>
+	<li><code>$(element).dropdown(options)</code> 激活下拉功能；</li>
+	<li><code>$(element).dropdown(&#39;toggle&#39;)</code> 下拉状态交替；</li>
+	<li><code>$(element).dropdown(&#39;close&#39;)</code> 隐藏下拉菜单；</li>
+	<li><code>$(element).dropdown(&#39;open&#39;)</code> 显示下拉菜单。</li>
+</ul>
+<div>
+	<button class="fn-btn fn-btn-secondary" id="doc-dropdown-toggle">调用
+		Toggle</button>
+	<button class="fn-btn fn-btn-success" id="doc-dropdown-open">调用
+		Open</button>
+	<button class="fn-btn fn-btn-warning" id="doc-dropdown-close">调用
+		Close</button>
+	<script>
+		$(function() {
+			function o() {
+				$(window).smoothScroll({
+					position : n.offset().top
+				})
+			}
+			var n = $("#doc-dropdown-js"),
+			d = n.data("fnui.dropdown");
+			$("#doc-dropdown-toggle").on("click", function() {
+				return o(), n.dropdown("toggle"), !1
+			}),
+			$("#doc-dropdown-open").on(
+					"click",
+					function() {
+						return o(), d.active ? alert("已经打开了！") : n
+								.dropdown("open"), !1
+					}), $("#doc-dropdown-close").on(
+					"click",
+					function() {
+						return o(), d.active ? n.dropdown("close")
+								: alert("还未打开！"), !1
+					}), n.on("open.dropdown", function() {
+				console.log("open event triggered")
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+$("#doc-dropdown-js").dorpdown("toggle");
+$("#doc-dropdown-js").dorpdown("open");
+$("#doc-dropdown-js").dorpdown("close");
+</code></pre>
+</div>
+
+
+<h4 id="参数说明">参数说明</h4>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th style="width: 60px">参数</th>
+			<th style="width: 70px">类型</th>
+			<th style="width: 110px">默认</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>boundary</code></td>
+			<td>选择器</td>
+			<td><code>window</code></td>
+			<td>下拉内容边界，避免下拉内容超过边界被遮盖截断</td>
+		</tr>
+		<tr>
+			<td><code>justify</code></td>
+			<td>选择器</td>
+			<td><code>undefined</code></td>
+			<td>下拉内容适应宽度的元素</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4 >事件</h4>
+<p>
+	下拉框的事件在<code>.fn-dropdown</code>上触发。
+</p>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>事件名称</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>open.dropdown</code></td>
+			<td>调用显示下拉框方法时立即触发</td>
+		</tr>
+		<tr>
+			<td><code>opened.dropdown</code></td>
+			<td>下拉框显示完成时触发</td>
+		</tr>
+		<tr>
+			<td><code>close.dropdown</code></td>
+			<td>调用隐藏方法时触发</td>
+		</tr>
+		<tr>
+			<td><code>closed.dropdown</code></td>
+			<td>下拉框关闭完成时触发</td>
+		</tr>
+	</tbody>
+</table>
+<div>
+	<pre><code>
+$(function(){
+  $dropdown.on('open.dropdown', function(e){
+    console.log('open event triggered');
+  });
+});
+</code></pre>
+</div>
+

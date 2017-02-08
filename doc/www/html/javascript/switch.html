@@ -1,0 +1,76 @@
+
+<script>
+$(function() { 
+	 $('[data-fn-switch]').fnswitch(); 
+}); 
+</script>
+<h1 id="tagsinput">
+	Switch <a href="#modal" title="Heading anchor" class="doc-anchor"></a>
+</h1>
+<hr />
+<p>switch 一个类似开关的checkbox按钮</p>
+
+<h2 id="基本形式">基本形式</h2>
+<div>
+	<input id="" type="checkbox" data-fn-switch>
+</div>
+<div>
+	<pre><code>
+&lt;input id="" type="checkbox" data-fn-switch&gt;
+</code></pre>
+</div>
+
+<h3 id="">颜色设定</h3>
+<p>
+	通过属性
+	<code>data-on-color</code>
+	来设置打开按钮颜色， 通过
+	<code>data-off-color</code>
+	来设置关闭按钮颜色， 可以设定的颜色有
+	<code>default、secondary、success、warning、primary</code>
+</p>
+<div>
+	<input type="checkbox" data-fn-switch data-on-color="success">
+	<input type="checkbox" data-fn-switch data-off-color="warning">
+</div>
+<div>
+	<pre><code>
+&lt;input type="checkbox" data-fn-switch data-on-color="success"&gt;
+&lt;input type="checkbox" data-fn-switch data-off-color="warning"&gt;
+</code></pre>
+</div>
+
+
+<h3 id="">文字设定</h3>
+<p>
+	通过属性
+	<code>data-on-text</code>
+	来设置打开按钮文字， 通过
+	<code>data-off-text</code>
+	来设置关闭按钮文字，
+</p>
+<div>
+	<input type="checkbox" data-fn-switch data-on-text="打开打开"> 
+	<input type="checkbox" data-fn-switch data-off-text="关闭关闭">
+</div>
+<div>
+	<pre><code>
+&lt;input type="checkbox" data-fn-switch data-on-text="打开打开"&gt; 
+&lt;input type="checkbox" data-fn-switch data-off-text="关闭关闭"&gt;
+</code></pre>
+</div>
+
+<h2 id="使用方式">使用方法</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	通过<code>input</code>标签中添加<code>data-fn-switch</code>来进行设置
+</p>
+<input id="" type="checkbox" data-fn-switch>
+<input id="" type="checkbox" checked="checked" data-fn-switch disabled>
+<div>
+	<pre>
+	 <code>
+&lt;input id="" type="checkbox" checked="checked" data-fn-switch disabled&gt;
+	 </code>
+	 </pre>
+</div>

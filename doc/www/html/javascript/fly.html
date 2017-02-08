@@ -1,0 +1,156 @@
+
+	
+	<h1 id="modal">
+		Fly <a href="#modal" title="Heading anchor" class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>Fly 飞行动画</p>
+	<h2 id="使用演示">
+		js调用 <a href="#%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	
+	<h3 id="基本形式">
+		基本形式 <a href="#%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<div>
+		<div class="fn-badge fn-badge-primary" id="btn-end"
+			style="margin-left: 500px">Destination</div>
+	</div>
+	<script type="text/javascript">
+					$(function(){
+						$("#btn-fly").on("click",function(){
+							$(this).fly(
+								      {
+								            start:{
+								              left:$("#btn-fly").offset().left,
+								              top:$("#btn-fly").offset().top
+								             },
+								             end:{
+								              left:$("#btn-end").offset().left,
+								              top:$("#btn-end").offset().top
+								             }
+								      }		
+							);
+						})
+					});
+				</script>
+	<div>
+		<button class="fn-btn fn-btn-primary" id="btn-fly">Fly</button>
+	</div>
+	<div>
+		<pre>
+						<code>
+
+						$("#btn-fly").on("click",function(){
+							$(this).fly(
+								      {
+								            start:{
+								              left:$("#btn-fly").offset().left,
+								              top:$("#btn-fly").offset().top
+								             },
+								             end:{
+								              left:$("#btn-end").offset().left,
+								              top:$("#btn-end").offset().top
+								             }
+								      }		
+							);
+						});
+						</code>
+					</pre>
+	</div>
+	<h3 id="模拟-confirm">
+		指定飞行元素 <a href="#%E6%A8%A1%E6%8B%9F-confirm" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<div>
+		<button class="fn-btn fn-btn-primary" id="btn-fly1">Fly</button>
+		<div class="fn-badge fn-badge-danger" id="btn-target"
+			style="display: none">target</div>
+	</div>
+	<script type="text/javascript">
+					$(function(){
+						$("#btn-fly1").on("click",function(){
+							$(this).fly(
+								      {
+								            start:{
+								              left:$("#btn-fly1").offset().left,
+								              top:$("#btn-fly1").offset().top
+								             },
+								             end:{
+								              left:$("#btn-end").offset().left,
+								              top:$("#btn-end").offset().top
+								             },
+								             targetid:"btn-target"
+								      }		
+							);
+						})
+					});
+				</script>
+	<div>
+		<pre>
+						<code>
+
+						$("#btn-fly1").on("click",function(){
+							$(this).fly(
+								      {
+								            start:{
+								              left:$("#btn-fly1").offset().left,
+								              top:$("#btn-fly1").offset().top
+								             },
+								             end:{
+								              left:$("#btn-end1").offset().left,
+								              top:$("#btn-end1").offset().top
+								             }
+								             targetid:""
+								      }		
+							);
+						});
+						</code>
+					</pre>
+	</div>
+	
+	<h3>调用方式</h3>
+	<p>
+		通过方法<code>$(selector).fly(options)</code>进行调用
+	</p>
+	<p>
+		opstions参数描述如下：
+	</p>
+	<ul>
+		<li><code>start</code>：起始坐标对象，包括left和top两个坐标属性，用数值表示。</li>
+		<li><code>end</code>：终点坐标对象，包含left和top两个坐标属性，用数值表示。</li>
+		<li><code>target</code>：目标元素的id，需要进行飞行的元素的id，如果为空，则默认为selector选中的元素。</li>
+		<li><code>class</code>：坐标飞行动画，可以为空，默认为一个缩放过程。</li>
+		<li><code>callback</code>：回调函数，运行完之后调用的函数。</li>
+	</ul>
+	<div>
+		<pre>
+						<code>
+					
+					var options ={
+						            start:             //起始坐标，可以获取，也可以直接用数字坐标表示
+						            {
+						              left:$("#start").offset().left,   
+						              top:$("#start").offset().top
+						             },
+						             end:              //终点坐标，可以获取目标的坐标，也可以根据需要用数字坐标表示
+						             {
+						              left:$("#btn-end").offset().left,
+						              top:$("#btn-end").offset().top
+						             },
+						             class:"className" , //飞行过程动画，用类命名，可以添加自定义的类，默认为"fly"，可不填
+						             callback:callbackfunc,  //回调函数
+						             target: id        //需要进行飞行的对象的id，默认为jQuery对象本身
+						          }
+						          
+					 //带jQuery对象的调用,target可以声明，也可以不声明
+				     $().fly(options);
+				     
+				     //无对象的调用，target需要自主声明
+				     $.fly(options);
+						</code>
+					</pre>
+	</div>
+

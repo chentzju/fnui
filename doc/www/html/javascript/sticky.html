@@ -1,0 +1,151 @@
+
+<script>
+	$(function() {
+		$('[data-fn-sticky]').sticky();
+	})
+</script>
+<h1 id="sticky">
+	Sticky <a href="#sticky" title="Heading anchor" class="doc-anchor"></a>
+</h1>
+<hr />
+<p>当窗口滚动至元素上边距离时，将元素固定在窗口顶部。</p>
+<ul>
+	<li>Sticky 插件是监听窗口滚动事件，当滚动距离超过元素上边距时，添加 <code>.fn-sticky</code>
+		类，将元素的 <code>position</code> 设置为 <code>fixed</code>，同时设置一个 <code>top</code>
+		值（默认为 0）。
+	</li>
+</ul>
+<h2 id="基本演示">基本演示</h2>
+<h3 id="基本形式">基本形式</h3>
+<p>
+	在元素上添加
+	<code>data-fn-sticky</code>
+	属性。
+</p>
+<div>
+	<div data-fn-sticky>
+		<button class="fn-btn fn-btn-primary fn-btn-block">Stick to
+			top</button>
+	</div>
+</div>
+<div>
+	<pre>	<code>
+&lt;div data-fn-sticky&gt;
+	&lt;button class="fn-btn fn-btn-primary fn-btn-block"&gt;Stick to top&lt;/button&gt;
+&lt;/div&gt;
+</code>
+					</pre>
+</div>
+<h3 id="设置上边距">设置上边距</h3>
+<p>
+	元素固定到窗口顶部后，默认上边距为 0，可以在设置上边距
+	<code>data-fn-sticky=&quot;{top:100}&quot;</code>
+	。
+</p>
+<div>
+	<div data-fn-sticky="{top:80}">
+		<button class="fn-btn fn-btn-primary">Stick 80px below the
+			top</button>
+	</div>
+</div>
+<div>
+	<pre>
+						<code>
+	&lt;div data-fn-sticky="{top:80}"&gt;
+		&lt;button class="fn-btn fn-btn-primary"&gt;Stick 80px below the top&lt;/button&gt;
+	&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+<h3 id="动画效果">动画效果</h3>
+<p>带动画效果的元素固定。</p>
+<div>
+	<div data-fn-sticky="{animation: 'slide-top'}">
+		<button class="fn-btn fn-btn-success fn-btn-block">固定到顶部动画效果</button>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;div data-fn-sticky="{animation: 'slide-top'}"&gt;
+	&lt;button class="fn-btn fn-btn-success fn-btn-block"&gt;固定到顶部动画效果&lt;/button&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+<h2 id="调用方式">调用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	如上面的演示所示，在元素上添加
+	<code>data-fn-sticky</code>
+	属性。
+</p>
+<h3 id="通过-js">通过 JS</h3>
+<p>
+	通过
+	<code>$.sticky(options)</code>
+	设置。
+</p>
+<div>
+	<div id="my-sticky">
+		<button class="fn-btn fn-btn-danger">Stick via JavaScript &
+			150px below the top</button>
+	</div>
+	<script>
+		$(function() {
+			$("#my-sticky").sticky({
+				top : 150,
+				bottom : function() {
+					return $(".amz-footer").height()
+				}
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre>
+		<code>
+$(function() {
+		$("#my-sticky").sticky({
+			top : 150,
+			bottom : function() {
+				return $(".amz-footer").height()
+			}
+		})
+});
+</code>
+	</pre>
+</div>
+<h3 id="选项">选项</h3>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th style="width: 60px">参数</th>
+			<th style="width: 70px">类型</th>
+			<th style="width: 50px">默认</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>top</code></td>
+			<td>数值</td>
+			<td><code>0</code></td>
+			<td>距离顶部位置</td>
+		</tr>
+		<tr>
+			<td><code>animation</code></td>
+			<td>字符串</td>
+			<td><code>''</code></td>
+			<td>动画名称</td>
+		</tr>
+		<tr>
+			<td><code>bottom</code></td>
+			<td>数值<br />或返回数值的函数
+			</td>
+			<td><code>0</code></td>
+			<td>距离底部小于该数值时不再往下滚动，避免覆盖下面的元素</td>
+		</tr>
+	</tbody>
+</table>

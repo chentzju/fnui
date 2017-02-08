@@ -1,0 +1,712 @@
+
+<h1 id="form-validator">Form Validator</h1>
+<hr />
+<p>基于 HTML5 的表单验证，使用 H5 type 、 required 、 pattern 、 min 、 max 、
+	minlength 、 maxlength 等属性进行验证，在不支持 JS 的环境中可以平稳退化到 H5 原生验证。</p>
+<h2 id="使用示例">使用示例</h2>
+<h3 id="html5-原生表单验证">HTML5 原生表单验证</h3>
+<p>
+	如果表单只面向 H5 浏览器，而且不需要过多的控制，那原生的表单验证无疑是省时省力的选择，通过
+	<code>:valid</code>
+	、
+	<code>:invalid</code>
+	伪类可以控制不同验证状态的样式。
+</p>
+<div>
+	<form action="" class="fn-form">
+		<fieldset>
+			<legend>H5 原生表单验证</legend>
+			<div class="fn-form-group">
+				<label for="doc-vld-name-1">用户名：</label><input type="text"
+					id="doc-vld-name-1" maxlength="3" pattern="^\d+$"
+					placeholder="输入用户名" class="fn-form-field" required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-email-1">邮箱：</label><input type="email"
+					id="doc-vld-email-1" placeholder="输入邮箱" required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-url-1">网址：</label><input type="url"
+					id="doc-vld-url-1" placeholder="输入网址" required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-age-1">年龄：</label><input type="number"
+					id="doc-vld-age-1" max="100" placeholder="输入年龄" required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-ta-1">评论：</label>
+				<textarea id="doc-vld-ta-1" minlength="10" maxlength="100"></textarea>
+			</div>
+			<button class="fn-btn fn-btn-secondary" type="submit">提交</button>
+		</fieldset>
+	</form>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;form action="" class="fn-form"&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;H5 原生表单验证&lt;/legend&gt;
+		&lt;div class="fn-form-group"&gt;
+			&lt;label for="doc-vld-name-1"&gt;用户名：&lt;/label&gt;&lt;input type="text"
+				id="doc-vld-name-1" maxlength="3" pattern="^\d+$"
+				placeholder="输入用户名" class="fn-form-field" required /&gt;
+		&lt;/div&gt;
+		&lt;div class="fn-form-group"&gt;
+			&lt;label for="doc-vld-email-1"&gt;邮箱：&lt;/label&gt;&lt;input type="email"
+				id="doc-vld-email-1" placeholder="输入邮箱" required /&gt;
+		&lt;/div&gt;
+		&lt;div class="fn-form-group"&gt;
+			&lt;label for="doc-vld-url-1"&gt;网址：&lt;/label&gt;&lt;input type="url"
+				id="doc-vld-url-1" placeholder="输入网址" required /&gt;
+		&lt;/div&gt;
+		&lt;div class="fn-form-group"&gt;
+			&lt;label for="doc-vld-age-1"&gt;年龄：&lt;/label&gt;&lt;input type="number"
+				id="doc-vld-age-1" max="100" placeholder="输入年龄" required /&gt;
+		&lt;/div&gt;
+		&lt;div class="fn-form-group"&gt;
+			&lt;label for="doc-vld-ta-1"&gt;评论：&lt;/label&gt;
+			&lt;textarea id="doc-vld-ta-1" minlength="10" maxlength="100"&gt;&lt;/textarea&gt;
+		&lt;/div&gt;
+		&lt;button class="fn-btn fn-btn-secondary" type="submit"&gt;提交&lt;/button&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</code>
+	</pre>
+</div>
+
+
+<h3 id="js-表单验证">JS 表单验证</h3>
+<p>JS 表单验证基于 HTML5 的各项验证属性进行：</p>
+<ul>
+	<li><code>required</code>: 必填；</li>
+	<li><code>pattern</code>: 验证正则表达式，插件内置了 <code>email</code>、<code>url</code>、<code>number</code>
+		三种类型的正则表达式；</li>
+	<li><code>minlength</code>/<code>maxlength</code>: 字符限制；</li>
+	<li><code>min</code>/<code>max</code>: 最小、最大值限制，仅适用于数值类型的域；</li>
+	<li><code>minchecked</code>/<code>maxchecked</code>: 至少、至多选择数，适用于
+		<code>checkbox</code>、下拉多选框，<code>checkbox</code> 时将相关属性的设置在同组的第一个元素上；</li>
+	<li><code>.js-pattern-xx</code>: 验证规则 class，正则库中存在的规则可以通过添加相应
+		class 实现规则添加。</li>
+</ul>
+<p>
+	<strong>注意：</strong>
+</p>
+<p>
+	HTML5 原生表单验证中
+	<code>pattern</code>
+	只验证值的合法性，也就是<strong>可以不填，如果填写则必须符合规则</strong>。如果是必填项，仍要添加
+	<code>required</code>
+	属性。该插件与 HTML5 的规则保持一致。
+</p>
+<div>
+	<pre>
+		<code>
+&lt;!-- 下面三种写法等效 --&gt;
+&lt;!-- 只内置了 email url number 三种类型的正则，可自行扩展 --&gt;
+&lt;input type="email"/&gt;
+
+&lt;!-- js-pattern-xx 其中 xx 为 pattern 库中的 key --&gt;
+&lt;input type="text" class="js-pattern-email"/&gt;
+
+&lt;input type="text" pattern="^(...email regex...)$"/&gt;
+</code>
+	</pre>
+</div>
+<div>
+	<form action="" class="fn-form" data-fn-validator>
+		<fieldset>
+			<legend>JS 表单验证</legend>
+			<div class="fn-form-group">
+				<label for="doc-vld-name-2">用户名：</label><input type="text"
+					id="doc-vld-name-2" minlength="3" placeholder="输入用户名（至少 3 个字符）"
+					required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-email-2">邮箱：</label><input type="email"
+					id="doc-vld-email-2" placeholder="输入邮箱" required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-url-2">网址：</label><input type="url"
+					id="doc-vld-url-2" placeholder="输入网址" required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-age-2">年龄：</label><input type="number"
+					id="doc-vld-age-2" placeholder="输入年龄  18-120" min="18" max="120"
+					required />
+			</div>
+			<div class="fn-form-group">
+				<label class="fn-form-label">爱好：</label><label
+					class="fn-checkbox-inline"><input type="checkbox"
+					value="橘子" name="docVlCb" minchecked="2" maxchecked="4" required>
+					橘子</label><label class="fn-checkbox-inline"><input type="checkbox"
+					value="苹果" name="docVlCb"> 苹果</label><label
+					class="fn-checkbox-inline"><input type="checkbox"
+					value="菠萝" name="docVlCb"> 菠萝</label><label
+					class="fn-checkbox-inline"><input type="checkbox"
+					value="芒果" name="docVlCb"> 芒果</label><label
+					class="fn-checkbox-inline"><input type="checkbox"
+					value="香蕉" name="docVlCb"> 香蕉</label>
+			</div>
+			<div class="fn-form-group">
+				<label>性别：</label><label class="fn-radio-inline"><input
+					type="radio" value="" name="docVlGender" required> 男</label><label
+					class="fn-radio-inline"><input type="radio"
+					name="docVlGender"> 女</label><label class="fn-radio-inline"><input
+					type="radio" name="docVlGender"> 其他</label>
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-select-1">下拉单选框</label><select id="doc-select-1"
+					required><option value="">-=请选择一项=-</option>
+					<option value="option1">选项一...</option>
+					<option value="option2">选项二.....</option>
+					<option value="option3">选项三........</option>
+				</select><span class="fn-form-caret"></span>
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-select-2">多选框</label><select multiple="multiple"
+					class="" id="doc-select-2" minchecked="2" maxchecked="4"><option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-ta-2">评论：</label>
+				<textarea id="doc-vld-ta-2" minlength="10" maxlength="100"></textarea>
+			</div>
+			<button class="fn-btn fn-btn-secondary" type="submit">提交</button>
+		</fieldset>
+	</form>
+</div>
+
+
+<h3 id="显示提示信息">显示提示信息</h3>
+<p>
+	通过插件的
+	<code>.onValid</code>
+	和
+	<code>onInValid</code>
+	回调接口，可以根据需要定提示信息显示。
+</p>
+<p>使用时可以自行定义提示信息，也可以使用插件的内置的提示信息，详见后面的示例代码。</p>
+<h4 id="底部显示提示信息">底部显示提示信息</h4>
+<div>
+	<form action="" class="fn-form" id="doc-vld-msg">
+		<fieldset>
+			<legend>JS 表单验证</legend>
+			<div class="fn-form-group">
+				<label for="doc-vld-name-2-1">用户名：</label><input type="text"
+					id="doc-vld-name-2-1" minlength="3" placeholder="输入用户名（至少 3 个字符）"
+					required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-email-2-1">邮箱：</label><input type="email"
+					id="doc-vld-email-2-1"
+					data-validation-message="自定义提示信息：输入地球上的电子邮箱撒" placeholder="输入邮箱"
+					required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-url-2-1">网址：</label><input type="url"
+					id="doc-vld-url-2-1" placeholder="输入网址" required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-age-2-1">年龄：</label><input type="number"
+					class="" id="doc-vld-age-2-1" placeholder="输入年龄  18-120" min="18"
+					max="120" required />
+			</div>
+			<div class="fn-form-group">
+				<label class="fn-form-label">爱好：</label><label
+					class="fn-checkbox-inline"><input type="checkbox"
+					value="橘子" name="docVlCb" minchecked="2" maxchecked="4" required>
+					橘子</label><label class="fn-checkbox-inline"><input type="checkbox"
+					value="苹果" name="docVlCb"> 苹果</label><label
+					class="fn-checkbox-inline"><input type="checkbox"
+					value="菠萝" name="docVlCb"> 菠萝</label><label
+					class="fn-checkbox-inline"><input type="checkbox"
+					value="芒果" name="docVlCb"> 芒果</label><label
+					class="fn-checkbox-inline"><input type="checkbox"
+					value="香蕉" name="docVlCb"> 香蕉</label>
+			</div>
+			<div class="fn-form-group">
+				<label>性别：</label><label class="fn-radio-inline"><input
+					type="radio" value="" name="docVlGender" required> 男</label><label
+					class="fn-radio-inline"><input type="radio"
+					name="docVlGender"> 女</label><label class="fn-radio-inline"><input
+					type="radio" name="docVlGender"> 其他</label>
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-select-1-1">下拉单选框</label><select id="doc-select-1-1"
+					required><option value="">-=请选择一项=-</option>
+					<option value="option1">选项一...</option>
+					<option value="option2">选项二.....</option>
+					<option value="option3">选项三........</option>
+				</select><span class="fn-form-caret"></span>
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-select-2-1">多选框</label><select multiple="multiple"
+					class="" id="doc-select-2-1" minchecked="2" maxchecked="4"><option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-ta-2-1">评论：</label>
+				<textarea id="doc-vld-ta-2-1" minlength="10" maxlength="100"></textarea>
+			</div>
+			<button class="fn-btn fn-btn-secondary" type="submit">提交</button>
+		</fieldset>
+	</form>
+	<script>
+		$(function() {
+			$("#doc-vld-msg")
+					.validator(
+							{
+								onValid : function(a) {
+									$(a.field).closest(".fn-form-group").find(
+											".fn-alert").hide()
+								},
+								onInValid : function(a) {
+									var i = $(a.field), d = i
+											.closest(".fn-form-group"), e = d
+											.find(".fn-alert"), l = i
+											.data("validationMessage")
+											|| this.getValidationMessage(a);
+											e.length
+													|| (e = $(
+															'<div class="fn-alert fn-alert-danger"></div>')
+															.hide().appendTo(d)),
+											e.html(l).show()
+								}
+							})
+		});
+	</script>
+</div>
+<div>
+	<pre>
+		<code>
+$(function() {
+  $('#doc-vld-msg').validator({
+    onValid: function(validity) {
+      $(validity.field).closest('.fn-form-group').find('.fn-alert').hide();
+    },
+
+    onInValid: function(validity) {
+      var $field = $(validity.field);
+      var $group = $field.closest('.fn-form-group');
+      var $alert = $group.find('.fn-alert');
+      // 使用自定义的提示信息 或 插件内置的提示信息
+      var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+      if (!$alert.length) {
+        $alert = $('&lt;div class="fn-alert fn-alert-danger"&gt;&lt;/div&gt;').hide().
+          appendTo($group);
+      }
+
+      $alert.html(msg).show();
+    }
+  });
+});
+</code>
+	</pre>
+</div>
+
+
+<h4 id="tooltip">
+	Tooltip <a href="#tooltip" title="Heading anchor" class="doc-anchor"></a>
+</h4>
+<div>
+	<form action="" class="fn-form" id="form-with-tooltip">
+		<fieldset>
+			<legend>定义 Tooltip</legend>
+			<div class="fn-form-group">
+				<label for="doc-vld-name-2-0">用户名：</label><input type="text"
+					id="doc-vld-name-2-0" minlength="3" placeholder="输入用户名（至少 3 个字符）"
+					required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-pwd-1-0">密码：</label><input type="password"
+					id="doc-vld-pwd-1-0" placeholder="6 位数字的银行卡密码" pattern="^\d{6}$"
+					required data-foolish-msg="把 IQ 卡密码交出来！" />
+			</div>
+			<button class="fn-btn fn-btn-secondary" type="submit">提交</button>
+		</fieldset>
+	</form>
+	<style>
+#vld-tooltip {
+	position: absolute;
+	z-index: 1000;
+	padding: 5px 10px;
+	background: #F37B1D;
+	min-width: 150px;
+	color: #fff;
+	transition: all .15s;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+	display: none
+}
+
+#vld-tooltip:before {
+	position: absolute;
+	top: -8px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -8px;
+	content: "";
+	border-width: 0 8px 8px;
+	border-color: transparent transparent #F37B1D;
+	border-style: none inset solid
+}
+</style>
+	<script>
+		$(function() {
+			var t = $("#form-with-tooltip"), 
+			o = $('<div id="vld-tooltip">提示信息！</div>');
+			o.appendTo(document.body), 
+			t.validator();
+			var i = t.data("fnui.validator");
+			t.on("focusin focusout", ".fn-form-error input", function(t) {
+				if ("focusin" === t.type) {
+					var a = $(this), e = a.offset(), d = a.data("foolishMsg")
+							|| i.getValidationMessage(a.data("validity"));
+					o.text(d).show().css({
+						left : e.left + 10,
+						top : e.top + $(this).outerHeight() + 10
+					})
+				} else
+					o.hide()
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;form action="" class="fn-form" id="form-with-tooltip"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;定义 Tooltip&lt;/legend&gt;
+    &lt;div class="fn-form-group"&gt;
+      &lt;label for="doc-vld-name-2-0"&gt;用户名：&lt;/label&gt;
+      &lt;input type="text" id="doc-vld-name-2-0" minlength="3"
+             placeholder="输入用户名（至少 3 个字符）" required/&gt;
+    &lt;/div&gt;
+
+    &lt;div class="fn-form-group"&gt;
+      &lt;label for="doc-vld-pwd-1-0"&gt;密码：&lt;/label&gt;
+      &lt;input type="password" id="doc-vld-pwd-1-0" placeholder="6 位数字的银行卡密码" pattern="^\d{6}$" required data-foolish-msg="把 IQ 卡密码交出来！"/&gt;
+    &lt;/div&gt;
+
+    &lt;button class="fn-btn fn-btn-secondary" type="submit"&gt;提交&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+
+&lt;style&gt;
+  #vld-tooltip {
+    position: absolute;
+    z-index: 1000;
+    padding: 5px 10px;
+    background: #F37B1D;
+    min-width: 150px;
+    color: #fff;
+    transition: all 0.15s;
+    box-shadow: 0 0 5px rgba(0,0,0,.15);
+    display: none;
+  }
+						
+  #vld-tooltip:before {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -8px;
+    content: "";
+    border-width: 0 8px 8px;
+    border-color: transparent transparent #F37B1D;
+    border-style: none inset solid;
+  }						
+&lt;/style&gt;
+</code>
+	</pre>
+</div>
+<div>
+	<pre>
+		<code>
+$(function() {
+	var t = $("#form-with-tooltip"), o = $('&lt;div id="vld-tooltip"&gt;提示信息！&lt;/div&gt;');
+	o.appendTo(document.body), t.validator();
+	var i = t.data("fnui.validator");
+	t.on("focusin focusout", ".fn-form-error input", function(t) {
+		if ("focusin" === t.type) {
+			var a = $(this), e = a.offset(), d = a.data("foolishMsg")
+					|| i.getValidationMessage(a.data("validity"));
+			o.text(d).show().css({
+				left : e.left + 10,
+				top : e.top + $(this).outerHeight() + 10
+			})
+		} else
+			o.hide()
+	})
+});
+</code>
+	</pre>
+</div>
+
+
+<h3 id="等值验证">等值验证</h3>
+<p>
+	通过
+	<code>data-equal-to</code>
+	指定要比较的域。
+</p>
+<div>
+	<form action="" class="fn-form" data-fn-validator>
+		<fieldset>
+			<legend>密码验证</legend>
+			<div class="fn-form-group">
+				<label for="doc-vld-name-2">用户名：</label><input type="text"
+					id="doc-vld-name-2" minlength="3" placeholder="输入用户名（至少 3 个字符）"
+					required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-pwd-1">密码：</label><input type="password"
+					id="doc-vld-pwd-1" placeholder="6 位数字的银行卡密码" pattern="^\d{6}$"
+					required />
+			</div>
+			<div class="fn-form-group">
+				<label for="doc-vld-pwd-2">确认密码：</label><input type="password"
+					id="doc-vld-pwd-2" placeholder="请与上面输入的值一致"
+					data-equal-to="#doc-vld-pwd-1" required />
+			</div>
+			<button class="fn-btn fn-btn-secondary" type="submit">提交</button>
+		</fieldset>
+	</form>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;div class="fn-form-group"&gt;
+	&lt;label for="doc-vld-pwd-1"&gt;密码：&lt;/label&gt;&lt;input type="password"
+		id="doc-vld-pwd-1" placeholder="6 位数字的银行卡密码" pattern="^\d{6}$"
+			required /&gt;
+&lt;/div&gt;
+&lt;div class="fn-form-group"&gt;
+	&lt;label for="doc-vld-pwd-2"&gt;确认密码：&lt;/label&gt;&lt;input type="password"
+		id="doc-vld-pwd-2" placeholder="请与上面输入的值一致"
+		data-equal-to="#doc-vld-pwd-1" required /&gt;
+&lt;/div&gt;
+
+</code>
+	</pre>
+</div>
+<h3 id="自定义验证">自定义验证</h3>
+<p>
+	插件预置的功能不可能满足各异的需求，通过
+	<code>validate</code>
+	选项，可以自定义验证规则，如远程验证等。
+</p>
+<div>
+	<pre>
+		<code>
+$('#your-form').validator({
+    validate: function(validity) {
+      var obj = $(validity.field);
+		//你的验证逻辑
+	   validity.valid = true //or false;
+       return validity;
+      }
+  });
+</code>
+	</pre>
+</div>
+<p>
+	参数
+	<code>validity</code>
+	是一个类似H5 ValidityState属性的对象。只要中主要用到的包括：
+</p>
+<ul>
+	<li><code>validity.field</code> - DOM 对象，当前验证的域，通过 <code>$(validity.field)</code>
+		可转换为 jQuery 对象，一般用于获取值和判断是否为特定域，以编写验证逻辑；</li>
+	<li><code>validity.valid</code> - 布尔值，验证是否通过，通过赋值 <code>true</code>，否则赋值<code>false</code>。</li>
+	<li>通过 <code>validity.valid</code> 标记验证是否通过；</li>
+</ul>
+<p>除了valid属性外，属性用来描述验证出错的细节，包括：</p>
+<div>
+	<pre>
+		<code>
+{
+  customError: false,
+  patternMismatch: false,
+  rangeOverflow: false, // higher than maximum
+  rangeUnderflow: false, // lower than  minimum
+  stepMismatch: false,
+  tooLong: false,
+  // value is not in the correct syntax
+  typeMismatch: false,
+  // Returns true if the element has no value but is a required field
+  valueMissing: false,
+  minlength:tooShort,
+  minchecked:checkedUnderflow,
+  maxchecked:checkedOverflow
+}
+</code>
+	</pre>
+</div>
+
+<h2 id="使用方式">使用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	在
+	<code>form</code>
+	上添加
+	<code>data-fn-validator</code>
+	属性（同时可以设置相关选项）。
+</p>
+
+<h3 id="通过-js">通过 JS</h3>
+<div>
+	<pre>
+		<code>
+$(function(){
+  $('#your-form').validator(options);
+});
+</code>
+	</pre>
+</div>
+
+<h4 id="参数说明">参数说明</h4>
+<div>
+	<pre>
+		<code>
+{
+  // 是否使用 H5 原生表单验证，不支持浏览器会自动退化到 JS 验证
+  H5validation: false,
+
+  // 内置规则的 H5 input type，这些 type 无需添加 pattern
+  H5inputType: ['email', 'url', 'number'],
+
+  // 验证正则
+  // key1: /^...$/，包含 `js-pattern-key1` 的域会自动应用改正则
+  patterns: {},
+
+  activeClass: 'fn-active',
+
+  // 验证不通过时添加到域上的 class
+  inValidClass: 'fn-field-error',
+
+  // 验证通过时添加到域上的 class
+  validClass: 'fn-field-valid',
+
+  // 表单提交的时候验证
+  validateOnSubmit: true,
+
+  // 表单提交时验证的域
+  // Elements to validate with allValid (only validating visible elements)
+  // :input: selects all input, textarea, select and button elements.
+  allFields: ':input:visible:not(:button, :disabled, .fn-novalidate)',
+
+  // 下列元素触发以下事件时会调用验证程序
+  keyboardFields: ':input:not(:button, :disabled,.fn-novalidate)',
+  keyboardEvents: 'focusout, change', // keyup, focusin
+
+  // 按键后进行一次验证
+  activeKeyup: true,
+
+  // 鼠标点击下列元素时会调用验证程序
+  pointerFields: 'input[type="range"]:not(:disabled, .fn-novalidate), ' +
+  'input[type="radio"]:not(:disabled, .fn-novalidate), ' +
+  'input[type="checkbox"]:not(:disabled, .fn-novalidate), ' +
+  'select:not(:disabled, .fn-novalidate), ' +
+  'option:not(:disabled, .fn-novalidate)',
+  pointerEvents: 'click',
+
+  // 域通过验证时回调
+  onValid: function(validity) {
+  },
+
+  // 验证出错时的回调， validity 对象包含相关信息，格式通 H5 表单元素的 validity 属性
+  onInValid: function(validity) {
+  },
+
+  // 域验证通过时添加的操作，通过该接口可定义各种验证提示
+  markValid: function(validity) {
+    // this is Validator instance
+    var options = this.options;
+    var $field  = $(validity.field);
+    var $parent = $field.closest('.fn-form-group');
+    $field.addClass(options.validClass).
+      removeClass(options.inValidClass);
+
+    $parent.addClass('fn-form-success').removeClass('fn-form-error');
+
+    options.onValid.call(this, validity);
+  },
+
+  // 域验证失败时添加的操作，通过该接口可定义各种验证提示
+  markInValid: function(validity) {
+    var options = this.options;
+    var $field  = $(validity.field);
+    var $parent = $field.closest('.fn-form-group');
+    $field.addClass(options.inValidClass + ' ' + options.activeClass).
+      removeClass(options.validClass);
+
+    $parent.addClass('fn-form-error').removeClass('fn-form-success');
+
+    options.onInValid.call(this, validity);
+  },
+
+  // 自定义验证程序接口，详见示例
+  validate: function(validity) {
+    // return validity;
+  },
+
+  // 定义表单提交处理程序
+  submit: function(){//}
+}
+</code>
+	</pre>
+</div>
+
+
+<h2 id="参考资源">参考资源</h2>
+<h3 id="常用正则表达式">常用正则表达式</h3>
+<ul>
+	<li>带区号的电话号码：<code>/^(\d{3}-|\d{4}-)(\d{8}|\d{7})$/</code>
+	</li>
+	<li>匹配中文字符： <code>/[\u4e00-\u9fa5]/</code>
+	</li>
+	<li>国内邮政编码： <code>/^\d{6}$/</code>
+	</li>
+	<li>国内手机号码： <code>/^1((3|5|8){1}\d{1}|70)\d{8}$/</code> （匹配
+		13x/15x/18x/170 号段，如有遗漏请自行添加）
+	</li>
+</ul>
+<h3 id="注意事项">注意事项</h3>
+<ul>
+	<li><code>checkbox</code>/<code>radio</code> <strong>务必添加
+			<code>name</code> 属性，否则无法正常工作
+	</strong>；</li>
+	<li><code>&lt;input type=&quot;number&quot;&gt;</code>
+		输入非数字字符时返回值为空字符串 <code>&quot;&quot;</code>；</li>
+	<li>浏览器默认选中下拉单选框的第一项，使用时需将第一项的值设置为空 <code>value=&quot;&quot;</code>。
+	</li>
+</ul>
+<div>
+	<pre>
+		<code>
+&lt;div class="fn-form-group"&gt;
+  &lt;label for="doc-select-1"&gt;下拉单选框&lt;/label&gt;
+  &lt;select id="doc-select-1" required&gt;
+    &lt;option value=""&gt;-=请选择一项=-&lt;/option&gt;
+    &lt;option value="option1"&gt;选项一...&lt;/option&gt;
+    &lt;option value="option2"&gt;选项二.....&lt;/option&gt;
+    &lt;option value="option3"&gt;选项三........&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;span class="fn-form-caret"&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>

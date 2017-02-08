@@ -1,0 +1,539 @@
+
+<h1 id="modal">Modal</h1>
+<hr />
+<p>
+	Modal 交互窗口，可以用来模拟浏览器的
+	<code>alert</code>
+	、
+	<code>confirm</code>
+	、
+	<code>prompt</code>
+	窗口。
+</p>
+<h2 id="使用演示">使用演示</h2>
+
+<h3 id="参数说明">参数说明</h3>
+<table class="fn-table fn-table-bordered fn-table-striped">
+	<thead>
+		<tr>
+			<th>参数</th>
+			<th>类型</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>onConfirm</code></td>
+			<td><code>function</code></td>
+			<td>具有 <code>data-fn-modal-confirm</code> 属性的按钮关闭时触发的函数
+			</td>
+		</tr>
+		<tr>
+			<td><code>onCancel</code></td>
+			<td><code>function</code></td>
+			<td>具有 <code>data-fn-modal-cancel</code> 属性的按钮关闭时触发的函数
+			</td>
+		</tr>
+		<tr>
+			<td><code>closeViaDimmer</code></td>
+			<td><code>boolean</code></td>
+			<td>点击遮罩层时关闭 Modal，默认为 <code>true</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>width</code></td>
+			<td><code>number</code></td>
+			<td>Modal 宽度，对 Popup 和 Actions 无效</td>
+		</tr>
+		<tr>
+			<td><code>height</code></td>
+			<td><code>number</code></td>
+			<td>Modal 高度，对 Popup 和 Actions 无效</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	<strong>注意：</strong>
+</p>
+<ul>
+	<li><strong>如无必要，请不要设置 <code>width</code>、<code>height</code>，以免破坏响应式样式。
+	</strong></li>
+	<li><code>onConfirm</code>/<code>onCanel</code> 函数中 <code>this</code>
+		指向 Modal 实例，可以通过 <code>this.</code> 访问实例的方法和属性。</li>
+</ul>
+<p>使用过程中需按示例代码组织好 HTML。</p>
+<h3 id="基本形式">基本形式</h3>
+<p>
+	此 Demo 设置了
+	<code>closeViaDimmer</code>
+	、
+	<code>width</code>
+	、
+	<code>height</code>
+	参数。
+</p>
+<div>
+	<button class="fn-btn fn-btn-primary"
+		data-fn-modal="{target: '#doc-modal-1', closeViaDimmer: 0, width: 400, height: 225}">Modal</button>
+	<div class="fn-modal fn-modal-no-btn" tabindex="-1" id="doc-modal-1">
+		<div class="fn-modal-dialog">
+			<div class="fn-modal-hd">
+				Modal 标题 <a href="javascript: void(0)"
+					class="fn-close fn-close-spin" data-fn-modal-close>&times;</a>
+			</div>
+			<div class="fn-modal-bd">Modal 内容。本 Modal 无法通过遮罩层关闭。</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;button class="fn-btn fn-btn-primary"
+	data-fn-modal="{target: '#doc-modal-1', closeViaDimmer: 0, width: 400, height: 225}"&gt;Modal&lt;/button&gt;
+&lt;div class="fn-modal fn-modal-no-btn" tabindex="-1" id="doc-modal-1"&gt;
+	&lt;div class="fn-modal-dialog"&gt;
+		&lt;div class="fn-modal-hd"&gt;
+			Modal 标题 &lt;a href="javascript: void(0)"
+				class="fn-close fn-close-spin" data-fn-modal-close&gt;&times;&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;div class="fn-modal-bd"&gt;Modal 内容。本 Modal 无法通过遮罩层关闭。&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+
+
+<h3 id="模拟-alert">模拟 Alert</h3>
+<div>
+	<button class="fn-btn fn-btn-primary"
+		data-fn-modal="{target: '#my-alert'}">Alert</button>
+	<div class="fn-modal fn-modal-alert" tabindex="-1" id="my-alert">
+		<div class="fn-modal-dialog">
+			<div class="fn-modal-hd">Modal</div>
+			<div class="fn-modal-bd">Hello world！</div>
+			<div class="fn-modal-footer">
+				<span class="fn-modal-btn fn-modal-btn-bold">确定</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;button class="fn-btn fn-btn-primary"
+	data-fn-modal="{target: '#my-alert'}"&gt;Alert&lt;/button&gt;
+&lt;div class="fn-modal fn-modal-alert" tabindex="-1" id="my-alert"&gt;
+	&lt;div class="fn-modal-dialog"&gt;
+		&lt;div class="fn-modal-hd"&gt;Modal&lt;/div&gt;
+		&lt;div class="fn-modal-bd"&gt;Hello world！&lt;/div&gt;
+		&lt;div class="fn-modal-footer"&gt;
+			&lt;span class="fn-modal-btn fn-modal-btn-bold"&gt;确定&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+
+<h3 id="模拟-confirm">模拟 Confirm</h3>
+<p>点击列表右边的x查看效果。</p>
+<div>
+	<button class="fn-btn fn-btn-warning" id="doc-confirm-toggle">Confirm</button>
+	<style>
+.confirm-list i {
+	position: absolute;
+	right: 0;
+	top: 12px;
+	color: #888;
+	width: 32px;
+	text-align: center;
+	cursor: pointer
+}
+
+.confirm-list i:hover {
+	color: #555
+}
+</style>
+	<ul class="fn-list confirm-list" id="doc-modal-list">
+		<li><a data-id="1" href="#">点击关闭，弹出提示。</a><i
+			class="fn-icon-close"></i></li>
+		<li><a data-id="1" href="#">点击关闭，弹出提示。</a><i
+			class="fn-icon-close"></i></li>
+	</ul>
+
+	<div class="fn-modal fn-modal-confirm" tabindex="-1" id="my-confirm">
+		<div class="fn-modal-dialog">
+			<div class="fn-modal-hd">Prompt</div>
+			<div class="fn-modal-bd">你，确定要删除这条记录吗？</div>
+			<div class="fn-modal-footer">
+				<span class="fn-modal-btn" data-fn-modal-cancel>取消</span> <span
+					class="fn-modal-btn" data-fn-modal-confirm>确定</span>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function() {
+			$("#doc-modal-list")
+					.find(".fn-icon-close")
+					.add("#doc-confirm-toggle")
+					.on(
+							"click",
+							function() {
+								$("#my-confirm")
+										.modal(
+												{
+													relatedTarget : this,
+													onConfirm : function() {
+														var n = $(
+																this.relatedTarget)
+																.prev("a"), o = n.length ? "你要删除的链接 ID 为 "
+																+ n.data("id")
+																: "点击了确认";
+														alert(o)
+													},
+													onCancel : function() {
+														alert("点击了取消")
+													}
+												})
+							})
+		});
+	</script>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;div class="fn-modal fn-modal-confirm" tabindex="-1" id="my-confirm"&gt;
+	&lt;div class="fn-modal-dialog"&gt;
+		&lt;div class="fn-modal-hd"&gt;Prompt&lt;/div&gt;
+		&lt;div class="fn-modal-bd"&gt;你，确定要删除这条记录吗？&lt;/div&gt;
+		&lt;div class="fn-modal-footer"&gt;
+			&lt;span class="fn-modal-btn" data-fn-modal-cancel&gt;取消&lt;/span&gt; &lt;span
+				class="fn-modal-btn" data-fn-modal-confirm&gt;确定&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+<div>
+	<pre>
+		<code>
+$("#my-confirm").modal({
+	relatedTarget : this,
+		onConfirm : function() {
+			var n = $(this.relatedTarget).prev("a"), 
+			o = n.length ? "你要删除的链接 ID 为 "+ n.data("id"): "点击了确认";alert(o)
+		},
+		onCancel : function() {
+			alert("点击了取消")
+		}
+})													
+</code>
+	</pre>
+</div>
+
+<h3 id="模拟-prompt">模拟 Prompt</h3>
+<p>
+	Prompt 支持多个输入框，输入框的值通过参数
+	<code>options.data</code>
+	获取：
+</p>
+<ul>
+	<li>只有一个输入框时，<code>options.data</code> 为字符串；
+	</li>
+	<li>多个输入框时，<code>options.data</code> 为数组。
+	</li>
+</ul>
+<div>
+	<button class="fn-btn fn-btn-success" id="doc-prompt-toggle">Prompt</button>
+	<div class="fn-modal fn-modal-prompt" tabindex="-1" id="my-prompt">
+		<div class="fn-modal-dialog">
+			<div class="fn-modal-hd">...</div>
+			<div class="fn-modal-bd">
+				随便说点啥<input type="text" class="fn-modal-prompt-input">
+			</div>
+			<div class="fn-modal-footer">
+				<span class="fn-modal-btn" data-fn-modal-cancel>取消</span> <span
+					class="fn-modal-btn" data-fn-modal-confirm>提交</span>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function() {
+			$("#doc-prompt-toggle").on("click", function() {
+				$("#my-prompt").modal({
+					relatedTarget : this,
+					onConfirm : function(n) {
+						alert("你输入的是：" + n.data || "")
+					},
+					onCancel : function() {
+						alert("点击了取消!")
+					}
+				})
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;button class="fn-btn fn-btn-success" id="doc-prompt-toggle"&gt;Prompt&lt;/button&gt;
+	&lt;div class="fn-modal fn-modal-prompt" tabindex="-1" id="my-prompt"&gt;
+		&lt;div class="fn-modal-dialog"&gt;
+			&lt;div class="fn-modal-hd"&gt;...&lt;/div&gt;
+			&lt;div class="fn-modal-bd"&gt;
+			随便说点啥&lt;input type="text" class="fn-modal-prompt-input"&gt;
+		&lt;/div&gt;
+		&lt;div class="fn-modal-footer"&gt;
+			&lt;span class="fn-modal-btn" data-fn-modal-cancel&gt;取消&lt;/span&gt; &lt;span
+					class="fn-modal-btn" data-fn-modal-confirm&gt;提交&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<div>
+	<pre>
+		<code>
+		$(function() {
+			$("#doc-prompt-toggle").on("click", function() {
+				$("#my-prompt").modal({
+					relatedTarget : this,
+					onConfirm : function(n) {
+						alert("你输入的是：" + n.data || "")
+					},
+					onCancel : function() {
+						alert("点击了取消!")
+					}
+				})
+			})
+		});
+</code>
+	</pre>
+</div>
+
+
+<h3 id="modal-loading">Modal Loading</h3>
+<p>采纳</p>
+<div>
+	<button class="fn-btn fn-btn-success"
+		data-fn-modal="{target: '#my-modal-loading'}">Modal Loading</button>
+	<div class="fn-modal fn-modal-loading fn-modal-no-btn" tabindex="-1"
+		id="my-modal-loading">
+		<div class="fn-modal-dialog">
+			<div class="fn-modal-hd">正在载入...</div>
+			<div class="fn-modal-bd">
+				<span class="fn-icon-spinner fn-icon-spin"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;button class="fn-btn fn-btn-success"
+	data-fn-modal="{target: '#my-modal-loading'}"&gt;Modal Loading&lt;/button&gt;
+&lt;div class="fn-modal fn-modal-loading fn-modal-no-btn" tabindex="-1"
+	id="my-modal-loading"&gt;
+	&lt;div class="fn-modal-dialog"&gt;
+		&lt;div class="fn-modal-hd"&gt;正在载入...&lt;/div&gt;
+		&lt;div class="fn-modal-bd"&gt;
+			&lt;span class="fn-icon-spinner fn-icon-spin"&gt;&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+
+</div>
+
+
+
+<h3 id="actions">Actions</h3>
+<p>结合List 组件使用，创建类似 iOS 的操作列表。</p>
+<div>
+	<button class="fn-btn fn-btn-secondary"
+		data-fn-modal="{target: '#my-actions'}">Actions</button>
+	<div class="fn-modal-actions" id="my-actions">
+		<div class="fn-modal-actions-group">
+			<ul class="fn-list">
+				<li class="fn-modal-actions-header">弹出框标题</li>
+				<li><a href="#"><span class="fn-icon-wechat"></span> 分享到微信</a></li>
+				<li><a href="#"><i class="fn-icon-mobile"></i> 短信分享</a></li>
+				<li class="fn-modal-actions-danger"><a href="#"><i
+						class="fn-icon-twitter"></i> 分享到 twitter</a></li>
+			</ul>
+		</div>
+		<div class="fn-modal-actions-group">
+			<button class="fn-btn fn-btn-secondary fn-btn-block"
+				data-fn-modal-close>取消</button>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;button class="fn-btn fn-btn-secondary"
+	data-fn-modal="{target: '#my-actions'}"&gt;Actions&lt;/button&gt;
+&lt;div class="fn-modal-actions" id="my-actions"&gt;
+	&lt;div class="fn-modal-actions-group"&gt;
+		&lt;ul class="fn-list"&gt;
+			&lt;li class="fn-modal-actions-header"&gt;弹出框标题&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;&lt;span class="fn-icon-wechat"&gt;&lt;/span&gt; 分享到微信&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fn-icon-mobile"&gt;&lt;/i&gt; 短信分享&lt;/a&gt;&lt;/li&gt;
+			&lt;li class="fn-modal-actions-danger"&gt;&lt;a href="#"&gt;&lt;i
+					class="fn-icon-twitter"&gt;&lt;/i&gt; 分享到 twitter&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class="fn-modal-actions-group"&gt;
+		&lt;button class="fn-btn fn-btn-secondary fn-btn-block"
+			data-fn-modal-close&gt;取消&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+
+
+<h3 id="popup">Popup</h3>
+<div>
+	<button class="fn-btn fn-btn-danger"
+		data-fn-modal="{target: '#my-popup'}">Popup</button>
+	<div class="fn-popup" id="my-popup">
+		<div class="fn-popup-inner">
+			<div class="fn-popup-hd">
+				<h4 class="fn-popup-title">title</h4>
+				<span data-fn-modal-close class="fn-close">&times;</span>
+			</div>
+			<div class="fn-popup-bd">
+				<p>
+					some string<br />some string<br />some string<br />some string<br />some
+					string<br />
+				</p>
+				<p>
+					some string<br />some string<br />some string<br />some string<br />some
+					string<br />
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;button class="fn-btn fn-btn-danger"
+		data-fn-modal="{target: '#my-popup'}"&gt;Popup&lt;/button&gt;
+	&lt;div class="fn-popup" id="my-popup"&gt;
+		&lt;div class="fn-popup-inner"&gt;
+			&lt;div class="fn-popup-hd"&gt;
+				&lt;h4 class="fn-popup-title"&gt;title&lt;/h4&gt;
+				&lt;span data-fn-modal-close class="fn-close"&gt;&times;&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class="fn-popup-bd"&gt;
+				...
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+
+<h2 id="使用方式">使用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	在
+	<code>&lt;button&gt;</code>
+	、
+	<code>&lt;a&gt;</code>
+	等元素上添加
+	<code>data-fn-modal=&quot;{target: &#39;#my-modal&#39;}&quot;</code>
+	，其中
+	<code>#my-modal</code>
+	为 Modal 窗口容器 ID。
+</p>
+<div>
+	<pre><code>
+&lt;button data-fn-modal="{target: '#my-modal'}"&gt;My Modal&lt;/button&gt;
+</code></pre>
+</div>
+
+<h3 id="通过-js">通过 JS</h3>
+<p>组织好 Modal HTML 以后，可以通过 Javascript 调用。</p>
+<div>
+	<pre><code>
+$('#your-modal').modal(options);
+</code></pre>
+</div>
+<div>
+	<button class="fn-btn fn-btn-primary js-modal-open">打开 Modal</button>
+	<button class="fn-btn fn-btn-secondary js-modal-close">关闭
+		Modal</button>
+	<button class="fn-btn fn-btn-danger js-modal-toggle">Toggle
+		Modal</button>
+	<div class="fn-modal fn-modal-no-btn" tabindex="-1" id="your-modal">
+		<div class="fn-modal-dialog">
+			<div class="fn-modal-hd">
+				Modal 标题 <a href="javascript: void(0)"
+					class="fn-close fn-close-spin" data-fn-modal-close>&times;</a>
+			</div>
+			<div class="fn-modal-bd">Modal 内容。</div>
+		</div>
+	</div>
+	<script>$(function(){var a=$("#your-modal");a.siblings(".fn-btn").on("click",function(o){var l=$(o.target);l.hasClass("js-modal-open")?a.modal():a.modal(l.hasClass("js-modal-close")?"close":"toggle")})});</script>
+</div>
+<div>
+	<pre><code>
+$('#your-modal').modal(options);
+</code></pre>
+</div>
+
+
+<h4 id="方法">方法</h4>
+<ul>
+	<li><code>.modal(options)</code> - 激活元素的 Modal 窗口交互，<code>options</code>
+		为对象</li>
+	<li><code>.modal(&#39;toggle&#39;)</code> - 交替 Modal 窗口状态</li>
+	<li><code>.modal(&#39;open&#39;)</code> - 显示 Modal 窗口</li>
+	<li><code>.modal(&#39;close&#39;)</code> - 关闭 Modal 窗口</li>
+</ul>
+<h4 id="事件">事件</h4>
+<p>事件在弹窗上触发，可以监听弹窗元素来执行其他操作。</p>
+<div>
+	<pre><code>
+$('#doc-modal-1').on('open.modal', function(){
+  console.log('第一个演示弹窗打开了');
+});
+</code></pre>
+</div>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>事件名称</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>open.modal</code></td>
+			<td><code>open</code> 方法被调用是立即触发</td>
+		</tr>
+		<tr>
+			<td><code>opened.modal</code></td>
+			<td>Modal 窗口打开完成以后触发（CSS 动画执行完成）</td>
+		</tr>
+		<tr>
+			<td><code>close.modal</code></td>
+			<td><code>close</code> 方法被调用是立即触发</td>
+		</tr>
+		<tr>
+			<td><code>closed.modal</code></td>
+			<td>Modal 窗口完全关闭以后触发（CSS 动画执行完成）</td>
+		</tr>
+	</tbody>
+</table>
+<script>$(function(){$(document).on("open.modal opened.modal close.modal closed.modal",function(o){console.log("#"+$(o.target).attr("id")+" 触发了 "+o.type+" 事件")})});</script>

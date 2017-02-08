@@ -1,0 +1,483 @@
+
+
+<!-- 因为是后再入模式 所以要调用一下初始化方法 -->
+<script>
+$(function(){
+	$('[data-fn-datepicker]').datepicker();
+})
+</script>
+<h1 id="datepicker">Datepicker</h1>
+<hr />
+<p>日期选择插件。</p>
+<p>
+	<strong>注意：</strong>
+</p>
+<p>
+	在触控设备上，
+	<code>&lt;input&gt;</code>
+	获得焦点时会激活键盘，部分浏览器添加
+	<code>readonly</code>
+	属性以后可禁止键盘激活。
+</p>
+
+
+<h2 id="使用演示">使用演示</h2>
+<h3 id="基本形式">基本形式</h3>
+<p>
+	在
+	<code>&lt;input&gt;</code>
+	上增加
+	<code>.data-fn-datepicker</code>
+	属性，调用日期插件。
+</p>
+<div>
+	<input type="text" class="fn-form-field" placeholder="日历组件" data-fn-datepicker readonly="readonly" />
+</div>
+<div>
+	<pre><code>
+&lt;input type="text" class="fn-form-field" placeholder="日历组件" data-fn-datepicker readonly="readonly" /&gt;
+</code>
+	</pre>
+</div>
+
+
+<h3 id="结合组件使用">结合组件使用</h3>
+<p>
+	结合
+	<code>.fn-input-group</code>
+	使用，父类添加 class
+	<code>.fn-datepicker-date</code>
+	，非
+	<code>&lt;input&gt;</code>
+	触发元素需增加
+	<code>.fn-datepicker-add-on</code>
+	class。
+</p>
+<div>
+	<div class="fn-input-group fn-datepicker-date"
+		data-fn-datepicker="{format: 'dd-mm-yyyy'}">
+		<input type="text" class="fn-form-field" placeholder="日历组件"
+			readonly="readonly"> <span
+			class="fn-input-group-btn fn-datepicker-add-on"><button
+				class="fn-btn fn-btn-default" type="button">
+				<span class="fn-icon-calendar"></span>
+			</button> </span>
+	</div>
+</div>
+<div>
+		<pre><code>
+&lt;div class="fn-input-group fn-datepicker-date" data-fn-datepicker="{format: 'dd-mm-yyyy'}"&gt;
+	&lt;input type="text" class="fn-form-field" placeholder="日历组件" readonly="readonly"&gt; 
+	&lt;span class="fn-input-group-btn fn-datepicker-add-on"&gt;
+		&lt;button class="fn-btn fn-btn-default" type="button"&gt;
+			&lt;span class="fn-icon-calendar"&gt;&lt;/span&gt;
+		&lt;/button&gt; 
+	&lt;/span&gt;
+&lt;/div&gt;	
+</code></pre>
+	</div>
+
+
+<h3 id="更改颜色">更改颜色</h3>
+<p>
+	默认为蓝色，设置
+	<code>theme</code>
+	选项可改变颜色：
+</p>
+<ul>
+	<li><code>success</code>: 绿色</li>
+	<li><code>warning</code>: 橙色</li>
+	<li><code>danger</code>: 红色</li>
+</ul>
+<div>
+	<p>
+		<input type="text" class="fn-form-field" placeholder="日历组件"
+			data-fn-datepicker="{theme: 'success', weekStart: 6}"
+			readonly="readonly" />
+	</p>
+</div>
+<div>
+		<pre><code>
+&lt;input type="text" class="fn-form-field" placeholder="日历组件"
+	data-fn-datepicker="{theme: 'success', weekStart: 6}"
+		readonly="readonly" /&gt;
+</code></pre>
+</div>
+
+
+<h3 id="视图模式">视图模式</h3>
+<p>
+	通过参数
+	<code>viewMode</code>
+	设置日历初始视图模式：
+</p>
+<ul>
+	<li><code>days</code>: 显示天（默认）</li>
+	<li><code>months</code>: 显示月</li>
+	<li><code>years</code>: 显示年</li>
+</ul>
+<div>
+	<div class="fn-input-group fn-datepicker-date"
+		data-fn-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
+		<input type="text" class="fn-form-field" placeholder="日历组件"
+			readonly="readonly"> <span
+			class="fn-input-group-btn fn-datepicker-add-on"><button
+				class="fn-btn fn-btn-default" type="button">
+				<span class="fn-icon-calendar"></span>
+			</button> </span>
+	</div>
+</div>
+<div>
+		<pre><code>
+&lt;div class="fn-input-group fn-datepicker-date"
+	data-fn-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}"&gt;
+	&lt;input type="text" class="fn-form-field" placeholder="日历组件"
+		readonly="readonly"&gt; &lt;span
+		class="fn-input-group-btn fn-datepicker-add-on"&gt;&lt;button
+			class="fn-btn fn-btn-default" type="button"&gt;
+			&lt;span class="fn-icon-calendar"&gt;&lt;/span&gt;
+		&lt;/button&gt; &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+	</div>
+
+
+<h3 id="限制视图模式">限制视图模式</h3>
+<p>
+	设置参数
+	<code>minViewMode</code>
+	可以限制视图模式。下面的示例中限制了只能选择到月份：
+</p>
+<div>
+	<div class="fn-input-group fn-datepicker-date"
+		data-fn-datepicker="{format: 'yyyy-mm', viewMode: 'years', minViewMode: 'months'}">
+		<input type="text" class="fn-form-field" placeholder="日历组件"
+			readonly="readonly"> <span
+			class="fn-input-group-btn fn-datepicker-add-on"><button
+				class="fn-btn fn-btn-default" type="button">
+				<span class="fn-icon-calendar"></span>
+			</button> </span>
+	</div>
+</div>
+<div>
+		<pre><code>
+&lt;div class="fn-input-group fn-datepicker-date"
+	data-fn-datepicker="{format: 'yyyy-mm', viewMode: 'years', minViewMode: 'months'}"&gt;
+	&lt;input type="text" class="fn-form-field" placeholder="日历组件"readonly="readonly"&gt; 
+	&lt;span class="fn-input-group-btn fn-datepicker-add-on"&gt;
+		&lt;button class="fn-btn fn-btn-default" type="button"&gt;
+				&lt;span class="fn-icon-calendar"&gt;&lt;/span&gt;
+		&lt;/button&gt; 
+	&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+	</div>
+	<p>
+		<strong>只能选择年份：</strong>
+	</p>
+	<p>
+		注意
+		<code>format: &#39;yyyy &#39;</code>
+		里面
+		<code>yyyy</code>
+		后面多加一个空格。
+	</p>
+	<div>
+		<div>
+			<input type="text" class="fn-form-field"
+				data-fn-datepicker="{format: 'yyyy ', viewMode: 'years', minViewMode: 'years'}"
+				placeholder="日历组件" data-fn-datepicker readonly="readonly" />
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+
+</code>
+					</pre>
+	</div>
+
+
+<h3 id="自定义事件">自定义事件</h3>
+<p>
+	通过监听自定义事件
+	<code>changeDate</code>
+	，可以在回调函数中进行验证等操作。通过
+	<code>$().data(&#39;date&#39;)</code>
+	获取改变后的日期。
+</p>
+<div>
+	<div class="fn-alert fn-alert-danger" id="my-alert"
+		style="display: none">
+		<p>开始日期应小于结束日期！</p>
+	</div>
+	<div class="fn-g">
+		<div class="fn-u-sm-6">
+			<button type="button" class="fn-btn fn-btn-default fn-margin-right"
+				id="my-start">开始日期</button>
+			<span id="my-startDate">2016-06-01</span>
+		</div>
+		<div class="fn-u-sm-6">
+			<button type="button" class="fn-btn fn-btn-default fn-margin-right"
+				id="my-end">结束日期</button>
+			<span id="my-endDate">2016-06-08</span>
+		</div>
+	</div>
+	<script>$(function(){
+				var e=new Date(2016,06,1),
+				t=new Date(2016,06,25),
+				a=$("#my-alert");
+				$("#my-start").datepicker().on("changeDate.datepicker",function(d){
+					d.date.valueOf()>t.valueOf()?a.find("p").text("开始日期应小于结束日期！").end().show():(a.hide(),e=new Date(d.date),$("#my-startDate").text($("#my-start").data("date"))),$(this).datepicker("close")
+				}),
+				$("#my-end").datepicker().on("changeDate.datepicker",function(d){
+					d.date.valueOf()<e.valueOf()?a.find("p").text("结束日期应大于开始日期！").end().show():(a.hide(),t=new Date(d.date),$("#my-endDate").text($("#my-end").data("date"))),$(this).datepicker("close")
+				})
+			});</script>
+</div>
+<div>
+		<pre><code>
+  $(function() {
+    var startDate = new Date(2016, 06, 01);
+    var endDate = new Date(2016, 06, 08);
+    var $alert = $('#my-alert');
+    $('#my-start').datepicker().
+      on('changeDate.datepicker', function(event) {
+        if (event.date.valueOf() &gt; endDate.valueOf()) {
+          $alert.find('p').text('开始日期应小于结束日期！').end().show();
+        } else {
+          $alert.hide();
+          startDate = new Date(event.date);
+          $('#my-startDate').text($('#my-start').data('date'));
+        }
+        $(this).datepicker('close');
+      });
+
+    $('#my-end').datepicker().
+      on('changeDate.datepicker', function(event) {
+        if (event.date.valueOf() &lt; startDate.valueOf()) {
+          $alert.find('p').text('结束日期应大于开始日期！').end().show();
+        } else {
+          $alert.hide();
+          endDate = new Date(event.date);
+          $('#my-endDate').text($('#my-end').data('date'));
+        }
+        $(this).datepicker('close');
+      });
+  });
+</code></pre>
+	</div>
+
+
+<h3 id="设置禁止选择日期">设置禁止选择日期</h3>
+<p>
+	初始化的时候通过
+	<code>onRender</code>
+	选项设置禁用日期。
+</p>
+<div>
+	<div class="fn-g">
+		<div class="fn-u-sm-6">
+			设置开始日期<br />
+			<p>
+				<input type="text" class="fn-form-field" placeholder="今天之前的日期被禁用"
+					id="my-start-2" />
+			</p>
+		</div>
+		<div class="fn-u-sm-6">
+			设置结束日期<br />
+			<p>
+				<input type="text" class="fn-form-field" placeholder="今天之前的日期被禁用"
+					id="my-end-2" />
+			</p>
+		</div>
+	</div>
+	<script>$(function() {
+	    var nowTemp = new Date();
+	    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+	    var $myStart2 = $('#my-start-2');
+
+	    var checkin = $myStart2.datepicker({
+	      onRender: function(date) {
+	        return date.valueOf() < now.valueOf() ? 'fn-disabled' : '';
+	      }
+	    }).on('changeDate.datepicker', function(ev) {
+	          var newDate = new Date(ev.date)
+	          newDate.setDate(newDate.getDate() + 1);
+	          checkout.setValue(newDate);
+	        checkin.close();
+	        $('#my-end-2')[0].focus();
+	    }).data('fnui.datepicker');
+
+	    var checkout = $('#my-end-2').datepicker({
+	      onRender: function(date) {
+	        return date.valueOf() <= now.valueOf() ? 'fn-disabled' : '';
+	      }
+	    }).on('changeDate.datepicker', function(ev) {
+	      checkout.close();
+	    }).data('fnui.datepicker');
+	  });</script>
+</div>
+<div>
+		<pre><code>
+$(function() {
+	    var nowTemp = new Date();
+	    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+	    var $myStart2 = $('#my-start-2');
+
+	    var checkin = $myStart2.datepicker({
+	      onRender: function(date) {
+	        return date.valueOf() &lt; now.valueOf() ? 'fn-disabled' : '';
+	      }
+	    }).on('changeDate.datepicker', function(ev) {
+	        if (ev.date.valueOf() &gt; checkout.date.valueOf()) {
+	          var newDate = new Date(ev.date)
+	          newDate.setDate(newDate.getDate() + 1);
+	          checkout.setValue(newDate);
+	        }
+	        checkin.close();
+	        $('#my-end-2')[0].focus();
+	    }).data('fnui.datepicker');
+
+	    var checkout = $('#my-end-2').datepicker({
+	      onRender: function(date) {
+	        return date.valueOf() &lt;= checkin.date.valueOf() ? 'fn-disabled' : '';
+	      }
+	    }).on('changeDate.datepicker', function(ev) {
+	      checkout.close();
+	    }).data('fnui.datepicker');
+
+	  });
+</code></pre>
+	</div>
+	
+	
+<h2 id="调用方式">调用方式 
+	</h2>
+	<h3 id="通过-data-api">
+		通过 Data API
+	</h3>
+	<p>
+		添加
+		<code>data-fn-datepicker</code>
+		属性，并设置相关选项。
+	</p>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">""</span> <span
+					class="hljs-attribute">data-fn-datepicker</span>=<span
+					class="hljs-value">"{format: 'yyyy-mm'}"</span>/&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h4 id="js-调用">
+		JS 调用 <a href="#js-%E8%B0%83%E7%94%A8" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h4>
+	<p>
+		通过
+		<code>$().datepicker(options)</code>
+		调用。
+	</p>
+	<div>
+		<pre><code>
+$('#my-datepicker').datepicker({format: 'yyyy-mm'});
+</code></pre>
+	</div>
+
+
+<h4 id="方法说明">方法说明</h4>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>方法名称</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>.datepicker('open')</code></td>
+			<td>显示日历</td>
+		</tr>
+		<tr>
+			<td><code>.datepicker('close')</code></td>
+			<td>隐藏日历</td>
+		</tr>
+		<tr>
+			<td><code>.datepicker('place')</code></td>
+			<td>更新调用<code>datepicker</code>的相对位置
+			</td>
+		</tr>
+		<tr>
+			<td><code>.datepicker('setValue', value)</code></td>
+			<td>设置<code>Datepicker</code>新值
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h4 id="选项说明">选项说明</h4>
+<ul>
+	<li><code>format</code>: 日期格式，默认为 <code>yyyy-mm-dd</code>，可以选择 <code>yy/mm/dd</code>
+		、<code>mm/dd</code>、<code>dd/mm/yyyy</code>、<code>dd/mm/yy</code>、<code>dd/mm</code>等，中间分隔符可以使用
+		<code>/</code>、<code>-</code>、<code></code>。</li>
+	<li><code>viewMode</code>: 日期选择器初始视图模式，<code>string</code>|<code>integer</code>，
+		默认为 0，可选值 <code>days</code>、<code>months</code>、<code>years</code>或者对应的
+		<code>0</code>、<code>1</code>、<code>2</code>。</li>
+	<li><code>minViewMode</code>: 日期选择器初始视图模式限制，<code>string</code>|<code>integer</code>，
+		默认为 <code>0</code>，可选值<code>days</code>、<code>months</code>、<code>years</code>或者对应的
+		<code>0</code>、<code>1</code>、<code>2</code>。</li>
+	<li><code>onRender</code>: 渲染日历时调用的函数，比如 <code>.fn-disabled</code>
+		设置禁用日期。</li>
+	<li><code>theme</code>: 设置日期颜色主题，可选值为 <code>success</code>、<code>danger</code>、<code>warning</code>，对应为绿色、红色、橙色，默认为蓝色。</li>
+	<li><code>locale</code>: 语言设置, 可选值为 <code>zh_CN</code>、<code>en_US</code>，默认为中文。</li>
+	<li><code>autoClose</code>: 日期选定以后是否自动关闭日期选择器, 默认为 <code>true</code>
+		(仅在 <code>days</code> 视图有效)。</li>
+</ul>
+<p>
+	设置
+	<code>viewMode</code>
+	和
+	<code>minViewMode</code>
+	需要注意日期格式
+	<code>format</code>
+	的设置。
+</p>
+
+
+
+<h4 id="事件说明">事件调用</h4>
+<p>选择日期时，通过查看控制台选择的日期。</p>
+<div>
+	<p>
+		<input type="text" class="fn-form-field" placeholder="日历组件"
+			id="doc-datepicker" />
+	</p>
+	<script>$(function(){$("#doc-datepicker").datepicker().on("changeDate.datepicker",function(e){console.log(e.date)})});</script>
+</div>
+<div>
+	<pre>
+		<code>
+$("#doc-datepicker").datepicker().on("changeDate.datepicker",function(e){
+	....
+});
+</code>
+	</pre>
+</div>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>事件名称</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>changeDate.datepicker</code></td>
+			<td>日期改变时触发</td>
+		</tr>
+	</tbody>
+</table>

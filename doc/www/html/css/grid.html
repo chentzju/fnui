@@ -1,0 +1,595 @@
+
+<h1 id="grid">Grid</h1>
+<hr />
+<p>
+	布局上使用12列的响应式网格系统。使用时需在外围容器上添加
+	<code>.fn-g</code>
+	class，在列上添加
+	<code>.fn-u-[sm|md|lg]-[1-12]</code>
+	class，然后根据不同的屏幕需求设置不同的宽度。
+</p>
+<p>响应式断点如下：</p>
+<table class="fn-table fn-table-bordered fn-table-striped">
+	<thead>
+		<tr>
+			<th style="width: 100px">Class</th>
+			<th>区间</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>fn-u-sm-*</code></td>
+			<td><code>0 - 767px</code></td>
+		</tr>
+		<tr>
+			<td><code>fn-u-md-*</code></td>
+			<td><code>768px - 1199px</code></td>
+		</tr>
+		<tr>
+			<td><code>fn-u-lg-*</code></td>
+			<td><code>1200px +</code></td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	以 <strong>移动优先</strong> 的理念开发， <strong>如果不设置大屏的网格布局，应用到小屏幕的样式会继承到更大的屏幕上</strong>。
+</p>
+
+<h2 id="基本使用">
+	基本使用 
+</h2>
+<h3 id="基本概念">
+	基本概念
+</h3>
+<ul>
+	<li><strong>行</strong> - <code>.fn-g</code>: 网格中的行，用于包裹列，清除列的浮动；</li>
+	<li><strong>列</strong> - <code>.fn-u-xx-n</code>: 网格中的列，<code>xx</code>
+		为视口区间，<code>n</code> 为该列所占的份数，如 <code>n</code> 为 <code>3</code>
+		时表示这一列占整行宽度的 <code>3/12</code>，即 <code>1/4</code>。</li>
+</ul>
+<p>
+	<strong>示例 1：一个基本的网格</strong>
+</p>
+<p>
+	下面的示例中，行包含两列，第一列占
+	<code>4</code>
+	份，第二列占
+	<code>8</code>
+	份，如果只设置
+	<code>.fn-u-sm-n</code>
+	这个 class，意味着无论屏幕分辨率多大，都保持这个比例的划分。
+</p>
+<div class="grid-example">
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-4">4</div>
+		<div class="fn-u-sm-8">8</div>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-4"&gt;4&lt;/div&gt;
+  &lt;div class="fn-u-sm-8"&gt;8&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<p>
+	<strong>示例 2：不同区间不同的划分比例</strong>
+</p>
+<p>
+	下面的示例中，小屏
+	<code>sm</code>
+	区间两列是等分的，中屏和大屏
+	<code>md</code>
+	区间为
+	<code>1:2</code>
+	划分，
+	<code>lg</code>
+	区间为
+	<code>1:3</code>
+	。
+</p>
+<div class="grid-example">
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-6 fn-u-md-4 fn-u-lg-3">sm-6 md-4 lg-3</div>
+		<div class="fn-u-sm-6 fn-u-md-8 fn-u-lg-9">sm-6 md-8 lg-9</div>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-g doc-fn-g"&gt;
+  &lt;div class="fn-u-sm-6 fn-u-md-4 fn-u-lg-3"&gt;sm-6 md-4 lg-3&lt;/div&gt;
+  &lt;div class="fn-u-sm-6 fn-u-md-8 fn-u-lg-9"&gt;sm-6 md-8 lg-9&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<h3 id="限制行的宽度">
+	限制行的宽度 
+</h3>
+<p>
+	 行
+	<code>.fn-g</code>的宽度被设置为
+	<code>100%</code>， 未限定最大宽度，会随着窗口自动缩放。
+</p>
+<p>
+	可以在行上添加
+	<code>.fn-g-fixed</code>
+	class，将最大宽度限制为
+	<code>1000px</code>
+	（虽然显示器分辨率越来越高，但该行的最大宽度为1000px）。
+</p>
+<p>
+	通过
+	<code>.fn-g</code>
+	+
+	<code>.fn-g-fixed</code>
+	限制行的宽度。
+</p>
+
+<p>
+	<strong>示例 3：容器</strong>
+</p>
+<p>
+	蓝色边框的是
+	<code>.fn-container</code>
+	。
+</p>
+<div class="grid-example">
+	<div class="fn-container">I'm in the .fn-container.</div>
+	<div class="fn-g fn-g-fixed doc-fn-g">
+		<div class="fn-u-sm-6">.fn-u-sm-6</div>
+		<div class="fn-u-sm-6">.fn-u-sm-6</div>
+	</div>
+	<div class="fn-container">
+		<div class="fn-g doc-fn-g">
+			<div class="fn-u-sm-6">.fn-u-sm-6</div>
+			<div class="fn-u-sm-6">.fn-u-sm-6</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+						<code>
+&lt;!--没有使用网格的内容--&gt;
+&lt;div class="fn-container"&gt;
+  I'm in the .fn-container.
+&lt;/div&gt;
+
+&lt;!--网格行限制宽度--&gt;
+&lt;div class="fn-g fn-g-fixed"&gt;
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--也可以设置容器--&gt;
+&lt;div class="fn-container"&gt;
+  &lt;div class="fn-g"&gt;
+    &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+    &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+					</pre>
+</div>
+
+<h3 id="多行网格">
+	多行网格 
+</h3>
+
+<div>
+	<pre>
+						<code>
+&lt;div class="fn-g fn-g-fixed"&gt;
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+&lt;/div&gt;
+</code>
+					</pre>
+</div>
+<h3 id="不足-12-份的网格">
+	不足 12 份的网格 
+</h3>
+<p>网格拆分时使用了非整数的百分比（100/12 * n），浏览器在计算的时候会有一些差异，最终所有列的宽度和可能没有达到
+	100%，导致网格右侧会有很小的空隙。因此，向右浮动最后一列，以填满行的右边（如下面示例中的第一行）。</p>
+<p>
+	实际使用中，如果行的网格数不足
+	<code>12</code>
+	，需要在最后一列上添加
+	<code>.fn-u-end</code>
+	。
+</p>
+<p>
+	<strong>示例 4：不足 12 份的网格</strong>
+</p>
+<div class="grid-example">
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-3">3</div>
+		<div class="fn-u-sm-3">3</div>
+		<div class="fn-u-sm-3">3</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-3">3</div>
+		<div class="fn-u-sm-3">3</div>
+		<div class="fn-u-sm-3 fn-u-end">3</div>
+	</div>
+</div>
+<div>
+	<pre>
+						<code>
+&lt;!-- 未添加 .fn-u-end 的情形 --&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-3"&gt;3&lt;/div&gt;
+  &lt;div class="fn-u-sm-3"&gt;3&lt;/div&gt;
+  &lt;div class="fn-u-sm-3"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 添加 .fn-u-end 后 --&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-3"&gt;3&lt;/div&gt;
+  &lt;div class="fn-u-sm-3"&gt;3&lt;/div&gt;
+  &lt;div class="fn-u-sm-3 fn-u-end"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code>
+					</pre>
+</div>
+
+<h2 id="进阶使用">
+	进阶使用 
+</h2>
+<h3 id="响应式辅助-class">
+	响应式辅助 Class 
+</h3>
+<p>
+	<strong>示例 5：响应式辅助类控制元素显隐</strong>
+</p>
+<p>调整浏览器窗口以查看响应式效果。</p>
+<div class="grid-example">
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-lg-3">
+			<span class="fn-show-md-down">sm-full <span
+				class="fn-show-lg-only">lg-3</span></span>
+		</div>
+		<div class="fn-u-lg-6">
+			<span class="fn-show-md-down">sm-full <span
+				class="fn-show-lg-only">lg-6</span></span>
+		</div>
+		<div class="fn-u-lg-3">
+			sm-full <span
+				class="fn-show-lg-only">lg-3</span>
+		</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-6 fn-u-lg-2">
+			<span class="fn-show-md-down">6 <span class="fn-hide-md-down">2</span></span>
+		</div>
+		<div class="fn-u-sm-6 fn-u-lg-8">
+			<span class="fn-show-md-down">6 <span class="fn-hide-md-down">8</span></span>
+		</div>
+		<div class="fn-u-sm-12 fn-u-lg-2">
+			<span class="fn-show-md-down">full <span
+				class="fn-hide-md-down">2</span></span>
+		</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-3">3</div>
+		<div class="fn-u-sm-9">9</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-lg-4">
+			<span class="fn-show-md-down">full <span
+				class="fn-hide-md-down">4</span></span>
+		</div>
+		<div class="fn-u-lg-8">
+			<span class="fn-show-md-down">full <span
+				class="fn-hide-md-down">8</span></span>
+		</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-6 fn-u-lg-5">
+			<span class="fn-show-md-down">6 <span class="fn-hide-md-down">5</span></span>
+		</div>
+		<div class="fn-u-sm-6 fn-u-lg-7">
+			<span class="fn-show-md-down">6 <span class="fn-hide-md-down">7</span></span>
+		</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-lg-6">
+			<span class="fn-show-md-down">full <span
+				class="fn-hide-md-down">6</span></span>
+		</div>
+		<div class="fn-u-lg-6">
+			<span class="fn-show-md-down">full <span
+				class="fn-hide-md-down">6</span></span>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+						<code>
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-2 fn-u-lg-4"&gt;
+    &lt;span class="fn-show-md-down"&gt;sm-2&lt;/span&gt;
+    &lt;span class="fn-show-lg-only"&gt;lg-4&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="fn-u-sm-4 fn-u-lg-4"&gt;sm4 lg4&lt;/div&gt;
+  &lt;div class="fn-u-sm-6 fn-u-lg-4"&gt;
+    &lt;span class="fn-show-md-down"&gt;sm-6&lt;/span&gt;
+    &lt;span class="fn-show-lg-only"&gt;lg-4&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-lg-3"&gt;
+    &lt;span class="fn-show-md-down"&gt;sm-full&lt;/span&gt;
+    &lt;span class="fn-show-lg-only"&gt;lg-3&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="fn-u-lg-6"&gt;
+    &lt;span class="fn-show-md-down"&gt;sm-full&lt;/span&gt;
+    &lt;span class="fn-show-lg-only"&gt;lg-6&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="fn-u-lg-3"&gt;
+    &lt;span class="fn-show-md-down"&gt;sm-full&lt;/span&gt;
+    &lt;span class="fn-show-lg-only"&gt;lg-3&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-6 fn-u-lg-2"&gt;
+    &lt;span class="fn-show-md-down"&gt;6&lt;/span&gt;
+    &lt;span class="fn-hide-md-down"&gt;2&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="fn-u-sm-6 fn-u-lg-8"&gt;
+    &lt;span class="fn-show-md-down"&gt;6&lt;/span&gt;
+    &lt;span class="fn-hide-md-down"&gt;8&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="fn-u-sm-12 fn-u-lg-2"&gt;
+    &lt;span class="fn-show-md-down"&gt;full&lt;/span&gt;
+    &lt;span class="fn-hide-md-down"&gt;2&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-3"&gt;3&lt;/div&gt;
+  &lt;div class="fn-u-sm-9"&gt;9&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-lg-4"&gt;
+    &lt;span class="fn-show-md-down"&gt;full&lt;/span&gt;
+    &lt;span class="fn-hide-md-down"&gt;4&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="fn-u-lg-8"&gt;
+    &lt;span class="fn-show-md-down"&gt;full&lt;/span&gt;
+    &lt;span class="fn-hide-md-down"&gt;8&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-6 fn-u-lg-5"&gt;
+    &lt;span class="fn-show-md-down"&gt;6&lt;/span&gt;
+    &lt;span class="fn-hide-md-down"&gt;5&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="fn-u-sm-6 fn-u-lg-7"&gt;
+    &lt;span class="fn-show-md-down"&gt;6&lt;/span&gt;
+    &lt;span class="fn-hide-md-down"&gt;7&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-lg-6"&gt;
+    &lt;span class="fn-show-md-down"&gt;full&lt;/span&gt;
+    &lt;span class="fn-hide-md-down"&gt;6&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="fn-u-lg-6"&gt;
+    &lt;span class="fn-show-md-down"&gt;full&lt;/span&gt;
+    &lt;span class="fn-hide-md-down"&gt;6&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+					</pre>
+</div>
+<h3 id="列边距">
+	列边距 
+</h3>
+<p>
+	添加
+	<code>fn-u-sm-offset-*</code>
+	、
+	<code>fn-u-md-offset-*</code>
+	、
+	<code>fn-u-lg-offset-*</code>
+	设置列的左边距。
+</p>
+<p>
+	<strong>示例 6：列边距</strong>
+</p>
+<div class="grid-example">
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-11">11</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-10 fn-u-sm-offset-1">10, offset 1</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-9 fn-u-sm-offset-2">9, offset 2</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-8 fn-u-sm-offset-3">8, offset 3</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-7 fn-u-sm-offset-4">7, offset 4</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-6 fn-u-sm-offset-5">6, offset 5</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-5 fn-u-sm-offset-6">5, offset 6</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-4 fn-u-sm-offset-7">4, offset 7</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-3 fn-u-sm-offset-8">3, offset 8</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-2 fn-u-sm-offset-9">2, offset 9</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-1">1</div>
+		<div class="fn-u-sm-1 fn-u-sm-offset-10">1, offset 10</div>
+	</div>
+</div>
+<div>
+	<pre>
+						<code>
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-11"&gt;11&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-10 fn-u-sm-offset-1"&gt;10, offset 1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-9 fn-u-sm-offset-2"&gt;9, offset 2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-8 fn-u-sm-offset-3"&gt;8, offset 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-7 fn-u-sm-offset-4"&gt;7, offset 4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-6 fn-u-sm-offset-5"&gt;6, offset 5&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-5 fn-u-sm-offset-6"&gt;5, offset 6&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-4 fn-u-sm-offset-7"&gt;4, offset 7&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-3 fn-u-sm-offset-8"&gt;3, offset 8&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-2 fn-u-sm-offset-9"&gt;2, offset 9&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-1"&gt;1&lt;/div&gt;
+  &lt;div class="fn-u-sm-1 fn-u-sm-offset-10"&gt;1, offset 10&lt;/div&gt;
+&lt;/div&gt;
+</code>
+					</pre>
+</div>
+<h3 id="居中的列">
+	居中的列 <a href="#%E5%B1%85%E4%B8%AD%E7%9A%84%E5%88%97"
+		title="Heading anchor" class="doc-anchor"></a>
+</h3>
+<p>
+	添加
+	<code>.fn-u-xx-centered</code>
+	实现列居中：
+</p>
+<ul>
+	<li>如果始终的设为居中，只需要添加 <code>.fn-u-sm-centered</code>（移动优先，继承）；
+	</li>
+	<li>某些区间不居中添加， <code>.fn-u-xx-uncentered</code>。
+	</li>
+</ul>
+<p>
+	<strong>示例 7：居中。</strong>
+</p>
+<div class="grid-example">
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-3 fn-u-sm-centered">3 centered</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-6 fn-u-lg-centered">6 centered</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-9 fn-u-sm-centered fn-u-lg-uncentered">9
+			md-down-centered</div>
+	</div>
+	<div class="fn-g doc-fn-g">
+		<div class="fn-u-sm-11 fn-u-sm-centered">11 centered</div>
+	</div>
+</div>
+<div>
+	<pre>
+						<code>
+&lt;!-- .fn-u-sm-centered 始终居中 --&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-3 fn-u-sm-centered"&gt;3 centered&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- .fn-u-lg-centered 大于 1024 时居中 --&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-6 fn-u-lg-centered"&gt;6 centered&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 大于 1024 时不居中 --&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-9 fn-u-sm-centered fn-u-lg-uncentered"&gt;9 md-down-centered &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 始终居中 --&gt;
+&lt;div class="fn-g"&gt;
+  &lt;div class="fn-u-sm-11 fn-u-sm-centered"&gt;11 centered&lt;/div&gt;
+&lt;/div&gt;
+</code>
+					</pre>
+</div>
+<h3 id="移除列内边距">
+	移除列内边距 
+</h3>
+<p>
+	使用<code>.fn-g-collapse</code>移除列内边距。
+</p>
+<p>
+	<strong>示例 8: 没有内边距的列</strong>
+</p>
+<p>
+	在行
+	<code>.fn-g</code>
+	上添加
+	<code>.fn-g-collapse</code>
+	，移除列的内边距（
+	<code>padding</code>
+	）。
+</p>
+<div class="grid-example">
+	<div class="fn-g fn-g-collapse doc-fn-g">
+		<div class="fn-u-sm-6">.fn-u-sm-6</div>
+		<div class="fn-u-sm-6">.fn-u-sm-6</div>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-g fn-g-collapse"&gt;
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+  &lt;div class="fn-u-sm-6"&gt;.fn-u-sm-6&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+

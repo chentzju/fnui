@@ -1,0 +1,163 @@
+
+	
+	<h1 id="tabs">
+		ClockCircle <a href="#tabs" title="Heading anchor" class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>
+		圆形进度条，基于 CSS3
+		<code>transition</code>
+		实现圆形进度条；CSS3 动画实现进度操作。
+	</p>
+	<h2 id="使用演示">
+		使用演示 <a href="#%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="内容高度一致">
+		设定默认进度条 <a
+			href="#%E5%86%85%E5%AE%B9%E9%AB%98%E5%BA%A6%E4%B8%80%E8%87%B4"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+
+	<div data-fn-clockcircle>70</div>
+
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;</span><span class="hljs-title">div</span> <span
+					class="hljs-attribute"> data-fn-clockcircle</span>&gt; 70<span
+					class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+						</code>
+					</pre>
+	</div>
+
+
+	<h2 id="调用方式">
+		调用方式 <a href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="通过-data-api">
+		通过 Data API <a href="#%E9%80%9A%E8%BF%87-data-api"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		在选项卡容器上添加
+		<code>data-fn-clockcircle</code>
+		属性。
+	</p>
+	<div data-fn-clockcircle>40</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;</span><span class="hljs-title">div</span> <span
+					class="hljs-attribute"> data-fn-clockcircle</span>&gt; 40<span
+					class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+						</code>
+					</pre>
+	</div>
+	<h3 id="通过-js">
+		通过 JS <a href="#%E9%80%9A%E8%BF%87-js" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<h4 id="方法">
+		方法 <a href="#%E6%96%B9%E6%B3%95" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h4>
+	<p>
+		通过
+		<code>$("#id").clockCircle(options)</code>
+		来调用。
+	</p>
+	<div>
+		<div class="fn-clockCircle" id="doc-my-clockcircle"></div>
+		<script>$(function(){
+						$("#doc-my-clockcircle").clockCircle({percent:10,size:100,width:"2px",color:"red"});
+					});</script>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+class="hljs-attribute">class</span>=<span class="hljs-value">"fn-tabs"</span> <span
+class="hljs-attribute">id</span>=<span class="hljs-value">"doc-my-clockcircle"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span
+					class="javascript">
+/**
+ *
+ *     	创建：$("div").clockCircle(options);
+ *            options = {
+ *                  size: "60px"     //大小
+ *                  width: "5px"     //环的粗细
+ *                  color: "#0ac"    //环的颜色
+ *                  percent:40       //当前百分比
+ *            }
+ *      方法： $("div").rotate(percent)    percent:数字    //转过的百分比
+ *      方法： $("div").process(percent,speed)  speed:"fast" "median" "slow"  //默认fast 500ms
+ *
+ * 		支持链式调用 $("div").clockCircle().rotate(30).process(50);
+ * 		不支持多个process 连续调用
+ *
+**/
+  $(<span class="hljs-function"><span class="hljs-keyword">function</span><span
+						class="hljs-params">()</span> </span>{
+    $(<span class="hljs-string">'#doc-my-clockcircle'</span>).clockCircle({percent:10,size:100,width:"2px"});
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h4 id="选项">
+		选项 <a href="#%E9%80%89%E9%A1%B9" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h4>
+	<ul>
+		<li><code>options.size</code> 环的大小</li>
+		<li><code>options.width</code>环的粗细</li>
+		<li><code>options.color</code>环的颜色(含中心数字)</li>
+		<li><code>options.percent</code>进度百分比（数字，不带百分号）</li>
+	</ul>
+	<div>
+		<pre>
+						<code>
+$(<span class="hljs-string">'#someclock'</span>).clockCircle({percent:10,size:100,width:"2px",color:"red"});
+</code>
+					</pre>
+	</div>
+	<h2 id="自定义事件">
+		动画 <a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>通过动画可以设定进度条的进度，包含两个动画方法，可通过js来调用动画</p>
+	<ul>
+		<li><code>$().rotate(percent)</code> 改变百分比，无渐变</li>
+		<li><code>$().process(percent,speed)</code>改变百分比，有渐变，可通过speed参数调节</li>
+	</ul>
+	<div class="fn-clockCircle" id="doc-my-clockcircle1"></div>
+	<div class="fn-clockCircle" id="doc-my-clockcircle2"></div>
+	<button type="button" class="fn-btn fn-btn-primary" id="withoutprocess">无渐变，设定到30%</button>
+	<button type="button" class="fn-btn fn-btn-success" id="withprocess">有渐变，设定到70%</button>
+	<button type="button" class="fn-btn fn-btn-danger" id="processfinish">直接加载到100%</button>
+	<script>$(function(){$("#doc-my-clockcircle1").clockCircle();
+									 $("#withoutprocess").on("click",function(){$("#doc-my-clockcircle1").rotate(30);});
+									 $("#withprocess").on("click",function(){$("#doc-my-clockcircle1").process(70,"slow")});
+									 $("#processfinish").on("click",function(){$("#doc-my-clockcircle2").clockCircle({size:"100px",width:"2px",color:"blue"}).process(100,"fast");});
+				});</script>
+	<div>
+		<pre>
+						<code>
+$(<span class="hljs-string">'#doc-my-clockcircle1'</span>)
+.on(<span class="hljs-string">'click'</span>,<span	class="hljs-function"><span class="hljs-keyword">function(){</span><span>$("#doc-my-clockcircle1").rotate(30);</span></span>})
+$(<span class="hljs-string">'#doc-my-clockcircle1'</span>)
+.on(<span class="hljs-string">'click'</span>,<span
+					class="hljs-function"><span class="hljs-keyword">function(){</span><span>$("#doc-my-clockcircle1").process(70,"slow");</span>
+				</span>})
+						//链式调用加载到100%
+$(<span class="hljs-string">'#doc-my-clockcircle2'</span>)
+.on(<span class="hljs-string">'click'</span>,<span
+class="hljs-function"><span class="hljs-keyword">function(){</span><span>$("#doc-my-clockcircle2").clockCircle({size:"100px",width:"2px",color:"blue"}).process(100,"fast");</span>
+				</span>})
+		
+						</code>
+					</pre>
+	</div>
+

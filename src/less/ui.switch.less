@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Component: switch-按钮开关
+ ============================================================================ */
+ 
+.@{ns}switch {
+	display: inline-block;
+	direction: ltr;
+	cursor: pointer;
+	border-radius: 1px;
+	border: 1px solid;
+	border-color: #e6e6e6;
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+	line-height: 8px;
+	z-index: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	vertical-align: middle;
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+
+.@{ns}switch .@{ns}switch-container {
+	display: inline-block;
+	top: 0;
+	border-radius: 1px;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+}
+
+.@{ns}switch .@{ns}switch-handle-on,.@{ns}switch .@{ns}switch-handle-off,.@{ns}switch .@{ns}switch-label
+	{
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block !important;
+	height: 100%;
+	padding: .625em .875em;
+	font-size: 1.6rem;
+	line-height: 1.2
+}
+
+.@{ns}switch .@{ns}switch-handle-on,.@{ns}switch .@{ns}switch-handle-off {
+	text-align: center;
+	z-index: 1
+}
+
+.@{ns}switch .@{ns}switch-handle-on.@{ns}switch-primary,.@{ns}switch .@{ns}switch-handle-off.@{ns}switch-primary
+	{
+	color: #fff;
+	background: #0e90d2
+}
+
+.@{ns}switch .@{ns}switch-handle-on.@{ns}switch-secondary,.@{ns}switch .@{ns}switch-handle-off.@{ns}switch-secondary
+	{
+	color: #fff;
+	background: #3bb4f2
+}
+
+.@{ns}switch .@{ns}switch-handle-on.@{ns}switch-success,.@{ns}switch .@{ns}switch-handle-off.@{ns}switch-success
+	{
+	color: #fff;
+	background: #5eb95e
+}
+
+.@{ns}switch .@{ns}switch-handle-on.@{ns}switch-warning,.@{ns}switch .@{ns}switch-handle-off.@{ns}switch-warning
+	{
+	background: #f37b1d;
+	color: #fff
+}
+
+.@{ns}switch .@{ns}switch-handle-on.@{ns}switch-danger,.@{ns}switch .@{ns}switch-handle-off.@{ns}switch-danger
+	{
+	color: #fff;
+	background: #dd514c
+}
+
+.@{ns}switch .@{ns}switch-handle-on.@{ns}switch-default,.@{ns}switch .@{ns}switch-handle-off.@{ns}switch-default
+	{
+	color: #000;
+	background: #eee
+}
+
+.@{ns}switch .@{ns}switch-label {
+	text-align: center;
+	margin-top: -1px;
+	margin-bottom: -1px;
+	z-index: 100;
+	color: #444;
+	background: #fff
+}
+
+.@{ns}switch .@{ns}switch-handle-on {
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0
+}
+
+.@{ns}switch .@{ns}switch-handle-off {
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0
+}
+
+.@{ns}switch input[type='radio'],.@{ns}switch input[type='checkbox'] {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: -1
+}
+
+.@{ns}switch input[type='radio'].form-control,.@{ns}switch input[type='checkbox'].form-control
+	{
+	height: auto
+}
+
+.@{ns}switch.@{ns}switch-xs .@{ns}switch-handle-on,.@{ns}switch.@{ns}switch-xs .@{ns}switch-handle-off,.@{ns}switch.@{ns}switch-xs .@{ns}switch-label
+	{
+	font-size: 1.2rem
+}
+
+.@{ns}switch.@{ns}switch-sm .@{ns}switch-handle-on,.@{ns}switch.@{ns}switch-sm .@{ns}switch-handle-off,.@{ns}switch.@{ns}switch-sm .@{ns}switch-label
+	{
+	font-size: 1.4rem
+}
+
+.@{ns}switch.@{ns}switch-lg .@{ns}switch-handle-on,.@{ns}switch.@{ns}switch-lg .@{ns}switch-handle-off,.@{ns}switch.@{ns}switch-lg .@{ns}switch-label
+	{
+	font-size: 1.8rem
+}
+
+.@{ns}switch.@{ns}switch-disabled,.@{ns}switch.@{ns}switch-readonly,.@{ns}switch.@{ns}switch-indeterminate
+	{
+	cursor: default !important
+}
+
+.@{ns}switch.@{ns}switch-disabled .@{ns}switch-handle-on,.@{ns}switch.@{ns}switch-readonly .@{ns}switch-handle-on,.@{ns}switch.@{ns}switch-indeterminate .@{ns}switch-handle-on,.@{ns}switch.@{ns}switch-disabled .@{ns}switch-handle-off,.@{ns}switch.@{ns}switch-readonly .@{ns}switch-handle-off,.@{ns}switch.@{ns}switch-indeterminate .@{ns}switch-handle-off,.@{ns}switch.@{ns}switch-disabled .@{ns}switch-label,.@{ns}switch.@{ns}switch-readonly .@{ns}switch-label,.@{ns}switch.@{ns}switch-indeterminate .@{ns}switch-label
+	{
+	opacity: .5;
+	cursor: default !important
+}
+
+.@{ns}switch.@{ns}switch-animate .@{ns}switch-container {
+	-webkit-transition: margin-left .5s;
+	transition: margin-left .5s
+}
+
+.@{ns}switch.@{ns}switch-inverse .@{ns}switch-handle-on,.@{ns}switch.@{ns}switch-inverse .@{ns}switch-handle-off
+	{
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0
+}
+
+.@{ns}switch.@{ns}switch-focused {
+	border-color: #3bb4f2;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(59, 180, 242, .6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(59, 180, 242, .6)
+}
+
+.@{ns}switch.@{ns}switch-on .@{ns}switch-label,.@{ns}switch.@{ns}switch-inverse.@{ns}switch-off .@{ns}switch-label
+	{
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0
+}
+
+.@{ns}switch.@{ns}switch-off .@{ns}switch-label,.@{ns}switch.@{ns}switch-inverse.@{ns}switch-on .@{ns}switch-label
+	{
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0
+}

@@ -1,0 +1,109 @@
+
+<h1 id="tagsinput">
+	Tags Input <a href="#modal" title="Heading anchor" class="doc-anchor"></a>
+</h1>
+<hr />
+<p>tagsinput 用来放在input输入框的小标签</p>
+
+<h2 id="基本形式">
+	基本形式 <a href="#%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"
+		title="Heading anchor" class="doc-anchor"></a>
+</h2>
+<p>直接拷贝以下代码来实现</p>
+
+<div>
+	<div class="fn-tagsinput">
+		<span class="tag fn-badge fn-badge-primary">alpha<span
+			data-role="remove"></span>
+		</span> <span class="tag fn-badge fn-badge-primary">beta<span
+			data-role="remove"></span>
+		</span> <span class="tag fn-badge fn-badge-primary">gama<span
+			data-role="remove"></span>
+		</span> <input type="text" placeholder=""
+			style="width: 3em !important;">
+	</div>
+</div>
+<div>
+	<pre>
+						<code>
+
+<span class = "hljs-tag">&lt;<span class = "hljs-title">div</span> <span class = "hljs-attribute">class</span>=<span class= "hljs-value">"fn-tagsinput"</span>&gt;</span>
+   <span class = "hljs-tag">&lt;<span class = "hljs-title">span</span> <span class = "hljs-attribute">class</span>=<span class= "hljs-value">"tag fn-badge fn-badge-primary"</span>&gt;</span>alpha
+       <span class = "hljs-tag">&lt;<span class = "hljs-title">span</span> data-role=<span class= "hljs-value">"remove"</span>&gt;</span><span class = "hljs-tag">&lt;/<span class = "hljs-title">span</span>&gt;</span>
+   <span class = "hljs-tag">&lt;/<span class = "hljs-title">span</span>&gt;</span>
+   <span class = "hljs-tag">&lt;<span class = "hljs-title">span</span> <span class = "hljs-attribute">class</span>=<span class= "hljs-value">"tag fn-badge fn-badge-primary"</span>&gt;</span>beta
+      <span class = "hljs-tag">&lt;<span class = "hljs-title">span</span> data-role=<span class= "hljs-value">"remove"</span>&gt;</span><span class = "hljs-tag">&lt;/<span class = "hljs-title">span</span>&gt;</span>
+   <span class = "hljs-tag">&lt;/<span class = "hljs-title">span</span>&gt;</span> 
+   <span class = "hljs-tag">&lt;<span class = "hljs-title">span</span> <span class = "hljs-attribute">class</span>=<span class= "hljs-value">"tag fn-badge fn-badge-primary"</span>&gt;</span>gama
+      <span class = "hljs-tag">&lt;<span class = "hljs-title">span</span> data-role=<span class= "hljs-value">"remove"</span>&gt;</span><span class = "hljs-tag">&lt;/<span class = "hljs-title">span</span>&gt;</span>
+   <span class = "hljs-tag">&lt;/<span class = "hljs-title">span</span>&gt;</span>
+  <span class = "hljs-tag">&lt;<span class = "hljs-title">input</span> <span class = "hljs-attribute">type</span>=<span class= "hljs-value">"text"</span> <span class = "hljs-attribute">placeholder</span>=<span class= "hljs-value">""</span> <span class = "hljs-attribute">style</span>="width: 3em !import<span class= "hljs-value">ant;"</span>&gt;</span>
+<span class = "hljs-tag">&lt;/<span class = "hljs-title">div</span>&gt;</span>
+						</code>
+					</pre>
+</div>
+<h2 id="使用方式">
+	使用方法 <a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"
+		title="Heading anchor" class="doc-anchor"></a>
+</h2>
+<h3 id="通过-data-api">
+	通过 Data API <a href="#%E9%80%9A%E8%BF%87-data-api"
+		title="Heading anchor" class="doc-anchor"></a>
+</h3>
+<p>
+	通过
+	<code>input</code>
+	标签中添加
+	<code>data-role="tagsinput"</code>
+	来进行设置
+</p>
+<input
+	id="tags-1" value="alpha,beta,gama" data-fn-tagsinput>
+<div>
+	<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> id =<span
+class="hljs-value"> "</span>t<span class="hljs-value">ags-1"</span> <span
+class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> value =<span
+class="hljs-value"> "alpha,beta,gama"</span> data-fn-tagsinput &gt;</span>
+						</code>
+					</pre>
+</div>
+<h3 id="通过-js">
+	通过 JS <a href="#%E9%80%9A%E8%BF%87-js" title="Heading anchor"
+		class="doc-anchor"></a>
+</h3>
+<p>组织好 HTML 以后，可以通过 Javascript 调用。</p>
+<div>
+	<input id="tags-2" value="aaa,bbb,ccc,ddd" data-fn-tagsinput>
+	<button class="fn-btn fn-btn-primary js-tags-add">增加 Modal</button>
+	<button class="fn-btn fn-btn-secondary js-tags-remove">删除 Modal</button>
+	<button class="fn-btn fn-btn-danger js-tags-removeall">全部删除 Modal</button>
+</div>
+<div>
+	<pre>
+					<code>
+//获取
+$(<span class="hljs-string">'#tags-1'</span>).val();
+//"alpha,beta,gama"
+
+$(<span class="hljs-string">'#tags-1'</span>).tagsinput("items");
+//["alpha","beta","gama"]
+
+//增删
+$(<span class="hljs-string">'#tags-1'</span>).tagsinput('add','sometag');
+$(<span class="hljs-string">'#tags-1'</span>).tagsinput('remove','sometag');
+$(<span class="hljs-string">'#tags-1'</span>).tagsinput('removeAll');
+						
+					</code>
+					</pre>
+</div>
+
+<script>
+					$(function(){
+						$(".js-tags-add").on("click",function(){$("#tags-2").tagsinput("add","eee");});
+						$(".js-tags-remove").on("click",function(){$("#tags-2").tagsinput("remove","eee")});
+						$(".js-tags-removeall").on("click",function(){$("#tags-2").tagsinput("removeAll");});
+						
+					})
+				</script>

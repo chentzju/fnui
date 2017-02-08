@@ -1,0 +1,440 @@
+
+<script>
+$(function(){
+	$('[data-fn-selected]').selected();
+})
+</script>
+<h1 id="selected">Selected</h1>
+<hr />
+<p>
+	<code>&lt;select&gt;</code>
+	元素样式复写插件。
+</p>
+<h2 id="使用示例">使用示例</h2>
+<h3 id="单选下拉框">单选下拉框</h3>
+<div>
+	<form action="">
+		<select name="test" data-fn-selected><option value="a">Apple</option>
+			<option value="b" selected="selected">Banana</option>
+			<option value="o">Orange</option>
+			<option value="m">Mango</option>
+			<option value="d" disabled="disabled">禁用</option>
+		</select>
+	</form>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;select data-fn-selected&gt;
+  &lt;option value="a"&gt;Apple&lt;/option&gt;
+  &lt;option value="b"&gt;Banana&lt;/option&gt;
+  &lt;option value="o"&gt;Orange&lt;/option&gt;
+  &lt;option value="m"&gt;Mango&lt;/option&gt;
+  &lt;option value="d" disabled&gt;禁用鸟&lt;/option&gt;
+&lt;/select&gt;
+</code>
+	</pre>
+</div>
+
+
+<h3 id="多选下拉框">多选下拉框</h3>
+<div>
+	<select multiple="multiple" data-fn-selected><option value="a">Apple</option>
+		<option value="b">Banana</option>
+		<option value="o">Orange</option>
+		<option value="m">Mango</option>
+	</select>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;select multiple data-fn-selected&gt;
+  &lt;option value="a"&gt;Apple&lt;/option&gt;
+  &lt;option value="b"&gt;Banana&lt;/option&gt;
+  &lt;option value="o"&gt;Orange&lt;/option&gt;
+  &lt;option value="m"&gt;Mango&lt;/option&gt;
+&lt;/select&gt;
+</code>
+	</pre>
+</div>
+
+
+<h3 id="多选下拉框-有默认选中项">多选下拉框 - 有默认选中项</h3>
+<div>
+	<select multiple="multiple" data-fn-selected><option value="a">Apple</option>
+		<option value="b" selected="selected">Banana</option>
+		<option value="o">Orange</option>
+		<option value="m" selected="selected">Mango</option>
+	</select>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;select multiple data-fn-selected&gt;
+  &lt;option value="a"&gt;Apple&lt;/option&gt;
+  &lt;option value="b" selected&gt;Banana&lt;/option&gt;
+  &lt;option value="o"&gt;Orange&lt;/option&gt;
+  &lt;option value="m" selected&gt;Mango&lt;/option&gt;
+&lt;/select&gt;
+</code>
+	</pre>
+</div>
+
+
+<h3 id="分组多选下拉框">分组多选下拉框</h3>
+<div>
+	<select multiple="multiple" data-fn-selected><optgroup
+			label="水果">
+			<option value="a">Apple</option>
+			<option value="b">Banana</option>
+			<option value="o">Orange</option>
+			<option value="m">Mango</option>
+		</optgroup>
+		<optgroup label="装备">
+			<option value="phone">iPhone</option>
+			<option value="im">iMac</option>
+			<option value="mbp">Macbook Pro</option>
+		</optgroup>
+	</select>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;select multiple data-fn-selected&gt;
+  &lt;optgroup label="水果"&gt;
+    &lt;option value="a"&gt;Apple&lt;/option&gt;
+    &lt;option value="b"&gt;Banana&lt;/option&gt;
+    &lt;option value="o"&gt;Orange&lt;/option&gt;
+    &lt;option value="m"&gt;Mango&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="装备"&gt;
+    &lt;option value="phone"&gt;iPhone&lt;/option&gt;
+    &lt;option value="im"&gt;iMac&lt;/option&gt;
+    &lt;option value="mbp"&gt;Macbook Pro&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+</code>
+	</pre>
+</div>
+<h3 id="按钮尺寸及颜色">按钮尺寸及颜色</h3>
+<ul>
+	<li><code>btnWidth</code>: 按钮宽度，数字或者百分比，<code>btnWidth:
+			&#39;50%&#39;</code></li>
+	<li><code>btnSize</code>: 按钮尺寸，<code>[xl|lg|sm|xs]</code> （<a
+		href="../css/button.php">参见 Button</a>）</li>
+	<li><code>btnStyle</code>: 按钮风格，<code>[primary|secondary|success|warning|danger]</code>
+	</li>
+</ul>
+<div>
+	<select
+		data-fn-selected="{btnWidth: 300, btnSize: 'sm', btnStyle: 'secondary'}"><option
+			value="a">Apple</option>
+		<option value="b">Banana</option>
+		<option value="o">Orange</option>
+		<option value="m">Mango</option>
+	</select>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;select data-fn-selected="{btnWidth: 300, btnSize: 'sm', btnStyle: 'secondary'}"&gt;
+  &lt;option value="a"&gt;Apple&lt;/option&gt;
+  &lt;option value="b"&gt;Banana&lt;/option&gt;
+  &lt;option value="o"&gt;Orange&lt;/option&gt;
+  &lt;option value="m"&gt;Mango&lt;/option&gt;
+&lt;/select&gt;
+</code>
+	</pre>
+</div>
+<h3 id="限制列表高度">限制列表高度</h3>
+<div>
+	<select data-fn-selected="{maxHeight: 100}"><option value="a">Apple</option>
+		<option value="b">Banana</option>
+		<option value="o">Orange</option>
+		<option value="m">Mango</option>
+		<option value="phone">iPhone</option>
+		<option value="im">iMac</option>
+		<option value="mbp">Macbook Pro</option>
+	</select>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;select data-fn-selected="{maxHeight: 100}"&gt;
+  &lt;option value="a"&gt;Apple&lt;/option&gt;
+  &lt;option value="b"&gt;Banana&lt;/option&gt;
+  &lt;option value="o"&gt;Orange&lt;/option&gt;
+  &lt;option value="m"&gt;Mango&lt;/option&gt;
+  &lt;option value="phone"&gt;iPhone&lt;/option&gt;
+  &lt;option value="im"&gt;iMac&lt;/option&gt;
+  &lt;option value="mbp"&gt;Macbook Pro&lt;/option&gt;
+&lt;/select&gt;
+</code>
+	</pre>
+</div>
+<h3 id="上拉选择">上拉选择</h3>
+<div>
+	<select data-fn-selected="{dropUp: 1}"><option value="a">Apple</option>
+		<option value="b">Banana</option>
+		<option value="o">Orange</option>
+		<option value="m">Mango</option>
+		<option value="phone">iPhone</option>
+		<option value="im">iMac</option>
+		<option value="mbp">Macbook Pro</option>
+	</select>
+</div>
+<div>
+	<pre><code>
+&lt;select data-fn-selected="{dropUp: 1}"&gt;
+  &lt;option value="a"&gt;Apple&lt;/option&gt;
+  &lt;option value="b"&gt;Banana&lt;/option&gt;
+  &lt;option value="o"&gt;Orange&lt;/option&gt;
+  &lt;option value="m"&gt;Mango&lt;/option&gt;
+  &lt;option value="phone"&gt;iPhone&lt;/option&gt;
+  &lt;option value="im"&gt;iMac&lt;/option&gt;
+  &lt;option value="mbp"&gt;Macbook Pro&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+</div>
+<h3 id="简易搜索">简易搜索</h3>
+<p>
+	基于 jQuery<code>:contains</code>选择符实现的简易搜索。
+</p>
+<div>
+	<select data-fn-selected="{searchBox: 1}"><option value="a">Apple</option>
+		<option value="b">Banana</option>
+		<option value="o">Orange</option>
+		<option value="m">Mango</option>
+		<option value="phone">iPhone</option>
+		<option value="im">iMac</option>
+		<option value="mbp">Macbook Pro</option>
+	</select>
+</div>
+<div>
+	<pre><code>
+&lt;select data-fn-selected="{searchBox: 1}"&gt;
+  &lt;option value="a"&gt;Apple&lt;/option&gt;
+  &lt;option value="b"&gt;Banana&lt;/option&gt;
+  &lt;option value="o"&gt;Orange&lt;/option&gt;
+  &lt;option value="m"&gt;Mango&lt;/option&gt;
+  &lt;option value="phone"&gt;iPhone&lt;/option&gt;
+  &lt;option value="im"&gt;iMac&lt;/option&gt;
+  &lt;option value="mbp"&gt;Macbook Pro&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+</div>
+
+<h3 id="js-操作-select">
+	JS 操作 select 
+</h3>
+<p>
+	使用 JS 操作
+	<code>&lt;select&gt;</code>
+	（如添加选项、禁用选项、选中选项等），需要重新渲染下拉菜单。
+</p>
+<ul>
+	<li>支持MutationObserver</a> 的浏览器会自动触发重新渲染；
+	</li>
+	<li>其他浏览器需要手动触发 <code>changed.selected</code> 事件。
+	</li>
+</ul>
+<p>
+	<strong>需要注意的是</strong>：
+</p>
+<div>
+	<pre><code>
+// 使用 `attr()` 可以被 MutationObserver 观察到
+$('select').find('option').eq(1).attr('selected', true);
+
+// 以下操作不会被 MutationObserver 观察到
+$('select').val('aa');
+$('select').find('option').eq(1).prop('selected', true);
+$('select').find('option')(1).selected = true;
+</code></pre>
+</div>
+<div>
+	<select id="js-selected" data-fn-selected><option value="a">Apple</option>
+		<option value="b" selected="selected">Banana</option>
+		<option value="o">Orange</option>
+		<option value="m">Mango</option>
+	</select>
+	<hr />
+	<button type="button" data-selected="add" class="fn-btn fn-btn-primary">添加选项</button>
+	<button type="button" data-selected="toggle"
+		class="fn-btn fn-btn-secondary">交替 Orange 选中状态</button>
+	<button type="button" data-selected="disable"
+		class="fn-btn fn-btn-danger">交替 Mango 禁用状态</button>
+	<hr />
+	<div id="js-selected-info"></div>
+	<script>$(function(){
+		var e=$("#js-selected"),
+		t=e.find('option[value="o"]'),
+		n=e.find('option[value="m"]'),
+		o=0;
+		$("[data-selected]").on("click",function(){
+			var s=$(this).data("selected");
+			"add"===s&&(e.append('<option value="o'+o+'">动态插入的选项 '+o+"</option>"),o++),"toggle"===s&&t.attr("selected",!t.get(0).selected),"disable"===s&&(n[0].disabled=!n[0].disabled),
+			$.AMUI.support.mutationobserver||e.trigger("changed.selected")}),
+			e.on("change",function(){$("#js-selected-info").html(
+					['选中项：<strong class="fn-text-danger">',[$(this).find("option").eq(this.selectedIndex).text()],
+					 '</strong> 值：<strong class="fn-text-warning">',$(this).val(),"</strong>"].join(""))})});</script>
+</div>
+<div>
+	<pre><code>
+<span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span
+				class="hljs-attribute">id</span>=<span class="hljs-value">"js-selected"</span> <span
+				class="hljs-attribute">data-fn-selected</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span
+				class="hljs-attribute">value</span>=<span class="hljs-value">"a"</span>&gt;</span>Apple<span
+				class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span
+				class="hljs-attribute">value</span>=<span class="hljs-value">"b"</span> <span
+				class="hljs-attribute">selected</span>&gt;</span>Banana<span
+				class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span
+				class="hljs-attribute">value</span>=<span class="hljs-value">"o"</span>&gt;</span>Orange<span
+				class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span
+				class="hljs-attribute">value</span>=<span class="hljs-value">"m"</span>&gt;</span>Mango<span
+				class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">hr</span>/&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+				class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span
+				class="hljs-attribute">data-selected</span>=<span class="hljs-value">"add"</span> <span
+				class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-primary"</span>&gt;</span>添加选项<span
+				class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+				class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span
+				class="hljs-attribute">data-selected</span>=<span class="hljs-value">"toggle"</span> <span
+				class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-secondary"</span>&gt;</span>交替 Orange 选中状态<span
+				class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+				class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span
+				class="hljs-attribute">data-selected</span>=<span class="hljs-value">"disable"</span> <span
+				class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-danger"</span>&gt;</span>交替 Mango 禁用状态<span
+				class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">hr</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+				class="hljs-attribute">id</span>=<span class="hljs-value">"js-selected-info"</span>&gt;</span><span
+				class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+</div>
+<div>
+	<pre>
+						<code>
+$(<span class="hljs-function"><span class="hljs-keyword">function</span><span
+				class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> $selected = $(<span
+				class="hljs-string">'#js-selected'</span>);
+  <span class="hljs-keyword">var</span> $o = $selected.find(<span
+				class="hljs-string">'option[value="o"]'</span>);
+  <span class="hljs-keyword">var</span> $m = $selected.find(<span
+				class="hljs-string">'option[value="m"]'</span>);
+  <span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+
+  $(<span class="hljs-string">'[data-selected]'</span>).on(<span
+				class="hljs-string">'click'</span>, <span class="hljs-function"><span
+				class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> action = $(<span
+				class="hljs-keyword">this</span>).data(<span class="hljs-string">'selected'</span>);
+
+    <span class="hljs-keyword">if</span> (action === <span
+				class="hljs-string">'add'</span>) {
+      $selected.append(<span class="hljs-string">'&lt;option value="o'</span> + i +<span
+				class="hljs-string">'"&gt;动态插入的选项 '</span> + i + <span
+				class="hljs-string">'&lt;/option&gt;'</span>);
+      i++;
+    }
+
+    <span class="hljs-keyword">if</span> (action === <span
+				class="hljs-string">'toggle'</span>) {
+      $o.attr(<span class="hljs-string">'selected'</span>, !$o.get(<span
+				class="hljs-number">0</span>).selected);
+    }
+
+    <span class="hljs-keyword">if</span> (action === <span
+				class="hljs-string">'disable'</span>) {
+      $m[<span class="hljs-number">0</span>].disabled = !$m[<span
+				class="hljs-number">0</span>].disabled;
+    }
+
+    <span class="hljs-comment">// 不支持 MutationObserver 的浏览器使用 JS 操作 select 以后需要手动触发 `changed.selected` 事件</span>
+    <span class="hljs-keyword">if</span> (!$.AMUI.support.mutationobserver) {
+      $selected.trigger(<span class="hljs-string">'changed.selected'</span>);
+    }
+  });
+
+  $selected.on(<span class="hljs-string">'change'</span>, <span
+				class="hljs-function"><span class="hljs-keyword">function</span><span
+				class="hljs-params">()</span> </span>{
+    $(<span class="hljs-string">'#js-selected-info'</span>).html([
+      <span class="hljs-string">'选中项：&lt;strong class="fn-text-danger"&gt;'</span>,
+      [$(<span class="hljs-keyword">this</span>).find(<span
+				class="hljs-string">'option'</span>).eq(<span class="hljs-keyword">this</span>.selectedIndex).text()],
+      <span class="hljs-string">'&lt;/strong&gt; 值：&lt;strong class="fn-text-warning"&gt;'</span>,
+      $(<span class="hljs-keyword">this</span>).val(),
+      <span class="hljs-string">'&lt;/strong&gt;'</span>
+    ].join(<span class="hljs-string">''</span>));
+  });
+});
+</code>
+					</pre>
+</div>
+<h2 id="调用方式">
+	调用方式 
+</h2>
+<h3 id="通过-data-api">
+	通过 Data API 
+</h3>
+<p>
+	给
+	<code>&lt;select&gt;</code>
+	元素添加
+	<code>data-fn-selected</code>
+	属性（可设置相关参数），如上面的示例所示。
+</p>
+<h3 id="通过-js">
+	通过 JS 
+</h3>
+<p>
+	通过
+	<code>$(&#39;select&#39;).selected(options)</code>
+	启用样式复写。
+</p>
+<p></p>
+<div>
+	<pre>
+						<code>
+$(<span class="hljs-function"><span class="hljs-keyword">function</span><span
+				class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// 使用默认参数</span>
+  $(<span class="hljs-string">'select'</span>).selected();
+
+  <span class="hljs-comment">// 设置参数</span>
+  $(<span class="hljs-string">'select'</span>).selected({
+    btnWidth: <span class="hljs-string">'300px'</span>,
+    btnSize: <span class="hljs-string">'sm'</span>,
+    btnStyle: <span class="hljs-string">'primary'</span>,
+    maxHeight: <span class="hljs-string">'100px'</span>
+  });
+});
+</code>
+					</pre>
+</div>
+<h4 id="参数说明">
+	参数说明
+</h4>
+<ul>
+	<li><code>btnWidth: null</code>: 按钮宽度，默认为 <code>200px</code></li>
+	<li><code>btnSize: null</code>: 按钮尺寸，可选值为 <code>xl|sm|lg|xl</code></li>
+	<li><code>btnStyle: &#39;default&#39;</code>: 按钮样式，可选值为 <code>primary|secondary|success|warning|danger</code>
+	</li>
+	<li><code>maxHeight: null</code>: 列表最大高度</li>
+	<li><code>dropUp: 0</code>: 是否为上拉，默认为 <code>0</code> (<code>false</code>)</li>
+</ul>
+

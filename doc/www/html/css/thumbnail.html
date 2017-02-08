@@ -1,0 +1,327 @@
+
+	<h1 id="thumbnail">
+		Thumbnail <a href="#thumbnail" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>Thumbnail 组件主要用于显示图片列表及图文混排列表。</p>
+	<h2 id="基本样式">
+		基本样式 <a href="#%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		在
+		<code>&lt;img&gt;</code>
+		添加
+		<code>.fn-thumbnail</code>
+		类；也可以在
+		<code>&lt;img&gt;</code>
+		外面添加一个容器，如
+		<code>&lt;div&gt;</code>
+		、
+		<code>&lt;figure&gt;</code>
+		、
+		<code>&lt;a&gt;</code>
+		等，再将 class 添加到容器上。
+	</p>
+	<h3 id="结合网格使用">
+		结合网格使用 <a
+			href="#%E7%BB%93%E5%90%88%E7%BD%91%E6%A0%BC%E4%BD%BF%E7%94%A8"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<div>
+		<div class="fn-g">
+			<div class="fn-u-sm-4">
+				<img class="fn-thumbnail"
+					src="img/demos/04.jpg"
+					alt="" />
+			</div>
+			<div class="fn-u-sm-4">
+				<a href="#" class="fn-thumbnail"><img
+					src="img/demos/01.jpg"
+					alt="" /> </a>
+			</div>
+			<div class="fn-u-sm-4">
+				<figure class="fn-thumbnail">
+					<img
+						src="img/demos/02.jpg"
+						alt="" />
+				</figure>
+			</div>
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-sm-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-sm-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-sm-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="结合-avg-grid-使用">
+		结合 AVG Grid 使用 <a
+			href="#%E7%BB%93%E5%90%88-avg-grid-%E4%BD%BF%E7%94%A8"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		添加 AVG Grid class 同时添加
+		<code>.fn-thumbnails</code>
+		。
+	</p>
+	<div>
+		<ul class="fn-avg-sm-3 fn-thumbnails">
+			<li><img class="fn-thumbnail"
+				src="img/demos/04.jpg"
+				alt="" /></li>
+			<li><a href="#" class="fn-thumbnail"><img
+					src="img/demos/01.jpg"
+					alt="" /> </a></li>
+			<li><figure class="fn-thumbnail">
+					<img
+						src="img/demos/02.jpg"
+						alt="" />
+				</figure></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-avg-sm-3 fn-thumbnails"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="标题">
+		标题 <a href="#%E6%A0%87%E9%A2%98" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h2>
+	<div>
+		<div class="fn-g">
+			<div class="fn-u-sm-4">
+				<div class="fn-thumbnail">
+					<img
+						src="img/demos/04.jpg"
+						alt="" />
+					<h3 class="fn-thumbnail-caption">图片标题 #1</h3>
+				</div>
+			</div>
+		<div class="fn-u-sm-4">
+			<a href="#" class="fn-thumbnail"><img src="img/demos/01.jpg"
+				alt="" />
+				<figcaption class="fn-thumbnail-caption">图片标题 #2</figcaption> </a>
+		</div>
+		<div class="fn-u-sm-4">
+				<figure class="fn-thumbnail">
+					<img
+						src="img/demos/02.jpg"
+						alt="" />
+					<figcaption class="fn-thumbnail-caption">图片标题 #3</figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-sm-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail-caption"</span>&gt;</span>图片标题 #1<span
+					class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-sm-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">figcaption</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail-caption"</span>&gt;</span>图片标题 #2<span
+					class="hljs-tag">&lt;/<span class="hljs-title">figcaption</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-sm-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">figcaption</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail-caption"</span>&gt;</span>图片标题 #3<span
+					class="hljs-tag">&lt;/<span class="hljs-title">figcaption</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="图文混排">
+		图文混排 <a href="#%E5%9B%BE%E6%96%87%E6%B7%B7%E6%8E%92"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		在
+		<code>fn-thumbnail</code>
+		内加入
+		<code>.fn-caption</code>
+		可以添加任何类型的HTML内容标题、段落、或按钮。
+	</p>
+	<div>
+		<div class="fn-g">
+			<div class="fn-u-sm-6">
+				<div class="fn-thumbnail">
+					<img
+						src="img/demos/04.jpg"
+						alt="" />
+					<div class="fn-thumbnail-caption">
+						<h3>百年孤独选</h3>
+						<p>连那最坚韧而又狂乱的爱情归根结底也不过是一种转瞬即逝的现实。</p>
+						<p>
+							<button class="fn-btn fn-btn-primary">孤独</button>
+							<button class="fn-btn fn-btn-default">百年</button>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="fn-u-sm-6">
+				<div class="fn-thumbnail">
+					<img
+						src="img/demos/01.jpg"
+						alt="" />
+					<div class="fn-thumbnail-caption">
+						<h3>百年孤独选</h3>
+						<p>连那最坚韧而又狂乱的爱情归根结底也不过是一种转瞬即逝的现实。</p>
+						<p>
+							<button class="fn-btn fn-btn-primary">孤独</button>
+							<button class="fn-btn fn-btn-default">百年</button>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-sm-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail-caption"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>图片标题<span
+					class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-primary"</span>&gt;</span>按钮<span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-default"</span>&gt;</span>按钮<span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-sm-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span
+					class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span
+					class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-thumbnail-caption"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>图片标题<span
+					class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-primary"</span>&gt;</span>按钮<span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-default"</span>&gt;</span>按钮<span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+		</pre>
+	</div>

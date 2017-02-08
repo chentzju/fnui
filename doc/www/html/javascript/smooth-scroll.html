@@ -1,0 +1,149 @@
+
+<h1 id="smooth-scroll">Smooth Scroll</h1>
+<hr />
+<p>平滑滚动插件，不支持IE9以下浏览器。</p>
+<h2 id="使用演示">使用演示</h2>
+
+<h3 id="滚动到底部">滚动到底部</h3>
+<div>
+	<button id="doc-scroll-to-btm" class="fn-btn fn-btn-primary">滚动到底部</button>
+	<script>
+		$("#doc-scroll-to-btm").on("click", function() {
+			var o = $(window);
+			o.smoothScroll({
+				position : $(document).height() - o.height()
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+&lt;button id="doc-scroll-to-btm" class="fn-btn fn-btn-primary"&gt;滚动到底部&lt;/button&gt;
+&lt;script&gt;
+		$("#doc-scroll-to-btm").on("click", function() {
+			var o = $(window);
+			o.smoothScroll({
+				position : $(document).height() - o.height()
+			})
+		});
+&lt;/script&gt;
+</code></pre>
+</div>
+
+
+
+<h3 id="滚动到顶部">滚动到顶部</h3>
+<div>
+	<button data-fn-smooth-scroll class="fn-btn fn-btn-success">滚动到顶部</button>
+</div>
+<div>
+	<pre><code>
+&lt;button data-fn-smooth-scroll class="fn-btn fn-btn-success"&gt;滚动到顶部&lt;/button&gt;
+</code></pre>
+</div>
+
+
+
+
+
+<h3 id="定义选项">定义选项</h3>
+<div>
+	<button data-fn-smooth-scroll="{position: 57, speed: 5000}"
+		class="fn-btn fn-btn-danger">慢悠悠地滚到距离顶部 57px 的位置</button>
+</div>
+<div>
+	<pre><code>
+&lt;button data-fn-smooth-scroll="{position: 57, speed: 5000}"
+		class="fn-btn fn-btn-danger"&gt;慢悠悠地滚到距离顶部 57px 的位置&lt;/button&gt;
+</code></pre>
+</div>
+<h2 id="使用方法">使用方法</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	在元素上添加
+	<code>data-fn-smooth-scroll</code>
+	属性。
+</p>
+<div>
+	<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+				class="hljs-attribute">data-fn-smooth-scroll</span> <span
+				class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-success"</span>&gt;</span>滚动到顶部<span
+				class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+</code>
+					</pre>
+</div>
+<p>如果要指定滚动的位置，可以给这个属性设一个值。</p>
+<div>
+	<button data-fn-smooth-scroll="{position: 189}"
+		class="fn-btn fn-btn-secondary">滚动到滚动条距离顶部 189px 的位置</button>
+</div>
+<div>
+	<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+				class="hljs-attribute">data-fn-smooth-scroll</span>=<span
+				class="hljs-value">"{position: 189}"</span> <span
+				class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-secondary"</span>&gt;</span>...<span
+				class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+</code>
+					</pre>
+</div>
+<h3 id="通过-javascript">通过 Javascript</h3>
+<h4 id="方法">方法</h4>
+<p>
+	为了保证不同浏览器兼容，请在
+	<code>$(window)</code>
+	上调用
+	<code>$().smoothScroll()</code>
+	方法。
+</p>
+<div>
+	<pre>
+		<code>
+$(window).smoothScroll([options])
+</code>
+	</pre>
+</div>
+
+<div>
+	<pre>
+						<code>
+<span class="hljs-comment">// 滚动到底部</span>
+$(<span class="hljs-string">'#my-button'</span>).on(<span
+				class="hljs-string">'click'</span>, <span class="hljs-function"><span
+				class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> $w = $(<span
+				class="hljs-built_in">window</span>);
+  $w.smoothScroll({position: $(<span class="hljs-built_in">document</span>).height() - $w.height()});
+});
+</code>
+					</pre>
+</div>
+<h4 id="选项说明">选项说明</h4>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th style="width: 60px">参数</th>
+			<th style="width: 70px">类型</th>
+			<th style="width: 110px">默认</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>position</code></td>
+			<td>数值</td>
+			<td><code>0</code></td>
+			<td>要滚动到位置，默认为 `0`，即滚动到顶部</td>
+		</tr>
+		<tr>
+			<td><code>speed</code></td>
+			<td>数值</td>
+			<td><code>750 ~ 1500</code></td>
+			<td>滚动速度，单位 `ms`，默认为 `750 - 1500`，根据距离判断</td>
+		</tr>
+	</tbody>
+</table>
+

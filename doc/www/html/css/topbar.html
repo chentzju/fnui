@@ -1,0 +1,363 @@
+
+	
+	<h1 id="topbar-导航条">
+		Topbar 导航条 <a href="#topbar-%E5%AF%BC%E8%88%AA%E6%9D%A1"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h1>
+	<hr />
+	
+	
+	<h2 id="基本样式">
+		基本样式 
+	</h2>
+	<h3 id="默认样式（浅色）">
+		默认样式（浅色） 
+	</h3>
+	<p>
+		在容器上添加
+		<code>.fn-topbar</code>
+		class，然后按照示例组织所需内容。
+	</p>
+	<div>
+		<header class="fn-topbar">
+			<h1 class="fn-topbar-brand">
+				<a href="#">Brand</a>
+			</h1>
+			<button
+				class="fn-topbar-btn fn-topbar-toggle fn-btn fn-btn-sm fn-btn-success fn-show-sm-only"
+				data-fn-collapse="{target: '#doc-topbar-collapse'}">
+				<span class="fn-sr-only">导航切换</span> <span class="fn-icon-bars"></span>
+			</button>
+			<div class="fn-collapse fn-topbar-collapse" id="doc-topbar-collapse">
+				<ul class="fn-nav fn-nav-pills fn-topbar-nav">
+					<li class="fn-active"><a href="#">首页</a></li>
+					<li><a href="#">项目</a></li>
+					<li class="fn-dropdown" data-fn-dropdown><a
+						class="fn-dropdown-toggle" data-fn-dropdown-toggle
+						href="javascript:;">下拉 <span class="fn-icon-caret-down"></span>
+					</a>
+						<ul class="fn-dropdown-content">
+							<li class="fn-dropdown-header">标题</li>
+							<li><a href="#">1. </a></li>
+							<li class="fn-active"><a href="#">2. </a></li>
+							<li><a href="#">3. </a></li>
+							<li class="fn-disabled"><a href="#">4. </a></li>
+							<li class="fn-divider"></li>
+							<li><a href="#">5. </a></li>
+						</ul></li>
+				</ul>
+				<form class="fn-topbar-form fn-topbar-left fn-form-inline"
+					role="search">
+					<div class="fn-form-group">
+						<input type="text" class="fn-form-field fn-input-sm"
+							placeholder="搜索">
+					</div>
+				</form>
+				<div class="fn-topbar-right">
+					<div class="fn-dropdown"
+						data-fn-dropdown="{boundary: '.fn-topbar'}">
+						<button
+							class="fn-btn fn-btn-secondary fn-topbar-btn fn-btn-sm fn-dropdown-toggle"
+							data-fn-dropdown-toggle>
+							其他 <span class="fn-icon-caret-down"></span>
+						</button>
+						<ul class="fn-dropdown-content">
+							<li><a href="#">注册</a></li>
+							<li><a href="#">随便看看</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="fn-topbar-right">
+					<button class="fn-btn fn-btn-primary fn-topbar-btn fn-btn-sm">登录</button>
+				</div>
+			</div>
+		</header>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-topbar"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-topbar-brand"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span> ...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-topbar-btn fn-topbar-toggle fn-btn fn-btn-sm fn-btn-success fn-show-sm-only"</span> <span
+					class="hljs-attribute">data-fn-collapse</span>=<span
+					class="hljs-value">"{target: '#doc-topbar-collapse'}"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-sr-only"</span>&gt;</span>导航切换<span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span
+					class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-bars"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-collapse fn-topbar-collapse"</span> <span
+					class="hljs-attribute">id</span>=<span class="hljs-value">"doc-topbar-collapse"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav fn-nav-pills fn-topbar-nav"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>项目<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown"</span> <span
+					class="hljs-attribute">data-fn-dropdown</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown-toggle"</span> <span
+					class="hljs-attribute">data-fn-dropdown-toggle</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span>&gt;</span>
+          下拉 <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-caret-down"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown-content"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown-header"</span>&gt;</span>标题<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>1. ...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>2. ...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>3. ...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-disabled"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>4. ...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-divider"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>5. ...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-topbar-form fn-topbar-left fn-form-inline"</span> <span
+					class="hljs-attribute">role</span>=<span class="hljs-value">"search"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field fn-input-sm"</span> <span
+					class="hljs-attribute">placeholder</span>=<span class="hljs-value">"搜索"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-topbar-right"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown"</span> <span
+					class="hljs-attribute">data-fn-dropdown</span>=<span
+					class="hljs-value">"{boundary: '.fn-topbar'}"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-secondary fn-topbar-btn fn-btn-sm fn-dropdown-toggle"</span> <span
+					class="hljs-attribute">data-fn-dropdown-toggle</span>&gt;</span>其他 <span
+					class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-caret-down"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown-content"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>注册<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-topbar-right"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-primary fn-topbar-btn fn-btn-sm"</span>&gt;</span>登录<span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="深色样式">
+		深色样式 
+	</h3>
+	<p>
+		在容器上添加
+		<code>.fn-topbar-inverse</code>
+		，调整为背景色为主色调的样式，内部结构同上。
+	</p>
+	<div>
+		<header class="fn-topbar fn-topbar-inverse">
+			<h1 class="fn-topbar-brand">
+				<a href="#">Brand</a>
+			</h1>
+			<button
+				class="fn-topbar-btn fn-topbar-toggle fn-btn fn-btn-sm fn-btn-secondary fn-show-sm-only"
+				data-fn-collapse="{target: '#doc-topbar-collapse-2'}">
+				<span class="fn-sr-only">导航切换</span> <span class="fn-icon-bars"></span>
+			</button>
+			<div class="fn-collapse fn-topbar-collapse"
+				id="doc-topbar-collapse-2">
+				<ul class="fn-nav fn-nav-pills fn-topbar-nav">
+					<li class="fn-active"><a href="#">首页</a></li>
+					<li><a href="#">项目</a></li>
+					<li class="fn-dropdown" data-fn-dropdown><a
+						class="fn-dropdown-toggle" data-fn-dropdown-toggle
+						href="javascript:;">下拉 <span class="fn-icon-caret-down"></span>
+					</a>
+						<ul class="fn-dropdown-content">
+							<li class="fn-dropdown-header">标题</li>
+							<li><a href="#">1. ...</a></li>
+							<li class="fn-active"><a href="#">2....</a></li>
+							<li><a href="#">3. ...</a></li>
+							<li class="fn-disabled"><a href="#">4. ...</a></li>
+							<li class="fn-divider"></li>
+							<li><a href="#">5. ...</a></li>
+						</ul></li>
+				</ul>
+				<form class="fn-topbar-form fn-topbar-left fn-form-inline"
+					role="search">
+					<div class="fn-form-group">
+						<input type="text" class="fn-form-field fn-input-sm"
+							placeholder="搜索">
+					</div>
+				</form>
+				<div class="fn-topbar-right">
+					<div class="fn-dropdown"
+						data-fn-dropdown="{boundary: '.fn-topbar'}">
+						<button
+							class="fn-btn fn-btn-secondary fn-topbar-btn fn-btn-sm fn-dropdown-toggle"
+							data-fn-dropdown-toggle>
+							其他 <span class="fn-icon-caret-down"></span>
+						</button>
+						<ul class="fn-dropdown-content">
+							<li><a href="#">...</a></li>
+							<li><a href="#">...</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="fn-topbar-right">
+					<button class="fn-btn fn-btn-primary fn-topbar-btn fn-btn-sm">登录</button>
+				</div>
+			</div>
+		</header>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-topbar fn-topbar-inverse"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	
+	<h2 id="顶部、底部固定">
+		顶部、底部固定 <a
+			href="#%E9%A1%B6%E9%83%A8%E3%80%81%E5%BA%95%E9%83%A8%E5%9B%BA%E5%AE%9A"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="顶部固定">
+		顶部固定 
+	</h3>
+	<p>
+		在
+		<code>.fn-topbar</code>
+		上添加
+		<code>.fn-topbar-fixed-top</code>
+		class，实现顶部固定。
+	</p>
+	<p>
+		包含顶部固定导航条的页面会在
+		<code>body</code>
+		上添加
+		<code>.fn-with-topbar-fixed-top</code>
+		，用户可以在这个 class 下设置样式，默认设置了
+		<code>padding-top: 51px</code>
+		。
+	</p>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-topbar fn-topbar-inverse fn-topbar-fixed-top"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-container"</span>&gt;</span>
+...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="底部固定">
+		底部固定 <a href="#%E5%BA%95%E9%83%A8%E5%9B%BA%E5%AE%9A"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		在
+		<code>.fn-topbar</code>
+		上添加
+		<code>.fn-topbar-fixed-bottom</code>
+		class，实现底部固定。
+	</p>
+	<p>
+		包含底部固定导航条的页面会在
+		<code>body</code>
+		上添加
+		<code>.fn-with-topbar-fixed-bottom</code>
+		，用户可以在这个 class 下设置样式，默认设置了
+		<code>padding-bottom: 51px</code>
+		。
+	</p>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-topbar fn-topbar-inverse fn-topbar-fixed-bottom"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-container"</span>&gt;</span>
+...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	

@@ -1,0 +1,91 @@
+<h1 id="toast">Toast</h1>
+<hr />
+<p>显示一个延时关闭的对话框。</p>
+<h2 id="使用演示">使用演示</h2>
+
+<h3 id="基本形式">基本形式</h3>
+<p>
+	fnui提供两种形式的toast弹出提示框，应该有三种提示，分别为信息、警告和加载中。通过<code>FNUI.toast.show(type,time)</code>
+	方法来显示toast
+</p>
+<p>type为类型，接受<code>'info'</code>,<code>'warning'</code>,<code>'loading'</code>，
+第二个参数time为定时关闭时间，如果不设定，则需要手动关闭</p>
+<h4 id="方法">方法</h4>
+<ul>
+	<li><code>$.toast.show('info',2000);</code> - 提示信息；2s后自动关闭</li>
+	<li><code>$.toast.show('warning',3000);</code> - 提示警告信息；3s后自动关闭</li>
+	<li><code>$.toast.show('loading',2000);</code> - 加载信息；2s后自动关闭</li>
+	<li><code>$.toast.close()</code> - 手动关闭</li>
+</ul>
+<p>	<code>$.toast</code>也等同于<code>FNUI.toast</code></p>
+<div>
+	<button type="button" class="fn-btn fn-btn-primary" id ='toastpop0'>点击弹出提示</button>
+	<button type="button" class="fn-btn fn-btn-primary" id ='toastpop1'>点击弹出警告</button>
+	<button type="button" class="fn-btn fn-btn-primary" id ='toastpop2'>点击弹出加载中</button>
+</div>
+
+<script>
+	$(function(){
+		$('#toastpop0').click(function () {
+			$.toast.show('info',2000);
+		});
+		$('#toastpop1').click(function () {
+			$.toast.show('warning',2000);
+		});
+		$('#toastpop2').click(function () {
+			$.toast.show('loading',2000);
+		});
+	});
+</script>
+<div>
+	<pre>
+		<code>
+$.toast.show('warning');
+$.toast.show('info');
+$.toast.show('loading');
+
+FNUI.toast.show('warning');
+FNUI.toast.show('info');
+FNUI.toast.show('loading');
+//关闭
+var toast = $.toast.show();
+...
+...
+...
+toast.close();
+</code>
+	</pre>
+</div>
+
+<h3>自定义内容</h3>
+<p>通过<code>content()</code>方法来自定义内容;通过clear()来清除自定义内容</p>
+<p>调用过一遍content()之后，如果不进行清除clear()或者覆盖content()，自定义提示在别的地方调用不会删除。</p>
+<ul>
+	<li><code>$.toast.content()</code>-自定义内容</li>
+	<li><code>$.toast.clear()</code>-清除自定义内容</li>
+</ul>
+<button type="button" class="fn-btn fn-btn-primary" id ='toastpop3'>点击弹出提示</button>
+<script>
+	$(function(){
+		$('#toastpop3').click(function () {
+			$.toast.content("自定义提示").show('info',2000).clear();
+		});
+	});
+</script>
+<div>
+	<pre>
+		<code>
+$('#toastpop3').click(function () {
+	$.toast.content("自定义提示").show('info',2000).clear();
+});
+
+//或者
+var toast = $.toast.content("自定义提示").show('info');
+....
+...
+...
+toast.clear();
+toast.close();
+</code>
+	</pre>
+</div>

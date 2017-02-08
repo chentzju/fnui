@@ -1,0 +1,243 @@
+
+<h1 id="progress">Progress</h1>
+<hr />
+<h2 id="基本使用">基本使用</h2>
+<hr />
+<p>
+	调用
+	<code>start()</code>
+	、
+	<code>done()</code>
+	控制进度条。
+</p>
+<div>
+	<pre>
+		<code>
+FNUI.progress.start();
+FNUI.progress.done();
+//或者
+$.progress.start();
+$.progress.done();
+		</code>
+	</pre>
+</div>
+<div>
+	<button id="np-s" class="fn-btn fn-btn-primary">FNUI.progress.start();</button>
+	<button id="np-d" class="fn-btn fn-btn-success">FNUI.progress.done();</button>
+</div>
+<div>
+	<pre>
+		<code>
+$(function()
+{
+  var progress = $.progress;
+
+  $('#np-s').on('click', function() {
+    progress.start();
+  });
+
+  $('#np-d').on('click', function() {
+    progress.done();
+  });
+});
+</code>
+	</pre>
+</div>
+
+<h2 id="使用场景">使用场景</h2>
+<ul>
+	<li><p>
+			在 Ajax 应用中添加进度条，绑定到 jQuery
+			<code>ajaxStart</code>
+			和
+			<code>ajaxStop</code>
+			事件中。
+		</p></li>
+	<li><p>
+			没有使用 Turbolinks/Pjax 也可以添加高大上的进度条，绑定到
+			<code>$(document).ready</code>
+			和
+			<code>$(window).load</code>
+			即可。
+		</p></li>
+</ul>
+
+
+<h2 id="高级使用">高级使用</h2>
+<p>
+	<strong>设置百分比</strong>: 调用
+	<code>.set(n)</code>
+	可以设置进度百分比, <em>n</em> 的取值区间为
+	<code>0..1</code>
+	。
+</p>
+<div>
+<pre><code>
+$.progress.set(0.0); 
+$.progress.set(0.4);
+$.progress.set(1.0);//same as .done()
+</code></pre>
+</div>
+<p>
+	<strong>增加进度</strong>: 调用
+	<code>.inc()</code>
+	，进度将会增加一个随机的数量，但不会到达 100%。
+</p>
+<div>
+	<pre>
+						<code>
+$.progress.inc();
+</code>
+					</pre>
+</div>
+<p>
+	也可以给
+	<code>.inc()</code>
+	传递一个数值参数:
+</p>
+<div>
+	<pre>
+		<code>
+$.progress.inc(0.2);// adds 0.2 until status is 0.994
+</code>
+					</pre>
+</div>
+<p>
+	<code>.inc()</code>
+	方法会获取当前进度值并增加 0.2，但最多只到达 0.994。
+</p>
+<p>
+	<strong>强制结束</strong>: 传递
+	<code>true</code>
+	给
+	<code>done()</code>
+	，强制显示进度条（默认情况是如果没有 <em>.start()</em>，<em>.done()</em> 执行任何操作）。
+</p>
+<div>
+	<pre>
+		<code>
+$.progress.done(true);
+</code>
+	</pre>
+</div>
+
+<p>
+	<strong>获取进度值</strong>: 使用
+	<code>.status</code>
+	属性。
+</p>
+<div>
+	<button id="np-set" class="fn-btn fn-btn-primary">$.progress.set(0.4);</button>
+	<button id="np-inc" class="fn-btn fn-btn-warning">$.progress.inc();</button>
+	<button id="np-fd" class="fn-btn fn-btn-success">$.progress.done(true);</button>
+	<button id="np-status" class="fn-btn fn-btn-danger">$.progress.status;</button>
+</div>
+<div>
+	<pre><code>
+$.progress.set(0.4);
+$.progress.inc();
+$.progress.done(true);
+$.progress.status;
+</code></pre>
+</div>
+
+
+<h2 id="参数设置">参数设置</h2>
+<h3 id="默认参数">默认参数</h3>
+<div>
+	<pre><code>  
+{
+    minimum: 0.08,
+    easing: 'ease',
+    positionUsing: '',
+    speed: 200,
+    trickle: true,
+    trickleRate: 0.02,
+    trickleSpeed: 800,
+    showSpinner: true,
+    parent: 'body',
+    barSelector: '[role="nprogress-bar"]',
+    spinnerSelector: '[role="nprogress-spinner"]',
+    template: '&lt;div class="nprogress-bar" role="nprogress-bar"&gt;' +
+    '&lt;div class="nprogress-peg"&gt;&lt;/div&gt;&lt;/div&gt;' +
+    '&lt;div class="nprogress-spinner" role="nprogress-spinner"&gt;' +
+    '&lt;div class="nprogress-spinner-icon"&gt;&lt;/div&gt;&lt;/div&gt;'
+  }
+</code>
+					</pre>
+</div>
+
+<h3 id="参数解释">参数解释</h3>
+<p>
+	<code>minimum</code>
+	: 设置最小百分比。
+</p>
+<p>
+	<code>template</code>: 设置模板，注意相应更改<code>barSelector</code>、<code>spinnerSelector</code>。
+</p>
+<p>
+	<code>ease</code>
+	、
+	<code>speed</code>
+	: 设置动画缓动函数和速度（
+	<code>ms</code>
+	）
+</p>
+<p>
+	<code>trickle</code>
+	、
+	<code>trickleRate</code>
+	、
+	<code>trickleSpeed</code>
+	:
+</p>
+<div>
+	<pre><code>
+$.progress.configure({ trickle: false});
+</code></pre>
+</div>
+
+<div>
+	<pre><code>
+$.progress.configure({ trickleRate: 0.02, trickleSpeed:800 });
+</code></pre>
+</div>
+<p>
+	<code>showSpinner</code>
+	:
+</p>
+<div>
+	<pre><code>
+$.progress.configure({ showSpinner: false});
+</code></pre>
+</div>
+
+<p>
+	<code>parent</code>
+	:设置插入进度条的父容器，默认为<code>body</code>。
+</p>
+<div>
+<pre><code>
+$.progress.configure({ parent: '#container'});
+</code></pre>
+</div>
+
+<script>
+	$(function() {
+		var n = FNUI.progress;
+		$("#np-s").on("click", function() {
+			n.start()
+		}), $("#np-d").on("click", function() {
+			n.done()
+		}), $("#np-set").on("click", function() {
+			n.set(.4)
+		}), $("#np-inc").on("click", function() {
+			n.inc()
+		}), $("#np-fd").on("click", function() {
+			n.done(!0)
+		}), $("#np-status").on("click", function() {
+			$(this).text("Status: " + n.status)
+		})
+	});
+</script>
+

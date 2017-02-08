@@ -1,0 +1,161 @@
+
+<h1 id="tabs">
+	Tabs <a href="#tabs" title="Heading anchor" class="doc-anchor"></a>
+</h1>
+<hr />
+<p>
+	选项卡插件，基于 CSS3
+	<code>transition</code>
+	实现水平平滑滚动；CSS3 动画实现回弹效果（触控操作时）。
+</p>
+<h2 id="使用演示">使用演示</h2>
+
+
+<h3>自适应高度</h3>
+<div>
+	<div class="fn-tabs" data-fn-tabs>
+		<ul class="fn-tabs-nav fn-nav fn-nav-tabs">
+			<li class="fn-active"><a href="javascript: void(0)">tab1</a></li>
+			<li><a href="javascript: void(0)">tab2</a></li>
+			<li><a href="javascript: void(0)">tab3</a></li>
+		</ul>
+		<div class="fn-tabs-bd">
+			<div class="fn-tab-panel fn-active">内容1111111111111111111111111111111111111111111111111</div>
+			<div class="fn-tab-panel">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
+			<div class="fn-tab-panel">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;div class="fn-tabs"&gt;
+	&lt;ul class="fn-tabs-nav fn-nav fn-nav-tabs"&gt;
+		&lt;li class="fn-active"&gt;&lt;a href="javascript: void(0)"&gt;tab1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="javascript: void(0)"&gt;tab2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="javascript: void(0)"&gt;tab3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class="fn-tabs-bd"&gt;
+		&lt;div class="fn-tab-panel fn-active"&gt;
+			,,,
+		&lt;/div&gt;
+		&lt;div class="fn-tab-panel"&gt;
+			,,,
+		&lt;/div&gt;
+		&lt;div class="fn-tab-panel"&gt;
+			,,,
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+<h3 id="禁用触控操作">禁用触控操作</h3>
+<p>在过长的 Tabs 中滚动页面时会意外触发 Tab 切换事件，用户可以选择禁用触控操作。</p>
+<div>
+	<pre>
+		<code>
+&lt;div class = "fn-tabs" data-fn-tabs = "{noSwipe: 1}" &gt;
+  	    。。。。
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+
+<h2 id="调用方式">调用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	在选项卡容器
+	<code>.fn-tabs</code>
+	上添加
+	<code>data-fn-tabs</code>
+	属性。上面的演示即通过此种方式调用。
+</p>
+
+<h3 id="通过-js">通过 JS</h3>
+<h4 id="方法">方法</h4>
+<p>
+	通过
+	<code>$().tabs(options)</code>
+	开启选项卡的交互功能。
+</p>
+<div>
+	<div class="fn-tabs" id="doc-my-tabs">
+		<ul class="fn-tabs-nav fn-nav fn-nav-tabs fn-nav-justify">
+			<li class="fn-active"><a href="">彩虹</a></li>
+			<li><a href="">画面</a></li>
+			<li><a href="">窗外</a></li>
+		</ul>
+		<div class="fn-tabs-bd">
+			<div class="fn-tab-panel fn-active">外面是个下雨天，不由得就会想念</div>
+			<div class="fn-tab-panel">像重复的广告片，总是闪烁的画面，那么地熟悉</div>
+			<div class="fn-tab-panel">像窗外的雨，绿油油的树叶，自由地在说笑</div>
+		</div>
+	</div>
+	<script>
+		$(function() {
+			var n = $("#doc-my-tabs");
+			n.tabs(), n.find("a").on("opened.tabs", function() {
+				console.log("[%s] 选项卡打开了", $(this).text())
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre>
+		<code>
+$(function() {
+	var n = $("#doc-my-tabs");
+	n.tabs(), n.find("a").on("opened.tabs", function() {
+		console.log("[%s] 选项卡打开了", $(this).text())
+	})
+});
+</code>
+	</pre>
+</div>
+
+
+<h4 id="选项">选项</h4>
+<ul>
+	<li><code>options.noSwipe</code> 是否禁用触控事件。</li>
+</ul>
+<div>
+	<pre><code>
+$('#someTabs').tabs({noSwipe: 1});
+</code></pre>
+</div>
+
+
+<h4 id="事件">事件</h4>
+<p>事件触发在标签上。</p>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>事件名称</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>open.tabs</code></td>
+			<td>打开一个选项卡时立即触发</td>
+		</tr>
+		<tr>
+			<td><code>opened.tabs</code></td>
+			<td>选项卡打开完成时触发（CSS 动画执行完成）</td>
+		</tr>
+	</tbody>
+</table>
+<div>
+	<pre><code>
+$(function() {
+	var n = $("#doc-my-tabs");
+	n.tabs(), n.find("a").on("opened.tabs", function() {
+		console.log("[%s] 选项卡打开了", $(this).text())
+	})
+});
+</code></pre>
+</div>
+

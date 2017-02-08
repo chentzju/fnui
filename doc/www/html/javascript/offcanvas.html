@@ -1,0 +1,249 @@
+
+<h1 id="offcanvas">OffCanvas</h1>
+<hr />
+<p>侧滑插件。</p>
+<h2 id="使用示例">使用示例</h2>
+<p>
+	该组件由触发器和侧滑元素两部分组成。触发器上添加
+	<code>data-fn-offcanvas</code>
+	属性，侧滑元素使用固定的 HTML 结构。
+</p>
+<h3 id="默认样式">默认样式</h3>
+<div>
+	<a href="#doc-oc-demo1" class="fn-btn fn-btn-primary" data-fn-offcanvas>点击显示侧边栏</a>
+	<div id="doc-oc-demo1" class="fn-offcanvas">
+		<div class="fn-offcanvas-bar">
+			<div class="fn-offcanvas-content">
+				<ul>
+					<li>一个简单的列表</li>
+					<li>通过样式美化</li>
+					<li>就是一个正常侧边栏</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;a href="#doc-oc-demo1" class="fn-btn fn-btn-primary" data-fn-offcanvas&gt;点击显示侧边栏&lt;/a&gt;
+&lt;div id="doc-oc-demo1" class="fn-offcanvas"&gt;
+	&lt;div class="fn-offcanvas-bar"&gt;
+		&lt;div class="fn-offcanvas-content"&gt;
+			&lt;ul&gt;
+				&lt;li&gt;一个简单的列表&lt;/li&gt;
+				&lt;li&gt;通过样式美化&lt;/li&gt;
+				&lt;li&gt;就是一个正常侧边栏&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+
+<h3 id="push-效果">Push 效果</h3>
+<p>
+	设置
+	<code>effect: &#39;push&#39;</code>
+	。
+</p>
+<div>
+	<button class="fn-btn fn-btn-primary"
+		data-fn-offcanvas="{target: '#doc-oc-demo2', effect: 'push'}">点击显示侧边栏</button>
+	<div id="doc-oc-demo2" class="fn-offcanvas">
+		<div class="fn-offcanvas-bar">
+			<div class="fn-offcanvas-content">
+				<ul>
+					<li>一个简单的列表</li>
+					<li>通过样式美化</li>
+					<li>就是一个正常侧边栏</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+<pre><code>
+data-fn-offcanvas="{target: '#doc-oc-demo2', effect: 'push'}"					
+</code></pre>
+</div>
+
+
+<h3 id="右侧显示">右侧显示</h3>
+<p>
+	边栏默认显示在左侧，在内容容器上添加
+	<code>.fn-offcanvas-bar-flip</code>
+	class 调整为右侧。
+</p>
+<div>
+	<button class="fn-btn fn-btn-success"
+		data-fn-offcanvas="{target: '#doc-oc-demo3'}">右侧显示侧边栏</button>
+	<div id="doc-oc-demo3" class="fn-offcanvas">
+		<div class="fn-offcanvas-bar fn-offcanvas-bar-flip">
+			<div class="fn-offcanvas-content">
+				<ul>
+					<li>一个简单的列表</li>
+					<li>通过样式美化</li>
+					<li>就是一个正常侧边栏</li>
+				</ul>
+				<p>
+					<a href="http://music.163.com/#/song?id=385554" target="_blank">网易音乐</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div id="doc-oc-demo3" class="fn-offcanvas"&gt;
+	&lt;div class="fn-offcanvas-bar fn-offcanvas-bar-flip"&gt;
+		&lt;div class="fn-offcanvas-content"&gt;
+			...
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+
+
+<h2 id="调用方式">调用方式</h2>
+<p>首先，按照以下结构组织好侧栏内容：</p>
+<div>
+	<pre>
+						<code>
+&lt;div id ="your-id"  class ="fn-offcanvas" &gt;
+&lt;div class="fn-offcanvas-bar"&gt;
+    &lt;!-- 你的内容 --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	在要触发侧栏的元素上添加
+	<code>data-fn-offcanvas</code>
+	属性：
+</p>
+<ul>
+	<li>如果是 <code>&lt;a&gt;</code> 元素，则把 <code>href</code> 的值设置为边栏的
+		ID：<code>href=&quot;#your-id&quot;</code>；
+	</li>
+	<li>如果是其他元素，则在 <code>data-fn-offcanvas</code> 的值里面指定侧边栏 ID：
+	</li>
+</ul>
+<div>
+	<pre><code>
+&lt;button data-fn-offcanvas="{target: '#your-id'}"&gt;&lt;/button&gt;
+</code></pre>
+</div>
+
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>属性</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>{target: '#your-id'}</code></td>
+			<td>指定侧边栏，如果是 <code>a</code> 元素则写在 <code>href</code> 里
+			</td>
+		</tr>
+		<tr>
+			<td><code>{effect: 'push'}</code></td>
+			<td>边栏动画效果，可选的值为 <code>overlay | push</code> 默认为 <code>overlay</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<h3 id="通过-js">通过 JS</h3>
+<p>组织好 OffCanvas HTML 以后，可以通过 Javascript 调用。</p>
+<div>
+	<pre>
+						<code>
+$('#my-offcanvas').offCanvas(options);
+</code>
+					</pre>
+</div>
+<p>
+	<strong>注意：</strong> 这里
+	<code>#my-offcanvas</code>
+	直接指向侧边栏元素，而不是触发器。
+</p>
+
+
+<h4 id="参数说明">参数说明</h4>
+<ul>
+	<li><code>options.effect</code>，值为 <code>overlay | push</code>，默认为
+		<code>overlay</code>。</li>
+</ul>
+<div>
+	<pre>
+						<code>
+$('#my-offcanvas').offCanvas({effect:'push'});
+</code>
+					</pre>
+</div>
+<p>
+	通过
+	<code>$().offCanvas(options)</code>
+	设置，参数同上。
+</p>
+
+
+<h4 id="方法">方法</h4>
+<ul>
+	<li><code>$().offCanvas(options)</code> - 设置边栏参数并打开边栏</li>
+	<li><code>$().offCanvas(&#39;open&#39;)</code> - 打开边栏</li>
+	<li><code>$().offCanvas(&#39;close&#39;)</code> - 关闭边栏</li>
+</ul>
+<h4 id="事件">事件</h4>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>事件名称</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>open.offcanvas</code></td>
+			<td>打开边栏时立即触发</td>
+		</tr>
+		<tr>
+			<td><code>close.offcanvas</code></td>
+			<td>关闭边栏时立即触发</td>
+		</tr>
+	</tbody>
+</table>
+<h4 id="js-控制示例">JS 控制示例</h4>
+<p>下面的示例演示了使用 JS 打开/关闭侧边栏。侧边栏打开以后，关闭按钮无法点击到，可以在控制台输入以下代码模拟点击事件：</p>
+<div>
+	<pre><code>
+$('[data-rel="close"]').click();
+</code></pre>
+</div>
+<div>
+	<div id="my-offcanvas" class="fn-offcanvas">
+		<div class="fn-offcanvas-bar">
+			<div class="fn-offcanvas-content">
+				<p>
+					<a>一个内容栏</a>
+					<a>两个内容栏</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<button class="fn-btn fn-btn-primary doc-oc-js" data-rel="open">打开侧边栏</button>
+	<button class="fn-btn fn-btn-primary doc-oc-js" data-rel="close">关闭侧边栏</button>
+	<script>$(function(){var o="#my-offcanvas",n=$(o);$(".doc-oc-js").on("click",function(){n.offCanvas($(this).data("rel"))}),n.on("open.offcanvas",function(){console.log(o+" 打开了。")}).on("close.offcanvas",function(){console.log(o+" 关闭了。")})});</script>
+</div>
+

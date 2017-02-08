@@ -1,0 +1,164 @@
+
+	<h1 id="fastclick">
+		FastClick <a href="#fastclick" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>
+		处理移动端
+		<code>click</code>
+		事件 300 毫秒延迟， 由 <a href="http://labs.ft.com/">FT Labs</a> 开发（<a
+			href="https://github.com/ftlabs/fastclick">项目地址</a>）。
+	</p>
+	<h2 id="为什么存在延迟？">
+		为什么存在延迟？ <a
+			href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%98%E5%9C%A8%E5%BB%B6%E8%BF%9F%EF%BC%9F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		根据 <a
+			href="https://developers.google.com/mobile/articles/fast_buttons">Google
+			开发者文档</a>：
+	</p>
+	<blockquote>
+		<p>...mobile browsers will wait approximately 300ms from the time that
+			you tap the button to fire the click event. The reason for this is
+			that the browser is waiting to see if you are actually performing a
+			double tap.</p>
+	</blockquote>
+	<p>
+		从点击屏幕上的元素到触发元素的
+		<code>click</code>
+		事件，移动浏览器会有大约 300 毫秒的等待时间。为什么这么设计呢？ 因为它想看看你是不是要进行双击（double tap）操作。
+	</p>
+	<h2 id="兼容性">
+		兼容性 <a href="#%E5%85%BC%E5%AE%B9%E6%80%A7" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h2>
+	<ul>
+		<li>Mobile Safari on iOS 3 and upwards</li>
+		<li>Chrome on iOS 5 and upwards</li>
+		<li>Chrome on Android (ICS)</li>
+		<li>Opera Mobile 11.5 and upwards</li>
+		<li>Android Browser since Android 2</li>
+		<li>PlayBook OS 1 and upwards</li>
+	</ul>
+	<h2 id="不应用-fastclick-的场景">
+		不应用 FastClick 的场景 <a
+			href="#%E4%B8%8D%E5%BA%94%E7%94%A8-fastclick-%E7%9A%84%E5%9C%BA%E6%99%AF"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<ul>
+		<li>桌面浏览器；</li>
+		<li>如果 <a
+			href="https://developer.mozilla.org/en-US/docs/Mobile/Viewport_meta_tag">viewport
+				meta 标签</a> 中设置了 <code>width=device-width</code>， Android 上的 Chrome
+			32+ 会禁用 300ms 延时；
+		</li>
+	</ul>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span
+					class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span
+					class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1"</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<ul>
+		<li>viewport meta 标签如果设置了 <code>user-scalable=no</code>，Android 上的
+			Chrome（所有版本）都会禁用 300ms 延迟。
+		</li>
+		<li>IE10 中，可以使用 css 属性 <code>-ms-touch-action: none</code> 禁止元素双击缩放（<a
+			href="http://blogs.msdn.com/b/askie/archive/2013/01/06/how-to-implement-the-ms-touch-action-none-property-to-disable-double-tap-zoom-on-touch-devices.aspx">参考文章</a>）。
+		</li>
+	</ul>
+	<h2 id="使用方法">
+		使用方法 <a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		<strong> FastClick。</strong>
+	</p>
+	<p>
+		如有需要，用户可以通过
+		<code>$.AMUI.FastClick</code>
+		调用。
+	</p>
+	<p>jQuery / Zepto.js:</p>
+	<div>
+		<pre>
+						<code>
+$(<span class="hljs-function"><span
+					class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  $.AMUI.FastClick.attach(<span class="hljs-built_in">document</span>.body);
+});
+</code>
+					</pre>
+	</div>
+	<p>CommonJS:</p>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-keyword">var</span> attachFastClick = <span
+					class="hljs-built_in">require</span>(<span class="hljs-string">'fastclick'</span>);
+attachFastClick(<span class="hljs-built_in">document</span>.body);
+</code>
+					</pre>
+	</div>
+	<h2 id="常见问题">
+		常见问题 <a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="使用-fastclick-以后-contenteditable-在触摸屏上失效，如何处理？">
+		使用 FastClick 以后
+		<code>contenteditable</code>
+		在触摸屏上失效，如何处理？ <a
+			href="#%E4%BD%BF%E7%94%A8-fastclick-%E4%BB%A5%E5%90%8E-contenteditable-%E5%9C%A8%E8%A7%A6%E6%91%B8%E5%B1%8F%E4%B8%8A%E5%A4%B1%E6%95%88%EF%BC%8C%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%EF%BC%9F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		在需要启动编辑功能的元素上添加
+		<code>.needsclick</code>
+		class 即可（<a href="http://jsbin.com/wahilo/3/">在线演示</a>）。
+	</p>
+	<div>
+		<div contenteditable class="needsclick">
+			<p>请使用触屏访问，然后尝试编辑下面的内容</p>
+			<p>编我改我写我……</p>
+		</div>
+		<hr>
+		<div contenteditable>
+			没有加
+			<code>needsclick</code>
+			class，触摸屏加载 FastClick 以后注定无法编辑。
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">contenteditable</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"needsclick"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>请使用触屏访问，然后尝试编辑下面的内容<span
+					class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>编我改我写我……<span
+					class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">hr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">contenteditable</span>&gt;</span>
+  没有加 <span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>needsclick<span
+					class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span> class，触摸屏加载 FastClick 以后注定无法编辑。
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="licence">
+		Licence <a href="#licence" title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<ul>
+		<li>@copyright The Financial Times Limited [All Rights Reserved]</li>
+		<li>@license MIT License</li>
+	</ul>
+

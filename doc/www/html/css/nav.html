@@ -1,0 +1,486 @@
+
+	<h1 id="nav">
+		Nav <a href="#nav" title="Heading anchor" class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>
+		导航样式组件，在
+		<code>&lt;ul&gt;</code>
+		链接列表中添加
+		<code>.fn-nav</code>
+		class。
+	</p>
+	<h2 id="基本样式">
+		基本样式 <a href="#%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		<code>&lt;ul&gt;</code>
+		添加
+		<code>.fn-nav</code>
+		class 以后就是一个基本的垂直导航。默认样式中并没有限定导航的宽度，可以结合网格使用。
+	</p>
+	<div>
+		<ul class="fn-nav">
+			<li class="fn-active"><a href="#">首页</a></li>
+			<li><a href="#">开始使用</a></li>
+			<li><a href="#">按需定制</a></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>开始使用<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>按需定制<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="水平导航">
+		水平导航 <a href="#%E6%B0%B4%E5%B9%B3%E5%AF%BC%E8%88%AA"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		在
+		<code>.fn-nav</code>
+		的基础上再添加
+		<code>.fn-nav-pills</code>
+		，形成一个水平导航。
+	</p>
+	<div>
+		<ul class="fn-nav fn-nav-pills">
+			<li class="fn-active"><a href="#">首页</a></li>
+			<li><a href="#">开始使用</a></li>
+			<li><a href="#">按需定制</a></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav fn-nav-pills"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>开始使用<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>按需定制<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="标签式导航">
+		标签式导航 <a href="#%E6%A0%87%E7%AD%BE%E5%BC%8F%E5%AF%BC%E8%88%AA"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		在
+		<code>.fn-nav</code>
+		的基础上添加
+		<code>.fn-nav-tabs</code>
+		，形成一个标签式的导航。激活的标签在
+		<code>&lt;li&gt;</code>
+		上添加
+		<code>.fn-active</code>
+		。
+	</p>
+	<div>
+		<ul class="fn-nav fn-nav-tabs">
+			<li class="fn-active"><a href="#">首页</a></li>
+			<li><a href="#">开始使用</a></li>
+			<li><a href="#">按需定制</a></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav fn-nav-tabs"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>开始使用<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>按需定制<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="宽度自适应">
+		宽度自适应 <a href="#%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		在水平导航或标签式导航上添加
+		<code>.fn-nav-justify</code>
+		让
+		<code>&lt;li&gt;</code>
+		平均分配宽度（通过
+		<code>display: table-cell</code>
+		实现）。
+	</p>
+	<p>
+		平均分配只在
+		<code>media-up</code>
+		(&gt; 640px) 有效，&lt;= 640px 时菜单会垂直堆叠（缩小浏览器窗口效果可以查看效果）。
+	</p>
+	<div>
+		<ul class="fn-nav fn-nav-pills fn-nav-justify">
+			<li class="fn-active"><a href="#">首页</a></li>
+			<li><a href="#">开始使用</a></li>
+			<li><a href="#">按需定制</a></li>
+			<li><a href="#">加入我们</a></li>
+		</ul>
+		<ul class="fn-nav fn-nav-tabs fn-nav-justify">
+			<li class="fn-active"><a href="#">首页</a></li>
+			<li><a href="#">开始使用</a></li>
+			<li><a href="#">加入我们</a></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav fn-nav-pills fn-nav-justify"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>开始使用<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>按需定制<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>加入我们<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav fn-nav-tabs fn-nav-justify"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>开始使用<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>加入我们<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="导航状态">
+		导航状态 <a href="#%E5%AF%BC%E8%88%AA%E7%8A%B6%E6%80%81"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		导航状态 class 添加在
+		<code>&lt;li&gt;</code>
+		上。
+	</p>
+	<ul>
+		<li><code>.fn-disabled</code> - 禁用</li>
+		<li><code>.fn-active</code> - 激活</li>
+	</ul>
+	<div>
+		<ul class="fn-nav fn-nav-pills">
+			<li class="fn-active"><a href="#">首页</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li class="fn-disabled"><a href="#">禁用链接</a></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav fn-nav-pills"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>关于我们<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-disabled"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>禁用链接<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="导航标题及分隔线">
+		导航标题及分隔线 <a
+			href="#%E5%AF%BC%E8%88%AA%E6%A0%87%E9%A2%98%E5%8F%8A%E5%88%86%E9%9A%94%E7%BA%BF"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>导航标题及分隔线目前仅适用于垂直菜单。</p>
+	<ul>
+		<li><code>.fn-nav-header</code> 导航标题，直接放在 <code>&lt;li&gt;</code> 中。</li>
+		<li><code>.fn-nav-divider</code> 导航分隔线，添加到空的 <code>&lt;li&gt;</code>
+			上。</li>
+	</ul>
+	<div>
+		<ul class="fn-nav">
+			<li><a href="#"><span class="fn-icon-home"></span>首页</a></li>
+			<li class="fn-nav-header">开始使用</li>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">联系我们</a></li>
+			<li class="fn-nav-divider"></li>
+			<li><a href="#">响应式</a></li>
+			<li><a href="#">移动优先</a></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav-header"</span>&gt;</span>开始使用<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>关于我们<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>联系我们<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav-divider"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>响应式<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>移动优先<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="下拉菜单">
+		下拉菜单 <a href="#%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>
+		需结合 JS <a href="/javascript/dropdown.php">Dropdown</a> 组件使用。
+	</p>
+	<div>
+		<ul class="fn-nav fn-nav-pills">
+			<li class="fn-active"><a href="#">首页</a></li>
+			<li><a href="#">项目</a></li>
+			<li class="fn-dropdown" data-fn-dropdown><a
+				class="fn-dropdown-toggle" data-fn-dropdown-toggle
+				href="javascript:;">菜单 <span class="fn-icon-caret-down"></span>
+			</a>
+				<ul class="fn-dropdown-content">
+					<li class="fn-dropdown-header">Header</li>
+					<li><a href="#">1. 一行代码，简单快捷</a></li>
+					<li class="fn-active"><a href="#">2. 网址不变且唯一</a></li>
+					<li><a href="#">3. 内容实时同步更新</a></li>
+					<li class="fn-disabled"><a href="#">4. 云端跨平台适配</a></li>
+					<li class="fn-divider"></li>
+					<li><a href="#">5. 专属的一键拨叫</a></li>
+				</ul></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav fn-nav-pills"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>项目<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown"</span> <span
+					class="hljs-attribute">data-fn-dropdown</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown-toggle"</span> <span
+					class="hljs-attribute">data-fn-dropdown-toggle</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span>&gt;</span>
+            菜单 <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-caret-down"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown-content"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown-header"</span>&gt;</span>Header<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>1. 一行代码，简单快捷<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>2. 网址不变且唯一<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>3. 内容实时同步更新<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-disabled"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>4. 云端跨平台适配<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-divider"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>5. 专属的一键拨叫<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="tab-式">
+		Tab 式 <a href="#tab-%E5%BC%8F" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<div>
+		<ul class="fn-nav fn-nav-tabs">
+			<li class="fn-active"><a href="#">首页</a></li>
+			<li><a href="#">项目</a></li>
+			<li class="fn-dropdown" data-fn-dropdown><a
+				class="fn-dropdown-toggle" data-fn-dropdown-toggle
+				href="javascript:;">菜单 <span class="fn-icon-caret-down"></span>
+			</a>
+				<ul class="fn-dropdown-content">
+					<li class="fn-dropdown-header">Header</li>
+					<li><a href="#">1. 一行代码，简单快捷</a></li>
+					<li class="fn-active"><a href="#">2. 网址不变且唯一</a></li>
+					<li><a href="#">3. 内容实时同步更新</a></li>
+					<li class="fn-disabled"><a href="#">4. 云端跨平台适配</a></li>
+					<li class="fn-divider"></li>
+					<li><a href="#">5. 专属的一键拨叫</a></li>
+				</ul></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-nav fn-nav-tabs"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-active"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>首页<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>项目<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown"</span> <span
+					class="hljs-attribute">data-fn-dropdown</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown-toggle"</span> <span
+					class="hljs-attribute">data-fn-dropdown-toggle</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span>&gt;</span>
+      菜单 <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-caret-down"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-dropdown-content"</span>&gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>

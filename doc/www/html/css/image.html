@@ -1,0 +1,65 @@
+	
+<h1>Image</h1>
+	<hr />
+	<p>定义图片样式。</p>
+	<h2 id="基础样式">
+		基础样式 
+	</h2>
+	<p>
+		基础样式定义在
+		<code>base</code>
+		中。
+	</p>
+	
+	<h2 id="增强样式">
+		增强样式 
+	</h2>
+	<h3 id="圆角样式">
+		圆角样式 
+	</h3>
+	<p>
+		为
+		<code>&lt;img&gt;</code>
+		元素设置不同的 class，增强其样式。
+	</p>
+	<ul>
+		<li><code>.fn-radius</code> 圆角</li>
+		<li><code>.fn-round</code> 椭圆</li>
+		<li><code>.fn-circle</code> 圆形，一般用于正方形的图片(你要觉得椭圆好看，用在长方形上也可以)</li>
+	</ul>
+	<div>
+	<p>
+		<img class="fn-radius" alt="140*140" src="img/demos/02.jpg"
+			width="140" height="140" /> <img class="fn-round" alt="140*140"
+			src="img/demos/03.jpg" width="200" height="120" /> <img
+			class="fn-circle" src="img/demos/01.jpg" width="140" height="140" />
+	</p>
+</div>
+	<div>
+		<pre><code>
+&lt;img class="fn-radius" alt="140*140" src="img/demos/02.jpg"width="140" height="140" /&gt;
+&lt;img class="fn-round" alt="140*140" src="img/demos/03.jpg" width="200" height="120" /&gt;
+&lt;img class="fn-circle" src="img/demos/01.jpg" width="140" height="140" /&gt;
+</code></pre>
+	</div>
+	<h3 id="边框">
+		边框 
+	</h3>
+	<ul>
+		<li><code>.fn-img-thumbnail</code> 边框</li>
+	</ul>
+<div>
+	<img class="fn-img-thumbnail" alt="140*140" src="img/demos/01.jpg"
+		width="140" height="140" />
+	 <img class="fn-img-thumbnail fn-radius"
+		alt="140*140" src="img/demos/02.jpg" width="140" height="140" />
+	 <img class="fn-img-thumbnail fn-circle" alt="140*140"
+		src="img/demos/03.jpg" width="140" height="140" />
+</div>
+<div>
+		<pre><code>
+&lt;img class="fn-img-thumbnail" src="img/demos/01.jpg"/&gt;
+&lt;img class="fn-img-thumbnail fn-radius" src="img/demos/02.jpg"/&gt;
+&lt;img class="fn-img-thumbnail fn-circle" src="img/demos/03.jpg"" /&gt;		
+</code></pre>
+</div>

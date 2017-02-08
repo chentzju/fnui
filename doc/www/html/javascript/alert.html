@@ -1,0 +1,209 @@
+
+<!-- ALERT component -->
+<h1 id="alert">Alert</h1>
+<hr />
+<p>显示可关闭的页内警告信息。</p>
+<h2 id="使用演示">使用演示</h2>
+<h3 id="基本形式">基本形式</h3>
+<div>
+	<div class="fn-alert">不同的一个警告框</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;div class="fn-alert"&gt;不同的一个警告框&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+
+
+<h3 id="关闭按钮">关闭按钮</h3>
+<div>
+	<div class="fn-alert" data-fn-alert>
+		<button type="button" class="fn-close">&times;</button>
+		<p>带关闭按钮的警告框</p>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;div class="fn-alert" data-fn-alert&gt;
+	&lt;button type="button" class="fn-close"&gt;&times;&lt;/button&gt;
+	&lt;p&gt;带关闭按钮的警告框&lt;/p&gt;
+&lt;/div&gt;	
+</code>
+	</pre>
+</div>
+
+
+<h3 id="不同状态">不同状态</h3>
+<div>
+	<div class="fn-alert fn-alert-success" data-fn-alert>
+		<button type="button" class="fn-close">&times;</button>
+		<p>成功状态</p>
+	</div>
+	<div class="fn-alert fn-alert-warning" data-fn-alert>
+		<button type="button" class="fn-close">&times;</button>
+		<p>警告状态</p>
+	</div>
+	<div class="fn-alert fn-alert-danger" data-fn-alert>
+		<button type="button" class="fn-close">&times;</button>
+		<p>危险状态。</p>
+	</div>
+	<div class="fn-alert fn-alert-secondary" data-fn-alert>
+		<button type="button" class="fn-close">&times;</button>
+		<p>默认状态</p>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;div class="fn-alert fn-alert-success" data-fn-alert&gt;
+	&lt;button type="button" class="fn-close"&gt;&times;&lt;/button&gt;
+	&lt;p&gt;成功状态&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="fn-alert fn-alert-warning" data-fn-alert&gt;
+	&lt;button type="button" class="fn-close"&gt;&times;&lt;/button&gt;
+	&lt;p&gt;警告状态&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="fn-alert fn-alert-danger" data-fn-alert&gt;
+	&lt;button type="button" class="fn-close"&gt;&times;&lt;/button&gt;
+	&lt;p&gt;危险状态。&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="fn-alert fn-alert-secondary" data-fn-alert&gt;
+	&lt;button type="button" class="fn-close"&gt;&times;&lt;/button&gt;
+	&lt;p&gt;默认状态&lt;/p&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+
+<h2>调用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	在 Alert 最外层元素上添加
+	<code>data-fn-alert</code>。
+</p>
+<div>
+	<pre><code>
+&lt;div class="fn-alert"&gt;
+	...
+&lt;/div&gt;
+</code></pre>
+</div>
+
+
+<h3 id="通过-js">通过 JS</h3>
+<p>开启关闭按钮交互功能：</p>
+<div>
+	<pre>
+	<code>
+$('.fn-alert').alert()
+</code></pre>
+</div>
+<h4 id="方法">方法</h4>
+<ul>
+	<li><code>$().alert()</code> - 激活 Alert 元素关闭按钮的交互功能。</li>
+	<li><code>$().alert(&#39;close&#39;)</code>：直接关闭元素。</li>
+</ul>
+<h4 id="自定义事件">自定义事件</h4>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>事件名称</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>close.alert</code></td>
+			<td>close方法被调用时立即触发</td>
+		</tr>
+		<tr>
+			<td><code>closed.alert</code></td>
+			<td>元素被关闭以后触发（CSS 动画执行完成）</td>
+		</tr>
+	</tbody>
+</table>
+<div>
+	<pre>
+		<code>
+$('#my-alert').on('closed.alert', function(){
+  alert('警告窗口已经关闭');
+});
+</code>
+	</pre>
+</div>
+
+<h4 id="js-控制示例">JS 控制示例</h4>
+<p>
+	<strong>示例1：</strong>激活 Alert 元素关闭按钮的交互功能
+</p>
+<div>
+	<div class="fn-alert" id="your-alert">
+		<button type="button" class="fn-close">&times;</button>
+		<p>在应用 JS 激活之前这个警告框是无法关闭的。不信点右边的 x 试试。</p>
+	</div>
+	<button type="button" class="fn-btn fn-btn-danger"
+		id="doc-alert-btn-bind">点击激活上面 Alert 的关闭功能</button>
+	<script>
+		$(function() {
+			$("#doc-alert-btn-bind").one("click", function() {
+				$("#your-alert").alert(), alert("已激活，点击上的 X 试试！")
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+$(function() {
+	$("#doc-alert-btn-bind").one("click", function() {
+		$("#your-alert").alert(), alert("已激活，点击上的 X 试试！")
+	})
+});		
+</code></pre>
+</div>
+
+<p>
+	<strong>示例2</strong>：使用 JS 关闭警告框及监听自定义事件
+</p>
+<div>
+	<div class="fn-alert" id="your-alert-1">
+		<button type="button" class="fn-close">&times;</button>
+		<p>这是一个警告框！</p>
+	</div>
+	<button type="button" class="fn-btn fn-btn-warning"
+		id="doc-alert-btn-close">点击关闭上面的 Alert</button>
+	<script>
+		$(function() {
+			$("#doc-alert-btn-close").one("click", function() {
+				$("#your-alert-1").alert("close")
+			}), $(document).on("close.alert", "#your-alert-1", function() {
+				alert("警告框开始关闭！")
+			}), $(document).on("closed.alert", "#your-alert-1",
+					function() {
+						alert("警告框关闭完成！")
+					})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+$(function() {
+	$("#doc-alert-btn-close").one("click", function() {
+		$("#your-alert-1").alert("close")
+	}), $(document).on("close.alert", "#your-alert-1", function() {
+		alert("警告框开始关闭！")
+	}), $(document).on("closed.alert", "#your-alert-1",
+			function() {
+				alert("警告框关闭完成！")
+			})
+});
+</code></pre>
+</div>
+

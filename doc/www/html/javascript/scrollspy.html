@@ -1,0 +1,287 @@
+
+<script>
+$(function(){
+  $('[data-fn-scrollspy]').scrollspy();
+})
+</script>
+<h1 id="scrollspy">ScrollSpy</h1>
+<hr />
+<p>窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3 动画的浏览器上有效）。</p>
+<h2 id="使用演示">使用演示</h2>
+<p>下面的演示中包含了各种动画效果。</p>
+<div>
+	<div class="fn-g">
+		<div class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3">
+			<div class="fn-panel fn-panel-primary"
+				data-fn-scrollspy="{animation: 'fade'}">
+				<div class="fn-panel-hd">Fade</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+	</div>
+	<div class="fn-g">
+		<div
+			class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3 fn-u-md-offset-4 fn-u-lg-offset-3">
+			<div class="fn-panel fn-panel-secondary"
+				data-fn-scrollspy="{animation: 'scale-up'}">
+				<div class="fn-panel-hd">Scale-up</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+	</div>
+	<div class="fn-g">
+		<div
+			class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3 fn-u-md-offset-8 fn-u-lg-offset-6">
+			<div class="fn-panel fn-panel-success"
+				data-fn-scrollspy="{animation: 'scale-down'}">
+				<div class="fn-panel-hd">Scale-down</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+	</div>
+	<div class="fn-g">
+		<div
+			class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3 fn-u-md-offset-8 fn-u-lg-offset-9">
+			<div class="fn-panel fn-panel-warning"
+				data-fn-scrollspy="{animation: 'slide-top'}">
+				<div class="fn-panel-hd">Slide Top</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+	</div>
+	<div class="fn-g">
+		<div
+			class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3 fn-u-md-offset-8 fn-u-lg-offset-6">
+			<div class="fn-panel fn-panel-danger"
+				data-fn-scrollspy="{animation: 'slide-bottom'}">
+				<div class="fn-panel-hd">Slide Bottom</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+	</div>
+	<div class="fn-g">
+		<div
+			class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3 fn-u-md-offset-4 fn-u-lg-offset-3">
+			<div class="fn-panel fn-panel-primary"
+				data-fn-scrollspy="{animation: 'slide-right'}">
+				<div class="fn-panel-hd">Slide Right</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+	</div>
+	<div class="fn-g">
+		<div class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3">
+			<div class="fn-panel fn-panel-secondary"
+				data-fn-scrollspy="{animation: 'slide-left'}">
+				<div class="fn-panel-hd">Slide Left</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+	</div>
+	<div class="fn-g">
+		<div class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3">
+			<div class="fn-panel fn-panel-success"
+				data-fn-scrollspy="{animation: 'fade'}">
+				<div class="fn-panel-hd">Fade</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+		<div class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3">
+			<div class="fn-panel fn-panel-warning"
+				data-fn-scrollspy="{animation: 'fade', delay: 300}">
+				<div class="fn-panel-hd">Fade delay: 300</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+		<div class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3">
+			<div class="fn-panel fn-panel-danger"
+				data-fn-scrollspy="{animation: 'fade', delay: 600}">
+				<div class="fn-panel-hd">Fade delay: 600</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+		<div class="fn-u-sm-12 fn-u-md-4 fn-u-lg-3">
+			<div class="fn-panel fn-panel-primary"
+				data-fn-scrollspy="{animation: 'fade', delay: 900}">
+				<div class="fn-panel-hd">Fade delay: 900</div>
+				<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+					动画的浏览器上有效）。</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-panel fn-panel-default" data-fn-scrollspy="{animation: 'fade'}"&gt;...&lt;/div&gt;
+
+&lt;div class="fn-panel fn-panel-default" data-fn-scrollspy="{animation: 'fade', delay: 300}"&gt;...&lt;/div&gt;
+</code></pre>
+</div>
+
+
+<h2 id="调用方式">调用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	添加
+	<code>data-fn-scrollspy</code>
+	属性，并设置相关属性。
+</p>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>属性</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>data-fn-scrollspy="{animation:'fade'}"</code></td>
+			<td>动画类名，参见动画组件，默认为 <code>fade</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>data-fn-scrollspy="{animation:'fade', delay:
+					300}"</code></td>
+			<td>延迟动画执行时间（ms），默认为 <code>0</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>data-fn-scrollspy="{animation:'fade', repeat:
+					false}"</code></td>
+			<td>是否重复动画，默认为 <code>true</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h3 id="js-调用">JS 调用</h3>
+<p>
+	通过
+	<code>$().scrollspy(options)</code>
+	设置，参数同上。
+</p>
+<div>
+	<div class="fn-panel fn-panel-primary" id="my-scrollspy">
+		<div class="fn-panel-hd">ScrollSpy via JS</div>
+		<div class="fn-panel-bd">窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3
+			动画的浏览器上有效）。</div>
+	</div>
+	<script>
+		$(function() {
+			$("#my-scrollspy").scrollspy({
+				animation : "slide-left",
+				delay : 500
+			})
+		});
+	</script>
+</div>
+<div>
+<pre><code>
+$(function() {
+	$("#my-scrollspy").scrollspy({
+		animation : "slide-left",
+		delay : 500
+	})
+});
+</code></pre>
+</div>
+
+
+<h4 id="事件">事件</h4>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>事件名称</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>inview.scrollspy</code></td>
+			<td>元素进入窗口可视区域时触发</td>
+		</tr>
+		<tr>
+			<td><code>outview.scrollspy</code></td>
+			<td>元素离开窗口可视区域时触发</td>
+		</tr>
+	</tbody>
+</table>
+<script>
+	$(function() {
+		$("#my-scrollspy").on("inview.scrollspy", function() {
+			console.log("进入视口")
+		}).on("outview.scrollspy", function() {
+			console.log("离开视口")
+		})
+	});
+</script>
+<div>
+	<pre><code>
+$(function() {
+	$("#my-scrollspy").on("inview.scrollspy", function() {
+		console.log("进入视口")
+	}).on("outview.scrollspy", function() {
+		console.log("离开视口")
+	})
+});
+</code></pre>
+</div>
+
+<h4 id="mutationobserver">MutationObserver</h4>
+<p>通过Mutation Observer实现动态加载元素的动画效果。</p>
+<div>
+	<p>
+		<button class="fn-btn fn-btn-primary" id="doc-scrollspy-insert">插入</button>
+	</p>
+	<div id="doc-scrollspy-wrapper" data-fn-observe>
+		<p>在下面插入一些元素试试：</p>
+	</div>
+	<script>
+		$(function() {
+			var a = 1, n = $("#doc-scrollspy-wrapper"), c = function(a) {
+				var c = '<div class="fn-panel fn-panel-primary" data-fn-scrollspy="{animation: \'scale-up\'}"><div class="fn-panel-bd">我是第'
+						+ a + "个插入的元素。</div></div>";
+				n.append(c)
+			};
+			$("#doc-scrollspy-insert").on("click", function() {
+				c(a), a++
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+&lt;p&gt;
+	&lt;button class="fn-btn fn-btn-primary" id="doc-scrollspy-insert"&gt;插入&lt;/button&gt;
+&lt;/p&gt;
+&lt;div id="doc-scrollspy-wrapper" data-fn-observe&gt;
+	&lt;p&gt;在下面插入一些元素试试：&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<div>
+	<pre><code>
+$(function() {		
+var a = 1, n = $("#doc-scrollspy-wrapper"), c = function(a) {
+		var c = '&lt;div class="fn-panel fn-panel-primary" data-fn-scrollspy="{animation: \'scale-up\'}"&gt;&lt;div class="fn-panel-bd"&gt;我是第'
+			+ a + "个插入的元素。&lt;/div&gt;&lt;/div&gt;";
+		n.append(c)
+	};
+	$("#doc-scrollspy-insert").on("click", function() {
+		c(a), a++
+	})
+});
+</code></pre>
+</div>
+

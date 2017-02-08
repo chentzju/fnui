@@ -1,0 +1,308 @@
+
+	
+	<h1 id="list">
+		List<a href="#list" title="Heading anchor" class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<h2 id="基本样式">
+		基本样式 <a href="#%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="链接列表">
+		链接列表 <a href="#%E9%93%BE%E6%8E%A5%E5%88%97%E8%A1%A8"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		使用
+		<code>&lt;ul&gt;</code>
+		结构嵌套链接列表，添加
+		<code>.fn-list</code>
+		。
+	</p>
+	<div>
+		<ul class="fn-list">
+			<li><a href="#">每个人都有一个死角， 自己走不出来，别人也闯不进去。</a></li>
+			<li><a href="#">我把最深沉的秘密放在那里。</a></li>
+			<li><a href="#">你不懂我，我不怪你。</a></li>
+			<li><a href="#">每个人都有一道伤口， 或深或浅，盖上布，以为不存在。</a></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>每个人都有一个死角， 自己走不出来，别人也闯不进去。<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>我把最深沉的秘密放在那里。<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>你不懂我，我不怪你。<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>每个人都有一道伤口， 或深或浅，盖上布，以为不存在。<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="文字超出截断为「-」">
+		文字超出截断为「...」 <a
+			href="#%E6%96%87%E5%AD%97%E8%B6%85%E5%87%BA%E6%88%AA%E6%96%AD%E4%B8%BA%E3%80%8C-%E3%80%8D"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		在
+		<code>&lt;a&gt;</code>
+		上添加
+		<code>.fn-text-truncate</code>
+		class 可以实现文字超出一行时截断为
+		<code>...</code>
+		。
+	</p>
+	<div>
+		<ul class="fn-list">
+			<li><a href="#" class="fn-text-truncate">每个人都有一个死角，
+					自己走不出来，别人也闯不进去。我把最深沉的秘密放在那里。每个人都有一道伤口， 或深或浅，盖上布，以为不存在。</a></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-text-truncate"</span>&gt;</span>每个人都有一个死角， 自己走不出来，别人也闯不进去。我把最深沉的秘密放在那里。每个人都有一道伤口， 或深或浅，盖上布，以为不存在。<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="纯文字列表">
+		纯文字列表 <a href="#%E7%BA%AF%E6%96%87%E5%AD%97%E5%88%97%E8%A1%A8"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		在
+		<code>.fn-list</code>
+		的基础上添加
+		<code>.fn-list-static</code>
+		。
+	</p>
+	<div>
+		<ul class="fn-list fn-list-static">
+			<li>每个人都有一个死角， 自己走不出来，别人也闯不进去。</li>
+			<li>我把最深沉的秘密放在那里。</li>
+			<li>你不懂我，我不怪你。</li>
+			<li>每个人都有一道伤口， 或深或浅，盖上布，以为不存在。</li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-list fn-list-static"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="样式变换">
+		样式变换 <a href="#%E6%A0%B7%E5%BC%8F%E5%8F%98%E6%8D%A2"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="列表边框">
+		列表边框 <a href="#%E5%88%97%E8%A1%A8%E8%BE%B9%E6%A1%86"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		在容器上添加
+		<code>.fn-list-border</code>
+		class。
+	</p>
+	<div>
+		<ul class="fn-list fn-list-static fn-list-border">
+			<li>每个人都有一个死角， 自己走不出来，别人也闯不进去。</li>
+			<li>我把最深沉的秘密放在那里。</li>
+		</ul>
+		<ul class="fn-list fn-list-border">
+			<li><a href="#">每个人都有一个死角， 自己走不出来，别人也闯不进去。</a></li>
+			<li><a href="#">我把最深沉的秘密放在那里。</a></li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-list fn-list-static fn-list-border"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-list fn-list-border"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="斑马纹">
+		斑马纹 <a href="#%E6%96%91%E9%A9%AC%E7%BA%B9" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<p>
+		添加
+		<code>.fn-list-striped</code>
+		class。
+	</p>
+	<div>
+		<ul class="fn-list fn-list-static fn-list-border fn-list-striped">
+			<li>每个人都有一个死角， 自己走不出来，别人也闯不进去。</li>
+			<li>我把最深沉的秘密放在那里。</li>
+			<li>你不懂我，我不怪你。</li>
+			<li>每个人都有一道伤口， 或深或浅，盖上布，以为不存在。</li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-list fn-list-static fn-list-border fn-list-striped"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="组合使用">
+		组合使用 <a href="#%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="添加-badge">
+		添加 Badge <a href="#%E6%B7%BB%E5%8A%A0-badge" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<div>
+		<ul class="fn-list fn-list-static fn-list-border">
+			<li><span class="fn-badge fn-badge-success">YES</span> <span
+				class="fn-badge fn-badge-danger">NO</span> 每个人都有一个死角，
+				自己走不出来，别人也闯不进去。</li>
+			<li><span class="fn-badge">17</span> 我把最深沉的秘密放在那里。</li>
+			<li><span class="fn-badge">5</span>你不懂我，我不怪你。</li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-list fn-list-static fn-list-border"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-badge fn-badge-success"</span>&gt;</span>YES<span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span
+					class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-badge fn-badge-danger"</span>&gt;</span>NO<span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    每个人都有一个死角， 自己走不出来，别人也闯不进去。<span class="hljs-tag">&lt;/<span
+					class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="添加-icon">
+		添加 ICON <a href="#%E6%B7%BB%E5%8A%A0-icon" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<div>
+		<ul class="fn-list fn-list-static fn-list-border">
+			<li><i class="fn-icon-home fn-icon-fw"></i> 每个人都有一个死角，
+				自己走不出来，别人也闯不进去。</li>
+			<li><i class="fn-icon-book fn-icon-fw"></i> 我把最深沉的秘密放在那里。</li>
+			<li><i class="fn-icon-pencil fn-icon-fw"></i>你不懂我，我不怪你。</li>
+		</ul>
+		<ul class="fn-list fn-list-border">
+			<li><a href="#"><i class="fn-icon-home fn-icon-fw"></i> 每个人都有一个死角，
+					自己走不出来，别人也闯不进去。</a></li>
+			<li><a href="#"><i class="fn-icon-book fn-icon-fw"></i> 我把最深沉的秘密放在那里。</a>
+			</li>
+			<li><a href="#"><i class="fn-icon-pencil fn-icon-fw"></i>你不懂我，我不怪你。</a>
+			</li>
+		</ul>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-list fn-list-static fn-list-border"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-home fn-icon-fw"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    每个人都有一个死角， 自己走不出来，别人也闯不进去。<span class="hljs-tag">&lt;/<span
+					class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-book fn-icon-fw"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    我把最深沉的秘密放在那里。<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">i</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-pencil fn-icon-fw"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>你不懂我，我不怪你。<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-list fn-list-border"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">i</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-home fn-icon-fw"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    每个人都有一个死角， 自己走不出来，别人也闯不进去。<span class="hljs-tag">&lt;/<span
+					class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span
+					class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span> <span
+					class="hljs-tag">&lt;<span class="hljs-title">i</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-book fn-icon-fw"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    我把最深沉的秘密放在那里。<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+					class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">i</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-pencil fn-icon-fw"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>你不懂我，我不怪你。<span
+					class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="与-panel-组合">
+		与 Panel 组合 <a href="panel.php"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		见 <a href="/css/panel">Panel 组件</a>。
+	</p>
+

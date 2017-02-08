@@ -1,0 +1,209 @@
+
+<h1 id="button">
+	Button
+</h1>
+<p>定义按钮<code>button</code>元素</p>
+<hr />
+<h2>基本使用 </h2>
+
+<p>
+	在元素上添加<code>.fn-btn</code>，元素即成为按钮，再通过颜色设置相应的颜色。
+</p>
+<ul>
+	<li><code>.fn-btn-default</code> - 默认，灰色按钮</li>
+	<li><code>.fn-btn-primary</code> - 蓝色按钮</li>
+	<li><code>.fn-btn-secondary</code> - 浅蓝色按钮</li>
+	<li><code>.fn-btn-success</code> - 绿色按钮</li>
+	<li><code>.fn-btn-warning</code> - 橙色按钮</li>
+	<li><code>.fn-btn-danger</code> - 红色按钮</li>
+	<li><code>.fn-btn-link</code> - 应用按钮样式的链接</li>
+</ul>
+<div>
+	<button type="button" class="fn-btn fn-btn-default">默认样式</button>
+	<button type="button" class="fn-btn fn-btn-primary">主色按钮</button>
+	<button type="button" class="fn-btn fn-btn-secondary">次色按钮</button>
+	<button type="button" class="fn-btn fn-btn-success">绿色按钮</button>
+	<button type="button" class="fn-btn fn-btn-warning">橙色按钮</button>
+	<button type="button" class="fn-btn fn-btn-danger">红色按钮</button>
+	<a class="fn-btn fn-btn-link">链接</a> <a class="fn-btn fn-btn-default">应用按钮样式的链接</a>
+</div>
+
+<h3>圆角按钮 </h3>
+<p>
+	在默认样式的基础上添加
+	<code>.fn-radius</code>class.
+</p>
+<div>
+	<button type="button" class="fn-btn fn-btn-default fn-radius">默认样式</button>
+	<button type="button" class="fn-btn fn-btn-primary fn-radius">主色按钮</button>
+	<button type="button" class="fn-btn fn-btn-secondary fn-radius">次色按钮</button>
+	<button type="button" class="fn-btn fn-btn-success fn-radius">绿色按钮</button>
+	<button type="button" class="fn-btn fn-btn-warning fn-radius">橙色按钮</button>
+	<button type="button" class="fn-btn fn-btn-danger fn-radius">红色按钮</button>
+</div>
+<div>
+	<pre><code>&lt;button type="button" class="fn-btn fn-btn-default fn-radius"&gt;圆角样式&lt;/button&gt;
+</code></pre>
+</div>
+
+<h3>椭圆形按钮 </h3>
+<p>
+	在默认样式的基础上添加<code>.fn-round</code>class.
+</p>
+<div>
+	<button type="button" class="fn-btn fn-btn-default fn-round">默认样式</button>
+	<button type="button" class="fn-btn fn-btn-primary fn-round">主色按钮</button>
+	<button type="button" class="fn-btn fn-btn-secondary fn-round">次色按钮</button>
+	<button type="button" class="fn-btn fn-btn-success fn-round">绿色按钮</button>
+	<button type="button" class="fn-btn fn-btn-warning fn-round">橙色按钮</button>
+	<button type="button" class="fn-btn fn-btn-danger fn-round">红色按钮</button>
+</div>
+<div>
+	<pre><code>
+&lt;button type="button" class="fn-btn fn-btn-danger fn-round"&gt;椭圆形按钮&lt;/button&gt;
+</code></pre>
+</div>
+
+
+<h3>带边框按钮 </h3>
+<p>在默认样式的基础上添加.fn-border-default</p>
+
+<div>
+	<button type="button" class="fn-btn fn-btn-default-border">默认样式</button>
+	<button type="button" class="fn-btn fn-btn-primary-border">主色按钮</button>
+	<button type="button" class="fn-btn fn-btn-secondary-border">次色按钮</button>
+	<button type="button" class="fn-btn fn-btn-success-border">绿色按钮</button>
+	<button type="button" class="fn-btn fn-btn-warning-border">橙色按钮</button>
+	<button type="button" class="fn-btn fn-btn-danger-border">红色按钮</button>
+</div>
+<div>
+	<pre><code>
+&lt;button type="button" class="fn-btn fn-btn-default-border"&gt;默认样式&lt;/button&gt;
+&lt;button type="button" class="fn-btn fn-btn-primary-border"&gt;主色按钮&lt;/button&gt;
+&lt;button type="button" class="fn-btn fn-btn-secondary-border"&gt;次色按钮&lt;/button&gt;
+&lt;button type="button" class="fn-btn fn-btn-success-border"&gt;绿色按钮&lt;/button&gt;
+&lt;button type="button" class="fn-btn fn-btn-warning-border"&gt;橙色按钮&lt;/button&gt;
+&lt;button type="button" class="fn-btn fn-btn-danger-border"&gt;红色按钮&lt;/button&gt;
+</code></pre>
+</div>
+
+<h2>
+	按钮状态 
+</h2>
+<h3>
+	激活状态 
+</h3>
+<p>
+	在按钮上添加<code>.fn-active</code>class。
+</p>
+<div>
+	<button type="button" class="fn-btn fn-btn-primary fn-active">激活状态</button>
+	<button type="button" class="fn-btn fn-btn-default fn-active">激活状态</button>
+	<br> <br> <a href="#" class="fn-btn fn-btn-primary fn-active" role="button">链接按钮激活状态</a> <a href="#"
+		class="fn-btn fn-btn-default fn-active" role="button">链接按钮激活状态</a>
+</div>
+<div>
+	<pre><code>
+&lt;button type="button" class="fn-btn fn-btn-primary fn-active"&gt;激活状态&lt;/button&gt;
+</code></pre>
+</div>
+<h3 id="禁用状态">
+	禁用状态 
+</h3>
+<p>
+	在按钮上设置
+	<code>disabled</code>
+	属性或者添加
+	<code>.fn-disabled</code>
+	class。
+</p>
+<div>
+	<button type="button" class="fn-btn fn-btn-primary" disabled="disabled">禁用状态</button>
+	<button type="button" class="fn-btn fn-btn-default" disabled="disabled">禁用状态</button>
+	<br> <br> <a href="#" class="fn-btn fn-btn-primary fn-disabled">链接按钮禁用状态</a>
+	<a href="#" class="fn-btn fn-btn-default fn-disabled">链接按钮禁用状态</a>
+</div>
+<div>
+	<pre><code>&lt;button type="button" class="fn-btn fn-btn-primary" disabled="disabled"&gt;禁用状态&lt;/button&gt;
+</code></pre>
+</div>
+
+
+<h2>按钮尺寸</h2>
+<ul>
+	<li><code>.fn-btn-xl</code></li>
+	<li><code>.fn-btn-lg</code></li>
+	<li><code>.fn-btn-default</code></li>
+	<li><code>.fn-btn-sm</code></li>
+	<li><code>.fn-btn-xs</code></li>
+</ul>
+<div>
+	<button class="fn-btn fn-btn-default fn-btn-xl">按钮 - xl</button>
+	<button class="fn-btn fn-btn-default fn-btn-lg">按钮 - lg</button>
+	<button class="fn-btn fn-btn-default">按钮默认大小</button>
+	<button class="fn-btn fn-btn-default fn-btn-sm">按钮 - sm</button>
+	<button class="fn-btn fn-btn-default fn-btn-xs">按钮 - xs</button>
+	<br /> <br />
+	<button class="fn-btn fn-btn-primary fn-btn-xl">按钮 - xl</button>
+	<button class="fn-btn fn-btn-primary fn-btn-lg">按钮 - lg</button>
+	<button class="fn-btn fn-btn-primary">按钮默认大小</button>
+	<button class="fn-btn fn-btn-primary fn-btn-sm">按钮 - sm</button>
+	<button class="fn-btn fn-btn-primary fn-btn-xs">按钮 - xs</button>
+</div>
+<div>
+	<pre><code>
+&lt;button class="fn-btn fn-btn-default fn-btn-xl"&gt;按钮 - xl&lt;/button&gt;
+&lt;button class="fn-btn fn-btn-default fn-btn-lg"&gt;按钮 - lg&lt;/button&gt;
+&lt;button class="fn-btn fn-btn-default"&gt;按钮默认大小&lt;/button&gt;
+&lt;button class="fn-btn fn-btn-default fn-btn-sm"&gt;按钮 - sm&lt;/button&gt;
+&lt;button class="fn-btn fn-btn-default fn-btn-xs"&gt;按钮 - xs&lt;/button&gt;
+</code></pre>
+</div>
+<h2>块级显示</h2>
+<p>
+	添加
+	<code>.fn-btn-block</code>
+	class。
+</p>
+<div>
+	<button type="button" class="fn-btn fn-btn-primary fn-btn-block">块级显示的按钮</button>
+	<button type="button" class="fn-btn fn-btn-danger-border fn-btn-block">块级显示的按钮</button>
+</div>
+<div>
+	<pre><code>
+&lt;button type="button" class="fn-btn fn-btn-primary fn-btn-block"&gt;块级显示的按钮&lt;/button&gt;
+&lt;button type="button" class="fn-btn fn-btn-danger-border fn-btn-block"&gt;块级显示的按钮&lt;/button&gt;
+</code></pre>
+</div>
+
+
+<h2>按钮 Icon </h2>
+<div>
+	<button class="fn-btn fn-btn-default">
+		<i class="fn-icon-cog"></i> 设置
+	</button>
+	<a class="fn-btn fn-btn-warning" href="#"><i
+		class="fn-icon-shopping-cart"></i> 结账</a>
+	<button class="fn-btn fn-btn-default">
+		<i class="fn-icon-spinner fn-icon-spin"></i> 加载中
+	</button>
+	<button class="fn-btn fn-btn-primary">
+		下载片片 <i class="fn-icon-cloud-download"></i>
+	</button>
+</div>
+<div>
+<pre><code>
+&lt;button class="fn-btn fn-btn-default"&gt;
+	&lt;i class="fn-icon-cog"&gt;&lt;/i&gt; 设置
+&lt;/button&gt;
+&lt;a class="fn-btn fn-btn-warning" href="#"&gt;
+	&lt;i class="fn-icon-shopping-cart"&gt;&lt;/i&gt; 结账
+&lt;/a&gt;
+&lt;button class="fn-btn fn-btn-default"&gt;
+	&lt;i class="fn-icon-spinner fn-icon-spin"&gt;&lt;/i&gt; 加载中
+&lt;/button&gt;
+&lt;button class="fn-btn fn-btn-primary"&gt;
+	下载片片 &lt;i class="fn-icon-cloud-download"&gt;&lt;/i&gt;
+&lt;/button&gt;
+</code></pre>
+</div>

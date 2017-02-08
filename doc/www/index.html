@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- 如果是IE浏览器，使用最新版本的兼容模式-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 移动优先 -->
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   <!-- 对360浏览器，默认使用webkit内核 -->
+  <meta name="renderer" content="webkit">
+
+  <title>FNUI 2.0</title>
+
+  <!-- page start -->
+  <link href="css/fnui.min.css" rel = "stylesheet">
+  <link href="css/main.css" rel = "stylesheet">
+</head>
+
+<body>
+	<header class="fn-topbar header" id="top">
+	  <h1 class="fn-topbar-brand">
+	      <a href="javascript:void(0);" id="home"><img src = "img/logo.png" height='100%'>蜂鸟UI 2.0</a>
+	  </h1>
+
+	  <button class="fn-topbar-btn fn-topbar-toggle fn-btn fn-btn-sm fn-btn-gray fn-show-sm-only" data-fn-collapse="{target: '#home-topbar-collapse'}"><span class="fn-sr-only">导航切换</span> <span class="fn-icon-bars"></span></button>
+	  <div class="fn-collapse fn-topbar-collapse fn-fr" id="home-topbar-collapse">
+	    <ul class="fn-nav fn-nav-pills fn-topbar-nav">
+			<li><a id="getting-started" href="javascript:void(0)">开始使用</a></li>
+			<li><a id="css" href="javascript:void(0)">CSS</a></li>
+			<li><a id="javascript" href="javascript:void(0)">JS 插件</a></li>
+			<li><a id="develop" href="javascript:void(0)">自定义开发</a></li>
+			<li><a id="example" href="javascript:void(0)">模板样例</a></li>
+			<li><a href="http://ui.gyj.com/demo/index.php">查看1.0版</a></li>
+	    </ul>
+	  </div>
+	</header>
+		
+	<!-- 中间内容 view -->
+	<div id="container">
+	
+	</div>
+	
+	<script type="text/html" id ="subcontainer">
+		<!-- getting started -->
+		<div class="subcontainer views">
+		</div>
+	</script>
+	<script type="text/html" id = "manual">
+		<!-- style sheets -->
+		<!-- javascript -->
+		<div class="subcontainer">
+			<section>
+				<div class="fn-g">
+				<!-- 列表 -->
+						<div class="col-md-3 fn-u-md-3">
+							<div id="amz-offcanvas" class="fn-offcanvas doc-offcanvas">
+								<section class="amz-sidebar fn-offcanvas-bar">
+									<ul class="fn-nav" id ="listinit">
+									</ul>
+								</section>
+							</div>
+						</div>
+						
+						<!-- 内容 -->
+						<div class="col-md-9 fn-u-md-9 doc-content" id ="content">
+						</div>
+				</div>
+			</section>
+			<a href="#amz-offcanvas"
+				class="fn-icon-btn fn-icon-bars fn-show-sm-only amz-sidebar-toggle"
+				data-fn-offcanvas><span class="fn-sr-only">侧栏导航</span>
+			</a>
+		</div>
+	</script>
+
+	<!-- 结束 -->
+	<div class="amz-toolbar" id="amz-toolbar">
+		<a href="#top" title="回到顶部" class="fn-icon-btn fn-icon-arrow-up"
+			id="amz-go-top"></a>
+	</div>
+	<footer class="footer">
+		<div class="foot-logo"><img src="img/logo.png"></div>
+		<p class="amz-cp">
+			&copy; 2015 浙江省分行网络金融中心技术研发部 版权所有 <br>官网：ui.gyj.com
+		</p>
+	</footer>
+
+
+<!--[if lte IE 8]><script src="js/ie8polyfill.js"></script><![end if]-->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/fnui.min.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>

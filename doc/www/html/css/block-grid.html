@@ -1,0 +1,245 @@
+<h1 id="block-grid">
+	AVG-Grid
+</h1>
+<hr/>
+<p>
+	Average Grid，均分网格（原 Block Grid），使用
+	ul/ol创建等分列，用于内容的排列。
+</p>
+<p>响应式断点为：</p>
+<table class="fn-table fn-table-bordered fn-table-striped">
+	<thead>
+		<tr>
+			<th style="width: 160px">Class</th>
+			<th>区间</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>.fn-avg-sm-*</code></td>
+			<td><code>0 - 767px</code></td>
+		</tr>
+		<tr>
+			<td><code>.fn-avg-md-*</code></td>
+			<td><code>768px - 1199px</code></td>
+		</tr>
+		<tr>
+			<td><code>.fn-avg-lg-*</code></td>
+			<td><code>1200px +</code></td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	与布局网格不同的是，这里的<strong>数字表示几等分</strong>，比如
+	<code>.fn-avg-sm-2</code>
+	会将子元素
+	<code>&lt;li&gt;</code>
+	的宽度设置为
+	<code>50%</code>
+	。
+</p>
+<p>
+	考虑到通用性（菜单、图片）等，
+	<code>&lt;li&gt;</code>
+	没有设置
+	<code>padding</code>
+	，使用时需根据需求自行设置。
+</p>
+<p>
+	<i class="fn-icon-warning"></i>另外需要注意的 AVG Grid <strong>只能用于 ul/ol
+		结构
+	</strong>。
+</p>
+<h2 id="基本使用">
+	基本使用 
+</h2>
+<p>
+	只添加
+	<code>.fn-avg-sm-*</code>
+	，应用于所有屏幕尺寸。
+</p>
+
+<div>
+	<ul class="fn-avg-sm-4 fn-thumbnails">
+		<li><img class="fn-thumbnail"
+			src="img/demos/01.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/02.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/03.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/04.jpg" />
+		</li>
+	</ul>
+</div>
+<div>
+	<pre><code>
+&lt;ul class="fn-avg-sm-4 fn-thumbnails"&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/01.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/02.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/03.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/04.jpg" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</div>
+<h2 id="响应式">
+	响应式 
+</h2>
+<p>按需增加更多响应式 class，缩放窗口可以查看响应效果。</p>
+<div>
+	<ul class="fn-avg-sm-2 fn-avg-md-3 fn-avg-lg-4 fn-thumbnails">
+		<li><img class="fn-thumbnail"
+			src="img/demos/01.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/02.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/03.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/04.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/04.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/03.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/02.jpg" />
+		</li>
+		<li><img class="fn-thumbnail"
+			src="img/demos/01.jpg" />
+		</li>
+	</ul>
+</div>
+<div>
+	<pre>
+						<code>
+&lt;ul class="fn-avg-sm-2 fn-avg-md-3 fn-avg-lg-4 fn-thumbnails"&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/01.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/02.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/03.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/04.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/04.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/03.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/02.jpg" /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img class="fn-thumbnail" src="img/demos/01.jpg" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code>
+					</pre>
+</div>
+<h2 id="九宫格">
+	九宫格 
+</h2>
+<style>
+.boxes {
+	width: 300px
+}
+
+.boxes .box {
+	height: 100px;
+	color: #eee;
+	line-height: 100px;
+	text-align: center;
+	font-weight: 700;
+	transition: transform .25s ease
+}
+
+.boxes .box:hover {
+	font-size: 250%;
+	transform: rotate(360deg);
+	-webkit-animation: heart .45s ease-in-out .15s infinite;
+	animation: heart .45s ease-in-out .15s infinite
+}
+
+.box-1 {
+	background-color: red
+}
+.box-2 {
+	background-color: orange
+}
+.box-3 {
+	background-color: #00f
+}
+.box-4 {
+	background-color: green
+}
+.box-5 {
+	background-color: red
+}
+.box-6 {
+	background-color: orange
+}
+.box-7 {
+	background-color: #00f
+}
+.box-8 {
+	background-color: green
+}
+.box-9 {
+	background-color: red
+}
+
+@
+-webkit-keyframes heart { 0%{
+	font-size: 150%
+}
+
+100%{
+font-size
+
+
+:
+
+
+300%
+}
+}
+@
+keyframes heart { 0%{
+	font-size: 150%
+}
+100%{
+font-size
+
+
+:
+
+
+300%
+}
+}
+</style>
+<div>
+	<ul class="fn-avg-sm-3 boxes">
+		<li class="box box-1">1</li>
+		<li class="box box-2">2</li>
+		<li class="box box-3">3</li>
+		<li class="box box-4">4</li>
+		<li class="box box-5">5</li>
+		<li class="box box-6">6</li>
+		<li class="box box-7">7</li>
+		<li class="box box-8">8</li>
+		<li class="box box-9">9</li>
+	</ul>
+</div>
+<div>
+	<pre><code>
+&lt;ul class="fn-avg-sm-3 boxes"&gt;
+  &lt;li class="box box-1"&gt;1&lt;/li&gt;
+  &lt;li class="box box-2"&gt;2&lt;/li&gt;
+  &lt;li class="box box-3"&gt;3&lt;/li&gt;
+  &lt;li class="box box-4"&gt;4&lt;/li&gt;
+  &lt;li class="box box-5"&gt;5&lt;/li&gt;
+  &lt;li class="box box-6"&gt;6&lt;/li&gt;
+  &lt;li class="box box-7"&gt;7&lt;/li&gt;
+  &lt;li class="box box-8"&gt;8&lt;/li&gt;
+  &lt;li class="box box-9"&gt;9&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</div>

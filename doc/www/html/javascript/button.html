@@ -1,0 +1,217 @@
+
+<!-- Button  按钮控件 -->
+<h1 id="button">Button JS 交互</h1>
+<hr />
+<p>Button 及 Button group 与 JS 交互。</p>
+
+
+<h2 id="按钮-loading-状态">按钮 loading 状态</h2>
+<h3 id="默认文字">默认文字</h3>
+<p>
+	默认的文字为
+	<code>loading...</code>。
+</p>
+<div>
+	<button type="button" class="fn-btn fn-btn-primary btn-loading-example">按钮
+		- button 元素</button>
+	&nbsp; <input type="button"
+		class="fn-btn fn-btn-secondary btn-loading-example"
+		value="按钮 - input 元素" />
+	<script>
+	$(function() {
+		$(".btn-loading-example").click(function() {
+			var t = $(this);
+			t.button("loading"), setTimeout(function() {
+				t.button("reset")
+			}, 5e3)
+		})
+	});
+	</script>
+</div>
+<div>
+	<pre><code>
+&lt;button type="button" class="fn-btn fn-btn-primary btn-loading-example"&gt;按钮- button 元素&lt;/button&gt;
+&lt;input type="button" class="fn-btn fn-btn-secondary btn-loading-example" value="按钮 - input 元素" /&gt;
+</code>
+	</pre>
+</div>
+<div>
+	<pre>
+		<code>
+$(function() {
+	$(".btn-loading-example").click(function() {
+		var t = $(this);
+		t.button("loading"), setTimeout(function() {
+			t.button("reset")
+		}, 5e3)
+	})
+});
+</code>
+	</pre>
+</div>
+
+
+<h3 id="自定义选项">
+	自定义选项 
+</h3>
+<p>
+	可以在元素上添加
+	<code>data-fn-loading</code>
+	来设置选项：
+</p>
+<ul>
+	<li><code>spinner</code> 加载动画图标，适用于支持 CSS3 动画、非 <code>input</code>
+		元素，写图标名称即可；</li>
+	<li><code>loadingText</code> 加载时显示的文字， 默认为 <code>loading</code>；</li>
+	<li><code>resetText</code> 重置以后的显示的文字，默认为原来的内容。</li>
+</ul>
+<div>
+	<button type="button" class="fn-btn fn-btn-primary btn-loading-example"
+		data-fn-loading="{spinner: 'circle-o-notch', loadingText: '加载中...', resetText: '加载过了'}">按钮
+		- button 元素</button>
+	&nbsp; <input type="button"
+		class="fn-btn fn-btn-secondary btn-loading-example"
+		value="按钮 - input 元素" data-fn-loading="{loadingText: '努力加载中...'}" />
+</div>
+<div>
+	<pre><code>
+&lt;button type="button" class="fn-btn fn-btn-primary btn-loading-example" data-fn-loading="{spinner: 'circle-o-notch', loadingText: '加载中...', resetText: '加载过了'}"&gt;按钮- button 元素&lt;/button&gt;
+
+&lt;input type="button" class="fn-btn fn-btn-secondary btn-loading-example"
+	value="按钮 - input 元素" data-fn-loading="{loadingText: '努力加载中...'}" /&gt;
+</code></pre>
+</div>
+
+
+<h2 id="单按钮状态切换">单按钮状态切换</h2>
+<div>
+	<button id="doc-single-toggle" type="button"
+		class="fn-btn fn-btn-primary" data-fn-button>切换状态</button>
+	<p>
+		按钮状态：<span id="doc-single-toggle-status" class="fn-text-danger">未激活</span>
+	</p>
+	<script>
+		$(function() {
+			function t() {
+				var t = n.hasClass("fn-active") ? "未激活" : "激活";
+				$("#doc-single-toggle-status").text(t)
+			}
+			var n = $("#doc-single-toggle");
+			n.on("click", function() {
+				t()
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+$(function() {
+	function t() {
+		var t = n.hasClass("fn-active") ? "未激活" : "激活";
+		$("#doc-single-toggle-status").text(t)
+	}
+	var n = $("#doc-single-toggle");
+	n.on("click", function() {
+		t()
+	})
+});
+</code></pre>
+</div>
+
+
+
+<h2 id="复选框">
+	复选框 
+</h2>
+<p>
+	<strong>注意</strong>：由于 FastClick 的原因，触屏设备上使用时需要在
+	<code>input</code>
+	上添加
+	<code>.needsclick</code>
+	，否则无法获取复选框的值。
+</p>
+<div>
+	<div class="fn-btn-group" data-fn-button>
+		<label class="fn-btn fn-btn-primary"><input type="checkbox"
+			class="needsclick" name="doc-js-btn" value="苹果"> 苹果</label><label
+			class="fn-btn fn-btn-primary"><input type="checkbox"
+			class="needsclick" name="doc-js-btn" value="橘子"> 橘子</label><label
+			class="fn-btn fn-btn-primary"><input type="checkbox"
+			class="needsclick" name="doc-js-btn" value="香蕉"> 香蕉</label>
+	</div>
+	<script>
+		$(function() {
+			var n = $('[name="doc-js-btn"]');
+			n.on("change", function() {
+				var c = [];
+				n.filter(":checked").each(function() {
+					c.push(this.value)
+				}), console.log("复选框选中的是：", c.join(" | "))
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+$(function() {
+	var n = $('[name="doc-js-btn"]');
+	n.on("change", function() {
+		var c = [];
+		n.filter(":checked").each(function() {
+			c.push(this.value)
+		}), console.log("复选框选中的是：", c.join(" | "))
+	})
+});
+</code></pre>
+</div>
+
+
+<h2 id="单选框">
+	单选框 
+</h2>
+<div>
+	<div class="fn-btn-group doc-js-btn-1" data-fn-button>
+		<label class="fn-btn fn-btn-primary"><input type="radio"
+			name="options" value="选项 1" id="option1"> 选项 1</label><label
+			class="fn-btn fn-btn-primary"><input type="radio"
+			name="options" value="选项 2" id="option2"> 选项 2</label><label
+			class="fn-btn fn-btn-primary"><input type="radio"
+			name="options" value="选项 3" id="option3"> 选项 3</label><label
+			class="fn-btn fn-btn-primary fn-disabled"><input type="radio"
+			name="options" value="选项 4" id="option4"> 选项 4</label>
+	</div>
+	<script>
+		$(function() {
+			var n = $('[name="options"]');
+			n.on("change", function() {
+				console.log("单选框当前选中的是：", n.filter(":checked").val())
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-btn-group doc-js-btn-1" data-fn-button&gt;
+	&lt;label class="fn-btn fn-btn-primary"&gt;
+		&lt;input type="radio" name="options" value="选项 1" id="option1"&gt; 选项 1
+	&lt;/label&gt;
+	&lt;label class="fn-btn fn-btn-primary"&gt;
+		&lt;input type="radio" name="options" value="选项 2" id="option2"&gt; 选项 2
+	&lt;/label&gt;
+	&lt;label class="fn-btn fn-btn-primary"&gt;
+		&lt;input type="radio" name="options" value="选项 3" id="option3"&gt; 选项 3
+	&lt;/label&gt;
+	&lt;label class="fn-btn fn-btn-primary fn-disabled"&gt;
+		&lt;input type="radio" name="options" value="选项 4" id="option4"&gt; 选项 4
+	&lt;/label&gt;
+&lt;/div&gt;
+
+
+$(function() {
+	var n = $('[name="options"]');
+	n.on("change", function() {
+		console.log("单选框当前选中的是：", n.filter(":checked").val())
+	})
+});
+</code></pre>
+</div>

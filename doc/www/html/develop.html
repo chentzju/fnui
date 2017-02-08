@@ -1,0 +1,55 @@
+
+<!-- 自定义开发 -->
+<h1>自定义开发</h1>
+<hr>
+<p>资源库地址：<code>http://109.5.13.213:8090/svn/gyj1/branches/front-end/fnui</code></p>
+<p><i class="fn-icon-warning"></i>请确保下载了fnui的源代码后，立刻从FNUI的资源库断开，
+并进行本地源码自定义，请勿提交你的自定义代码到svn，以免与开发团队发生冲突。</p>
+
+<h3>CSS样式</h3>
+<p>FNUI 2.0样式表采用LESS开发，通过定义全局变量、公共函数、局部变量的方式，
+来实现样式表的复用。只要你懂得LESS的基本语法，就可以对我们的代码进行更改。</p>
+
+<p>LESS语言的编译采用了grunt-ctrib-less插件包，能够实现一旦改动，一键编译的功能。</p>
+
+<h3>Javascript</h3>
+FNUI 2.0的javascript源码采用AMD规范开发，使用requirejs管理模块和依赖。
+
+<h3>Grunt</h3>
+<p>FNUI 2.0的源码编译和发布使用grunt构建。在FNUI 2.0的grunt任务中，包含了编译LESS样式成CSS、
+合并AMD依赖表、编译AMD依赖为普通js包、美化样式表和js，打包、发布、拷贝等多项功能。</p>
+
+<h4>你可以这样自定义你的fnui</h4>
+<p>下载FNUI 2.0的源代码，在你想要改变
+的地方进行修改，修改之后只需命令行到源代码文件夹，使用grunt进行自动化构建即可。</p>
+<code>grunt build</code>
+<p>grunt会帮你把修改后的
+代码进行编译、模块拼装、压缩、美化并代码发布到dist目录和脚手架,并打好压缩包，你可以直接
+使用代码文件或者用脚手架构建你修改后的FNUI前端。</p>
+<h3>FNUI源码目录结构</h3>
+<pre>
+fnui
+ |
+ |--dist/   //发布目录
+ |   |
+ |   |--css/     //样式发布地址
+ |   |--fonts/   //字符集发布地址
+ |   |--js/      //js发布地址
+ |
+ |--doc/   //手册
+ |--generator-fnui/   //脚手架
+ |
+ |--src/        //源码
+ |   |--less   //less文件集
+ |   |--js     //js源码
+ |   |--fonts   //fonts  字符集（无需更改)
+ |   |--html    //测试页面  (无效)
+ |   |--images  //测试图片(无效)
+ |
+ |--Gruntfile.js   //grunt任务配置
+ |--package.json   //包依赖
+ |--LICENSE
+ |--README.MD
+ |--r.js  //requirejs编译文件(暂时不用)
+ |--build.js //requirejs任务文件(暂时不用)
+</pre>

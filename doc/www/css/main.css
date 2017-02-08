@@ -1,0 +1,163 @@
+body{
+	font-family:'Microsoft YaHei';
+	color:#5a5a5a;
+}
+a {
+    color: #7a7a7a;
+}
+.fn-btn-gray {
+    color: #7a7a7a;
+    background-color: #222;
+    border-color: #222;
+}
+.fn-nav-header{
+	color:#bdbdbd;
+}
+.fn-nav-en{
+	font-size: 1rem;
+    color: #bdbdbd;
+}
+.header.fn-topbar{
+	margin-bottom:0;
+	background-color:#222;
+}
+.header.fn-topbar, .fn-topbar a {
+    color: #bdbdbd;
+}
+.header.fn-nav>li>a:focus, .fn-nav>li>a:hover {
+	color: #ddd;
+    background-color: #444;
+}
+.fn-topbar-nav>li.fn-active>a, .fn-topbar-nav>li.fn-active>a:focus, .fn-topbar-nav>li .fn-active>a:hover {
+	    border-radius: 0;
+	    color: #dedede;
+	    background: #444;
+}
+.fn-nav>li.fn-active>a, .fn-nav>li.fn-active>a:focus, .fn-nav>li.fn-active>a:hover {
+    color: #fff;
+    background-color: #444;
+    cursor: default;
+}
+@media only screen and (min-width: 768px){
+	.fn-topbar-nav > li.fn-active > a:after {
+	    opacity: 1;
+	    border-bottom-color: white;
+	}
+	.header #home-topbar-collapse{
+		margin-right:8rem;
+	}
+}
+
+#container{
+	
+}
+
+.footer{
+    background: #3A3D40;
+    padding: 15px 0 10px;
+    text-align:center;
+    color:#dedede;
+}
+.amz-toolbar{
+    position: fixed;
+    right: 1rem;
+    bottom: 5rem;
+}
+
+
+/** 首页  **/
+#amz-home {
+    padding: 8.5rem;
+    background: linear-gradient(60deg,#066491 23%,#2fc4b9 68%);
+    height: 500px;
+    text-align:center;
+    border-bottom: solid 35px #065075;
+}
+@media only screen and (max-width: 767px){
+	#amz-home {
+		padding:3.5rem;
+		height: 200px;
+		border-bottom: solid 15px #065075;
+	}
+	.amz-banner1 p img {
+	    width: 250px;
+	    height: 78px;
+	    display: block;
+	    margin: 0 auto;
+	}
+	.amz-banner1 a{
+		display:none;
+	}
+}
+
+.amz-features2 {
+    padding: 15px 0 100px 0;
+    background: #dbeee3;
+    text-align:center;
+}
+
+.amz-features3 {
+    padding: 15px 0 100px 0;
+    background: #37b3d5;
+}
+.amz-features3 .fn-g-fixed div {
+    margin: 10px 0;
+}
+.amz-features-title{
+	text-align:center;
+}
+@media only screen and (max-width: 767px){
+	.amz-features3 img{
+	    width: 100%;
+	}
+}
+
+
+/** 容器  **/
+.subcontainer{
+	padding-top:30px;
+	padding-bottom:30px;
+}
+@media only screen and (min-width: 768px){
+	.subcontainer{
+		padding-left:10%;
+		padding-right:10%;
+	}
+}
+
+/**  offcanvas 左边栏   **/
+@media only screen and (min-width: 768px){
+	.doc-offcanvas {
+	    display: block;
+	    position: static;
+	    background: 0 0;
+	    padding-right: 10px;
+	    -webkit-animation-duration: .3s;
+	    animation-duration: .3s;
+	    -webkit-animation-timing-function: linear;
+	    animation-timing-function: linear;
+	}
+	.doc-offcanvas .fn-offcanvas-bar {
+	    position: static;
+	    width: auto;
+	    background: 0 0;
+	    -webkit-transform: translateX(0);
+	    -ms-transform: translateX(0);
+	    transform: translateX(0);
+	}
+	.listhead{
+		
+	}
+}
+@media only screen and (max-width: 767px){
+	.amz-sidebar-toggle{
+		position:fixed;
+		right:1rem;
+		bottom:1rem;
+	}
+}
+
+/**  grid  **/
+.grid-example div{
+	border:solid 0.1px #F37B1D;
+}

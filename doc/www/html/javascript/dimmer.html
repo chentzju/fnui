@@ -1,0 +1,19 @@
+<h1 id="dimmer">Dimmer</h1>
+<hr />
+<p>显示一个可关闭的遮罩。</p>
+
+<h3>通过js调用打开一个遮罩</h3>
+
+<p>通过<code>FNUI.dimmer.open()</code>或者<code>$.dimmer.open()</code>打开遮罩</p>
+<p>通过<code>FNUI.dimmer.close()</code>或者<code>$.dimmer.close()</code>关闭遮罩</p>
+<button class="fn-btn fn-btn-primary" id="opendimmer">打开遮罩,2S后自动关闭</button>
+<script>
+$(function(){
+	$("#opendimmer").on('click',function(){
+		$.dimmer.open();
+		setTimeout(function(){
+			$.dimmer.close();
+		},2000)
+	})
+})
+</script>

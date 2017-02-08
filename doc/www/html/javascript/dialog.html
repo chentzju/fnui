@@ -1,0 +1,133 @@
+
+<h1 id="modal">
+					Dialog <a href="#modal" title="Heading anchor" class="doc-anchor"></a>
+				</h1>
+				<hr />
+				<h2 id="使用演示">
+					使用演示 <a href="#%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"
+						title="Heading anchor" class="doc-anchor"></a>
+				</h2>
+				<h3 id="基本形式">
+					创建一个对话框，不加遮罩<a href="#%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"
+						title="Heading anchor" class="doc-anchor"></a>
+				</h3>
+				<div>
+				  <div class="buttonDemo">
+                    <a href="javascript:;" id="demo-1" class="fn-btn fn-btn-primary">运 行</a>
+                     </div>
+				</div>
+				
+				<div>
+					<pre>
+						<code>
+					
+$.dialog({
+				    content : '对话框内容',
+				    title : 'ok',
+				    ok : function() {
+				        alert('我是确定按钮，回调函数返回false时不会关闭对话框。');
+				        return false;
+				    },
+				    cancel : function() {
+				        alert('我是取消按钮');
+				    },
+				    lock : false
+});
+						</code>
+					</pre>
+				</div>
+<script type="text/javascript">
+                    
+$(function() {
+     
+// 创建一个对话框
+$('#demo-1').on('click', function() {
+  $.dialog({
+      content : '对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容',
+      title : 'ok',
+      ok : function() {
+          alert('我是确定按钮，回调函数返回false时不会关闭对话框。');
+          return false;
+      },
+      cancel : function() {
+          alert('我是取消按钮');
+      },
+      lock : false
+  });
+});
+            
+            // 2秒自动关闭
+$('#demo-2').on('click', function() {
+         $.dialog({
+             content : '窗口将在2秒后自动关闭',
+             title: "alert",
+             width: 600,
+             time : 2000
+         });
+     });
+
+     $('#demo-3').on('click', function() {
+         $.dialog();
+     });
+     
+ })
+                    
+</script>
+				<h3 id="模拟-alert">
+					2秒自动关闭 <a href="#%E6%A8%A1%E6%8B%9F-alert" title="Heading anchor"
+						class="doc-anchor"></a>
+				</h3>
+				<div>
+				   <div class="buttonDemo">
+                     <a href="javascript:;" id="demo-2" class="fn-btn fn-btn-primary">运 行</a>
+                   </div>
+				</div>
+				
+				<div>
+					<pre>
+						<code>
+ $.dialog({
+             content : '窗口将在2秒后自动关闭',
+             title: "alert",
+              width: 600,
+             time : 2000
+  });
+            
+						</code>
+					</pre>
+				</div>
+				<h3 id="模拟-confirm">
+					加载中，不会消失 <a href="#%E6%A8%A1%E6%8B%9F-confirm" title="Heading anchor"
+						class="doc-anchor"></a>
+				</h3>
+				<div>
+				   <div class="buttonDemo">
+                      <a href="javascript:;" id="demo-3" class="fn-btn fn-btn-primary">运 行</a>
+                   </div>
+				</div>
+				
+				<div>
+					<pre>
+						<code>
+ $.dialog();
+            
+						</code>
+					</pre>
+				</div>
+				<div id="issue-list"></div>
+				<script type="text/x-handlebars-template" id="issue-list-tpl"><h2>Issue 列表</h2>
+          <ul class="fn-list issue-list">
+            {{#each this}}
+              <li><a href="{{html_url}}" target="_blank" class="fn-text-truncate fn-icon-bug">{{title}}
+                <span
+                  class="fn-badge {{#ifCond state '=='
+                  'open'}}fn-badge-danger{{else}}fn-badge-success{{/ifCond}}">{{state}}</span></a></li>
+            {{/each}}
+          </ul></script>
+				<div class="ds-thread" id="ds-thread"
+					data-thread-key="38968a0646e7b96d0e56686a436ec1d0"
+					data-title="JS 插件 - Modal"></div>
+			</div>
+		</div>
+	</section>
+

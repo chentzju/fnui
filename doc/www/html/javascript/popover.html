@@ -1,0 +1,133 @@
+<script>
+$(function(){
+	$('[data-fn-popover]').popover();
+})
+</script>
+<h1 id="popover">
+	Popover <a href="#popover" title="Heading anchor" class="doc-anchor"></a>
+</h1>
+<hr />
+<p>气泡式弹出层组件，本组件无需创建 HTML 结构。</p>
+<p>插件根据元素在窗口中的位置自动判断弹出层显示位置，目前没有设置位置的选项。</p>
+<h2 id="使用演示">使用演示</h2>
+<h3 id="点击显示">点击显示</h3>
+<div>
+	<button class="fn-btn fn-btn-primary"
+		data-fn-popover="{content: 'Popover'}">点击显示 Popover</button>
+</div>
+<div>
+	<pre><code>
+&lt;button class="fn-btn fn-btn-primary"
+		data-fn-popover="{content: 'Popover'}"&gt;点击显示 Popover&lt;/button&gt;
+</code></pre>
+</div>
+
+
+<h3 id="hover-focus-显示">Hover/Focus 显示</h3>
+<p>Tooltip 效果。</p>
+<div>
+	<button class="fn-btn fn-btn-success"
+		data-fn-popover="{content: ' Hover/Focus的 Popover', trigger: 'hover focus'}">Hover/Focus
+		显示 Popover</button>
+</div>
+<div>
+	<pre><code>
+&lt;button class="fn-btn fn-btn-success"
+		data-fn-popover="{content: ' Hover/Focus的 Popover', trigger: 'hover focus'}"&gt;Hover/Focus
+		显示 Popover&lt;/button&gt;
+</code></pre>
+</div>
+
+
+<h2 id="使用方式">使用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	在元素上添加
+	<code>data-fn-popover</code>
+	属性并设置相关参数。上面的演示都是通过 Data API 实现的。
+</p>
+<div>
+	<pre><code>
+&lt;button data-fn-popover="{content: '想显示的内容', trigger: 'hover'}"&gt;Popover&lt;/button&gt;
+</code></pre>
+</div>
+<h3 id="通过-js">通过 JS</h3>
+<p>
+	通过
+	<code>$().popover(options)</code>
+	方式添加元素 Popover 交互。
+</p>
+<div>
+	<button class="fn-btn fn-btn-danger" id="my-popover">Popover
+		via JS</button>
+	<script>
+		$(function() {
+			$("#my-popover").popover({
+				content : "Popover via JavaScript"
+			})
+		});
+	</script>
+</div>
+<div>
+	<pre><code>
+$(function() {
+	$("#my-popover").popover({
+		content : "Popover via JavaScript"
+	})
+});
+</code></pre>
+</div>
+
+
+<h4 id="参数说明">参数说明</h4>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>参数</th>
+			<th>类型</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>content</code></td>
+			<td><code>string</code></td>
+			<td>Popover 显示的内容</td>
+		</tr>
+		<tr>
+			<td><code>trigger</code></td>
+			<td><code>string</code></td>
+			<td>交互方式，<code>click|hover|focus</code>，默认为 <code>click</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h4 id="方法">方法</h4>
+<ul>
+	<li><code>.popover(options)</code> - 激活元素的 Popover 交互功能，<code>options</code>
+		为对象</li>
+	<li><code>.popover(&#39;toggle&#39;)</code> - 交替 Popover 状态</li>
+	<li><code>.popover(&#39;open&#39;)</code> - 显示 Popover</li>
+	<li><code>.popover(&#39;close&#39;)</code> - 关闭 Popover</li>
+</ul>
+<h4 id="事件">事件</h4>
+<p>事件定义在触发 Popover 交互的元素上。</p>
+<table class="fn-table fn-table-bd fn-table-striped">
+	<thead>
+		<tr>
+			<th>事件名称</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>open.popover</code></td>
+			<td><code>open</code> 方法被调用是立即触发</td>
+		</tr>
+		<tr>
+			<td><code>close.popover</code></td>
+			<td><code>close</code> 方法被调用是立即触发</td>
+		</tr>
+	</tbody>
+</table>
+

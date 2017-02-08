@@ -1,0 +1,119 @@
+
+	<h1 id="modal">
+		Popup-Modal <a href="#modal" title="Heading anchor" class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>
+		Popup-Modal 交互窗口，经过封装的modal窗口，可以用来表达
+		<code>alert</code>
+		、
+		<code>confirm</code>
+		、
+		<code>prompt</code>
+		窗口。
+	</p>
+	<h2 id="使用演示">
+		使用演示 <a href="#%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<p>使用过程中需按示例代码组织好 HTML。</p>
+	<h3 id="基本形式">
+		基本形式 <a href="#%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		此 Demo 设置了
+		<code>closeViaDimmer</code>
+		、
+		<code>width</code>
+		、
+		<code>height</code>
+		参数。
+	</p>
+	<div>
+		<button class="fn-btn fn-btn-primary" id="default-popupmodal">Modal</button>
+	</div>
+	<script>$(function(){$("#default-popupmodal").on("click",function(){$.modal(
+							{title:"这是一个测试窗口",content:"这是测试窗口弹出来的内容内容内容内容内容"}
+						);});
+				})</script>
+	<div>
+		<pre>
+/*						<code>
+ * options:{
+ *      type: popup(default), alert, prompt, loading, action(待开发)
+ *      title:   title 
+ *      content:  body content  string or html
+ *      oncancel:    only prompt
+ *      onconfirm:   only prompt
+ *      }
+ */
+ 
+						$("#default-popupmodal").on("click",function(){
+						
+						$.modal(
+							{title:"这是一个测试窗口",content:"这是测试窗口弹出来的内容内容内容内容内容"}
+						);
+						
+						});
+						</code>
+					</pre>
+	</div>
+
+	<h3 id="模拟-alert">
+		参数options <a href="#%E6%A8%A1%E6%8B%9F-alert" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<p>框架根据调用的参数options的不同，可以展示不同的内容</p>
+
+	<div>
+		<button class="fn-btn fn-btn-primary" id="alertmodal">Alert</button>
+		<button class="fn-btn fn-btn-warning" id="confirmmodal">Confirm</button>
+		<button class="fn-btn fn-btn-success" id="loadingmodal">Modal Loading</button>
+	</div>
+	<script>$(function(){ 
+					$("#alertmodal").on("click",function(){
+					$.modal({type:"alert",title:"标题",content:"内容"})});
+					
+					$("#confirmmodal").on("click",function(){
+					$.modal({type:"prompt",title:"你确定这么做嘛?",content:"如果删除，将不可恢复",
+						oncancel:cancel,onconfirm:confirm});});
+					
+					$("#loadingmodal").on("click",function(){
+						$.modal({type:"loading"});
+					});
+				});
+					function cancel(){alert("不同意!");}
+					function confirm(){alert("准奏");}
+				</script>
+	<div>
+		<pre>
+						<code>
+							$.modal(
+							{
+							type:"alert",
+							title:"警告",
+							content:"内容，需要警告的事情"
+							}
+							
+							);
+							$.modal(
+							
+							{
+								type:"prompt",
+								title:"你确定这么做嘛?",
+								content:"如果删除，将不可恢复",
+								oncancel:cancel,
+								onconfirm:confirm
+							}
+							
+							);
+							$.modal(
+							
+							{type:"loading"}
+							
+							);
+						</code>
+					</pre>
+	</div>
+

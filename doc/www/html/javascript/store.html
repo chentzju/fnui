@@ -1,0 +1,239 @@
+
+	<h1 id="store">
+		Store <a href="#store" title="Heading anchor" class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>
+		跨浏览器本地存储接口封装，源自 store.js.
+	</p>
+	<p>
+		LocalStorage 只能存储字符串，store.js 在存取的时候会自动
+		<code>stringify</code>
+		、
+		<code>parse</code>
+		。
+	</p>
+	<h2 id="存储接口">
+		存储接口 
+	</h2>
+	<p>
+		通过
+		<code>$.AMUI.store</code>
+		调用。
+	</p>
+	<h3 id="检测是否支持（开启）-localstorage">
+		检测是否支持（开启） LocalStorage 
+
+	</h3>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-keyword">var</span> store = $.AMUI.store;
+<span class="hljs-keyword">if</span> (!store.enabled) {
+  alert(<span class="hljs-string">'Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.'</span>);
+  <span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-keyword">var</span> user = store.get(<span
+					class="hljs-string">'user'</span>);
+<span class="hljs-comment">// ... and so on ...</span>
+</code>
+					</pre>
+	</div>
+	<p>
+		Safari 的
+		<code>无痕浏览</code>
+		模式或者用户禁用了本地存储时，
+		<code>store.enabled</code>
+		将返回
+		<code>false</code>
+		。
+	</p>
+	<p>
+		<strong>浏览器如何禁用 LocalStorage</strong>：
+	</p>
+	<ul>
+		<li>Firefox： 地址栏输入 <code>about:config</code>, 将 <code>dom.storage.enabled</code>
+			的值设置为 <code>false</code>；
+		</li>
+		<li>Chrome: <code>设置</code> → <code>隐私设置</code> → <code>内容设置</code> →
+			<code>阻止网站设置任何数据</code>。
+		</li>
+	</ul>
+	<h3 id="接口列表">
+		接口列表 
+	</h3>
+	<p>
+		LocalStorage受同源策略限制，以下操作仅限于同源下的数据。
+	</p>
+	<ul>
+		<li><code>store.set(key, val)</code>: 存储 <code>key</code> 的值为 <code>val</code>；</li>
+		<li><code>store.get(key)</code>: 获取 <code>key</code> 的值；</li>
+		<li><code>store.remove(key)</code>: 移除 <code>key</code> 的记录；</li>
+		<li><code>store.clear()</code>: 清空存储；</li>
+		<li><code>store.getAll()</code>: 返回所有存储；</li>
+		<li><code>store.forEach()</code>: 遍历所有存储。</li>
+	</ul>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-keyword">var</span> store = $.AMUI.store;
+
+<span class="hljs-comment">// 存储 'username' 的值为 'marcus'</span>
+store.set(<span class="hljs-string">'username'</span>, <span
+					class="hljs-string">'marcus'</span>)
+
+<span class="hljs-comment">// 获取 'username'</span>
+store.get(<span class="hljs-string">'username'</span>)
+
+<span class="hljs-comment">// 移除 'username' 字段</span>
+store.remove(<span class="hljs-string">'username'</span>)
+
+<span class="hljs-comment">// 清除所有本地存储</span>
+store.clear()
+
+<span class="hljs-comment">// 存储对象 - 自动调用 JSON.stringify</span>
+store.set(<span class="hljs-string">'user'</span>, { name: <span
+					class="hljs-string">'marcus'</span>, likes: <span
+					class="hljs-string">'javascript'</span> })
+
+<span class="hljs-comment">// 获取存储的对象 - 自动执行 JSON.parse</span>
+<span class="hljs-keyword">var</span> user = store.get(<span
+					class="hljs-string">'user'</span>)
+alert(user.name + <span class="hljs-string">' likes '</span> + user.likes)
+
+<span class="hljs-comment">// 从所有存储中获取值</span>
+store.getAll().user.name == <span class="hljs-string">'marcus'</span>
+
+<span class="hljs-comment">// 遍历所有存储</span>
+store.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span
+					class="hljs-params">(key, val)</span> </span>{
+  <span class="hljs-built_in">console</span>.log(key, <span
+					class="hljs-string">'=='</span>, val)
+})
+</code>
+					</pre>
+	</div>
+	<h2 id="浏览器支持">
+		浏览器支持 
+	</h2>
+	<p>
+		绝大多数浏览器（包括 IE 8）都原生支持LocalStorage。
+	</p>
+	<p>
+		你的浏览器测试结果为： <strong id="errorOutput" class="fn-text-danger"></strong>
+		<strong id="store-test-success" class="fn-text-success"></strong>
+	</p>
+	
+	<h2 id="注意事项">
+		注意事项 <a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="原生方法与-store-js-的差异">
+		原生方法与 store.js 的差异 <a
+			href="#%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95%E4%B8%8E-store-js-%E7%9A%84%E5%B7%AE%E5%BC%82"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>使用原生方法操作：</p>
+	<div>
+		<pre>
+						<code>
+localStorage.myage = <span
+					class="hljs-number">24</span>
+localStorage.myage !== <span class="hljs-number">24</span> <span
+					class="hljs-comment">// true</span>
+localStorage.myage === <span class="hljs-string">'24'</span> <span
+					class="hljs-comment">// true</span>
+
+localStorage.user = { name: <span class="hljs-string">'marcus'</span>, likes: <span
+					class="hljs-string">'javascript'</span> }
+localStorage.user === <span class="hljs-string">"[object Object]"</span> <span
+					class="hljs-comment">// true</span>
+
+localStorage.tags = [<span class="hljs-string">'javascript'</span>, <span
+					class="hljs-string">'localStorage'</span>, <span
+					class="hljs-string">'store.js'</span>]
+localStorage.tags.length === <span class="hljs-number">32</span> <span
+					class="hljs-comment">// true</span>
+localStorage.tags === <span class="hljs-string">"javascript,localStorage,store.js"</span> <span
+					class="hljs-comment">// true</span>
+</code>
+					</pre>
+	</div>
+	<p>使用 store.js 序列化后的结果:</p>
+	<div>
+		<pre>
+						<code>
+store.set(<span class="hljs-string">'myage'</span>, <span
+					class="hljs-number">24</span>)
+store.get(<span class="hljs-string">'myage'</span>) === <span
+					class="hljs-number">24</span> <span class="hljs-comment">// true</span>
+
+store.set(<span class="hljs-string">'user'</span>, { name: <span
+					class="hljs-string">'marcus'</span>, likes: <span
+					class="hljs-string">'javascript'</span> })
+alert(<span class="hljs-string">"Hi my name is "</span> + store.get(<span
+					class="hljs-string">'user'</span>).name + <span class="hljs-string">"!"</span>) <span
+					class="hljs-comment">// 仍然返回对象</span>
+
+store.set(<span class="hljs-string">'tags'</span>, [<span
+					class="hljs-string">'javascript'</span>, <span class="hljs-string">'localStorage'</span>, <span
+					class="hljs-string">'store.js'</span>])
+alert(<span class="hljs-string">"We've got "</span> + store.get(<span
+					class="hljs-string">'tags'</span>).length + <span
+					class="hljs-string">" tags here"</span>) <span class="hljs-comment">// 仍然返回数组</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="自动过期实现">
+		自动过期实现 <a
+			href="#%E8%87%AA%E5%8A%A8%E8%BF%87%E6%9C%9F%E5%AE%9E%E7%8E%B0"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>LocalStorage 并没有提供过期时间接口，只能通过存储时间做比对实现。</p>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-keyword">var</span> store = $.AMUI.store;
+<span class="hljs-keyword">var</span> storeWithExpiration = {
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span><span
+					class="hljs-params">(key, val, exp)</span> </span>{
+    store.set(key, {val:val, exp:exp, time:<span class="hljs-keyword">new</span> <span
+					class="hljs-built_in">Date</span>().getTime()});
+  },
+
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span><span
+					class="hljs-params">(key)</span> </span>{
+    <span class="hljs-keyword">var</span> info = store.get(key)
+    <span class="hljs-keyword">if</span> (!info) {
+      <span class="hljs-keyword">return</span> <span
+					class="hljs-literal">null</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">new</span> <span
+					class="hljs-built_in">Date</span>().getTime() - info.time &gt; info.exp) {
+      <span class="hljs-keyword">return</span> <span
+					class="hljs-literal">null</span>;
+    }
+
+    <span class="hljs-keyword">return</span> info.val
+  }
+}；
+
+storeWithExpiration.set(<span class="hljs-string">'foo'</span>, <span
+					class="hljs-string">'bar'</span>, <span class="hljs-number">1000</span>);
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span><span
+					class="hljs-params">()</span> </span>{
+  <span class="hljs-built_in">console</span>.log(storeWithExpiration.get(<span
+					class="hljs-string">'foo'</span>));
+}, <span class="hljs-number">500</span>) <span class="hljs-comment">// -&gt; "bar"</span>
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span><span
+					class="hljs-params">()</span> </span>{
+  <span class="hljs-built_in">console</span>.log(storeWithExpiration.get(<span
+					class="hljs-string">'foo'</span>));
+}, <span class="hljs-number">1500</span>) <span class="hljs-comment">// -&gt; null</span>
+</code>
+					</pre>
+	</div>

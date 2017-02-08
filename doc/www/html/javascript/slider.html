@@ -1,0 +1,241 @@
+
+<script>
+	$(function() {
+		$('[data-fn-flexslider]').each(
+				function(i, item) {
+					var $slider = $(item);
+					var options = FNUI.utils.parseOptions($slider
+							.data('fnFlexslider'));
+					$slider.flexslider(options);
+				});
+	})
+</script>
+<h1 id="slider">Slider</h1>
+<hr />
+<p>提供一种自适应的图片slider。</p>
+<h2 id="使用演示">使用演示</h2>
+<h3 id="基本形式">基本形式</h3>
+<div>
+	<div class="fn-slider fn-slider-default" data-fn-flexslider>
+		<ul class="fn-slides">
+			<li><img src="img/demos/04.jpg" /></li>
+			<li><img src="img/demos/01.jpg" /></li>
+			<li><img src="img/demos/03.jpg" /></li>
+			<li><img src="img/demos/02.jpg" /></li>
+		</ul>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;div class="fn-slider fn-slider-default" data-fn-flexslider&gt;
+	&lt;ul class="fn-slides"&gt;
+		&lt;li&gt;&lt;img src="img/demos/04.jpg" /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="img/demos/01.jpg" /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="img/demos/03.jpg" /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="img/demos/02.jpg" /&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+<h3 id="缩略图模式">缩略图模式</h3>
+<div>
+	<div class="fn-slider fn-slider-default"
+		data-fn-flexslider="{controlNav: 'thumbnails', directionNav: false}">
+		<ul class="fn-slides">
+			<li data-thumb="img/demos/04.jpg"><img src="img/demos/04.jpg" /></li>
+			<li data-thumb="img/demos/01.jpg"><img src="img/demos/01.jpg" /></li>
+			<li data-thumb="img/demos/03.jpg"><img src="img/demos/03.jpg" /></li>
+			<li data-thumb="img/demos/04.jpg"><img src="img/demos/04.jpg" /></li>
+		</ul>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;div class="fn-slider fn-slider-default"
+	data-fn-flexslider="{controlNav: 'thumbnails', directionNav: false}"&gt;
+	&lt;ul class="fn-slides"&gt;
+		&lt;li data-thumb="img/demos/04.jpg"&gt;&lt;img src="img/demos/04.jpg" /&gt;&lt;/li&gt;
+		&lt;li data-thumb="img/demos/01.jpg"&gt;&lt;img src="img/demos/01.jpg" /&gt;&lt;/li&gt;
+		&lt;li data-thumb="img/demos/03.jpg"&gt;&lt;img src="img/demos/03.jpg" /&gt;&lt;/li&gt;
+		&lt;li data-thumb="img/demos/04.jpg"&gt;&lt;img src="img/demos/04.jpg" /&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code>
+	</pre>
+</div>
+
+
+<h3 id="多图滚动">多图滚动</h3>
+<p>
+	设置
+	<code>itemWidth</code>
+	选项实现多图滚动。
+	<code>itemMargin</code>
+	仅用作计算滚动宽度用，要设置
+	<code>&lt;li&gt;</code>
+	之间的距离仍然需要 CSS， 默认设置了 5px 的宽度，加上
+	<code>.fn-slider-carousel</code>
+	后生效。
+</p>
+<div>
+	<div class="fn-slider fn-slider-default fn-slider-carousel"
+		data-fn-flexslider="{itemWidth: 200, itemMargin: 5}">
+		<ul class="fn-slides">
+			<li><img src="img/demos/04.jpg" /></li>
+			<li><img src="img/demos/01.jpg" /></li>
+			<li><img src="img/demos/03.jpg" /></li>
+			<li><img src="img/demos/02.jpg" /></li>
+			<li><img src="img/demos/02.jpg" /></li>
+			<li><img src="img/demos/03.jpg" /></li>
+			<li><img src="img/demos/04.jpg" /></li>
+			<li><img src="img/demos/01.jpg" /></li>
+		</ul>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div class="fn-slider fn-slider-default fn-slider-carousel"
+     data-fn-flexslider="{itemWidth: 200, itemMargin: 5}"&gt;
+  &lt;ul class="fn-slides"&gt;
+    &lt;li&gt;&lt;img src="..." /&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<h2 id="使用方式">使用方式</h2>
+<h3 id="html-结构">HTML 结构</h3>
+<p>
+	以下结构<strong>必须</strong>，
+	<code>&lt;li&gt;</code>
+	中的内容可以自由组合。
+</p>
+<div>
+	<pre>
+						<code>			
+&lt;div class="fn-slider fn-slider-default"&gt;
+  &lt;ul class="fn-slides"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+</code>
+					</pre>
+</div>
+
+<h3 id="通过-data-api-初始化">通过 Data API 初始化</h3>
+<p>
+	在容器上添加
+	<code>data-fn-flexslider</code>
+	自动初始化。
+</p>
+<div>
+	<pre>
+						<code>
+&lt;div class="fn-slider fn-slider-default" data-fn-flexslider &gt;
+  &lt;ul class="fn-slides"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code>
+					</pre>
+</div>
+<h3 id="通过-js-初始化">通过 JS 初始化</h3>
+<div>
+	<pre><code>
+$('.fn-slider').flexslider();
+</code></pre>
+</div>
+
+<h4 id="自定参数">自定参数</h4>
+<p>在初始化函数中传入所需参数即可。</p>
+<div>
+	<pre>
+						<code>
+$(function(){
+  $('.fn-slider').flexslider({
+	// options
+  });
+});
+</code></pre>
+
+</div>
+<h4 id="方法">方法</h4>
+<ul>
+	<li><code>$(&#39;#slider&#39;).flexslider(&#39;play&#39;);</code>
+		- 播放</li>
+	<li><code>$(&#39;#slider&#39;).flexslider(&#39;pause&#39;);</code>
+		- 暂停</li>
+	<li><code>$(&#39;#slider&#39;).flexslider(&#39;stop&#39;);</code>
+		- 停止</li>
+	<li><code>$(&#39;#slider&#39;).flexslider(&#39;next&#39;);</code>
+		- 上一个</li>
+	<li><code>$(&#39;#slider&#39;).flexslider(&#39;prev&#39;);</code>
+		- 下一个</li>
+	<li><code>$(&#39;#slider&#39;).flexslider(3);</code> // - 切换到第 4 个
+		slide</li>
+</ul>
+<h4 id="slider-实例">slider 实例</h4>
+<p>通过 slider 实例可以调用更多方法。</p>
+<div>
+	<pre>
+						<code>
+<span class="hljs-keyword">var</span> slider = $(<span
+				class="hljs-string">'#slider'</span>).data(<span class="hljs-string">'flexslider'</span>);
+
+slider.addSlide(obj, position); <span class="hljs-comment">// 插入的元素（选择符或 jQuery 对象）以及位置</span>
+slider.removeSlide(obj); 移除 slide
+</code>
+					</pre>
+</div>
+
+<h3 id="参数及说明">参数说明和默认</h3>
+<div>
+	<pre>
+		<code>
+{
+  animation: "slide",             // String: ["fade"|"slide"]，动画效果
+  easing: "swing",                // String: 滚动动画计时函数
+  direction: "horizontal",        // String: 滚动方向 ["horizontal"|"vertical"]
+  animationLoop: true,            // Boolean: 是否循环播放
+
+  startAt: 0,                     // Integer: 开始播放的 slide，从 0 开始计数
+  slideshow: true,                // Boolean: 是否自动播放
+  slideshowSpeed: 5000,           // Integer: ms 滚动间隔时间
+  animationSpeed: 600,            // Integer: ms 动画滚动速度
+  initDelay: 0,                   // Integer: ms 首次执行动画的延迟
+
+  // Usability features
+  pauseOnAction: true,            // Boolean: 用户操作时停止自动播放
+  pauseOnHover: false,            // Boolean: 悬停时暂停自动播放
+
+  // Primary Controls
+  controlNav: true,               // Boolean: 是否创建控制点
+  directionNav: true,             // Boolean: 是否创建上/下一个按钮（previous/next）
+  
+  // Carousel Options
+  itemWidth: 0,                   // Integer: slide 宽度，多个同时滚动时设置
+  itemMargin: 0,                  // Integer: slide 间距
+  minItems: 1,                    // Integer: 最少显示 slide 数, 与 `itemWidth` 相关
+  maxItems: 0,                    // Integer: 最多显示 slide 数, 与 `itemWidth` 相关
+  move: 0,                        // Integer: 一次滚动移动的 slide 数量，0 - 滚动可见的 slide
+
+  // Callback API
+  start: function()
+				{},            // Callback: function(slider) - 初始化完成的回调
+  before: function()
+				{},           // Callback: function(slider) - 每次滚动开始前的回调
+  after: function()
+				{},            // Callback: function(slider) - 每次滚动完成后的回调
+  end: function()
+				{},              // Callback: function(slider) - 执行到最后一个 slide 的回调
+  added: function()
+				{},            // Callback: function(slider) - slide 添加时触发
+  removed: function()
+				{}           // Callback: function(slider) - slide 被移除时触发
+}
+</code>
+	</pre>
+</div>

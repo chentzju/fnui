@@ -1,0 +1,279 @@
+
+<!-- 折叠面板 -->
+<h1 id="collapse">Collapse</h1>
+<hr />
+<p>折叠效果组件，用于制作下滑菜单或手风琴效果。</p>
+<p>
+	<strong><i class = "fn-icon-warning"></i>不要在折叠内容的容器上设置垂直的 <code>margin</code>/<code>padding</code>/<code>border</code>样式。</strong>
+</p>
+<h2 id="使用演示">使用演示</h2>
+<h3 id="折叠面板">折叠面板</h3>
+<p>结合 Panel组件实现手风琴效果。需结合以下辅助 class 使用：</p>
+<ul>
+	<li>要隐藏的内容添加 <code>.fn-collapse</code>；
+	</li>
+	<li>默认显示的内容添加 <code>.fn-collapse.fn-in</code>；
+	</li>
+</ul>
+<p>添加以上 class 以后，通过 Data API 来调用：</p>
+
+<div>
+	<pre><code>&lt;h4 data-fn-collapse = "{parent: '#accordion', target: '#do-not-say-1'}"&gt;&lt;/h4&gt;
+</code></pre>
+</div>
+<p>其中：</p>
+<ul>
+	<li><code>parent</code> 为容器 ID</li>
+	<li><code>target</code> 为要伸缩的容器 ID</li>
+</ul>
+<p>
+	如果触发元素为
+	<code>&lt;a&gt;</code>
+	元素，可以把
+	<code>target</code>
+	设置在
+	<code>href</code>
+	属性里。
+</p>
+<div>
+	<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span
+				class="hljs-attribute">data-fn-collapse</span>=<span
+				class="hljs-value">"{parent: '#accordion'}"</span> <span
+				class="hljs-attribute">href</span>=<span class="hljs-value">"#do-not-say-1"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code>
+					</pre>
+</div>
+
+<div>
+	<div class="fn-panel-group" id="accordion">
+		<div class="fn-panel fn-panel-default">
+			<div class="fn-panel-hd">
+				<h4 class="fn-panel-title"
+					data-fn-collapse="{parent: '#accordion', target: '#do-not-say-1'}">
+					订单号1</h4>
+			</div>
+			<div id="do-not-say-1" class="fn-panel-collapse fn-collapse fn-in">
+				<div class="fn-panel-bd">订单content1</div>
+			</div>
+		</div>
+		<div class="fn-panel fn-panel-default">
+			<div class="fn-panel-hd">
+				<h4 class="fn-panel-title"
+					data-fn-collapse="{parent: '#accordion', target: '#do-not-say-2'}">
+					订单号2</h4>
+			</div>
+			<div id="do-not-say-2" class="fn-panel-collapse fn-collapse">
+				<div class="fn-panel-bd">订单content2</div>
+			</div>
+		</div>
+		<div class="fn-panel fn-panel-default">
+			<div class="fn-panel-hd">
+				<h4 class="fn-panel-title"
+					data-fn-collapse="{parent: '#accordion', target: '#do-not-say-3'}">
+					订单号3</h4>
+			</div>
+			<div id="do-not-say-3" class="fn-panel-collapse fn-collapse">
+				<div class="fn-panel-bd">订单content3</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<pre><code>
+&lt;div&gt;
+	&lt;div class="fn-panel-group" id="accordion"&gt;
+		&lt;div class="fn-panel fn-panel-default"&gt;
+			&lt;div class="fn-panel-hd"&gt;
+				&lt;h4 class="fn-panel-title"
+					data-fn-collapse="{parent: '#accordion', target: '#do-not-say-1'}"&gt;
+					订单号1&lt;/h4&gt;
+			&lt;/div&gt;
+			&lt;div id="do-not-say-1" class="fn-panel-collapse fn-collapse fn-in"&gt;
+				&lt;div class="fn-panel-bd"&gt;订单content1&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="fn-panel fn-panel-default"&gt;
+			&lt;div class="fn-panel-hd"&gt;
+				&lt;h4 class="fn-panel-title"
+					data-fn-collapse="{parent: '#accordion', target: '#do-not-say-2'}"&gt;
+					订单号2&lt;/h4&gt;
+			&lt;/div&gt;
+			&lt;div id="do-not-say-2" class="fn-panel-collapse fn-collapse"&gt;
+				&lt;div class="fn-panel-bd"&gt;订单content2&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="fn-panel fn-panel-default"&gt;
+			&lt;div class="fn-panel-hd"&gt;
+				&lt;h4 class="fn-panel-title"
+					data-fn-collapse="{parent: '#accordion', target: '#do-not-say-3'}"&gt;
+					订单号3&lt;/h4&gt;
+			&lt;/div&gt;
+			&lt;div id="do-not-say-3" class="fn-panel-collapse fn-collapse"&gt;
+				&lt;div class="fn-panel-bd"&gt;订单content3&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+
+<h3 id="折叠菜单">折叠菜单</h3>
+<p>使用时注意目标元素外面应该有一个容器，以便动画执行时计算高度。</p>
+<div>
+	<button class="fn-btn fn-btn-primary"
+		data-fn-collapse="{target: '#collapse-nav'}">
+		Menu <i class="fn-icon-bars"></i>
+	</button>
+	<nav>
+		<ul id="collapse-nav" class="fn-nav fn-collapse">
+			<li><a href="">开始使用</a></li>
+			<li><a href="">CSS 介绍</a></li>
+			<li class="fn-active"><a href="">JS 介绍</a></li>
+			<li><a href="">功能定制</a></li>
+		</ul>
+	</nav>
+</div>
+<div>
+	<pre><code>
+&lt;button class="fn-btn fn-btn-primary"
+	data-fn-collapse="{target: '#collapse-nav'}"&gt;
+	Menu &lt;i class="fn-icon-bars"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;nav&gt;
+	&lt;ul id="collapse-nav" class="fn-nav fn-collapse"&gt;
+		&lt;li&gt;&lt;a href=""&gt;开始使用&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=""&gt;CSS 介绍&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="fn-active"&gt;&lt;a href=""&gt;JS 介绍&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=""&gt;功能定制&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+</div>
+
+
+<h2 id="调用方式">调用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	在元素上添加
+	<code>data-fn-collapse</code>
+	并设置
+	<code>target</code>
+	的值为折叠元素 ID：
+</p>
+<div>
+	<pre><code>
+&lt;button data-fn-collapse="{target: '#my-collapse'}"&gt;&lt;/button&gt;
+</code></pre>
+</div>
+
+
+<h3 id="通过-js">通过 JS</h3>
+<p>使用方法：</p>
+<div>
+	<pre><code>
+$('#myCollapse').collapse()
+</code></pre>
+</div>
+
+<h4 id="方法">方法</h4>
+<ul>
+	<li><code>$().collapse(options)</code> - 绑定元素展开/折叠操作</li>
+</ul>
+<div>
+	<pre><code>
+$('#myCollapse').collapse({
+  toggle: false
+})
+</code></pre>
+</div>
+<ul>
+	<li><code>$().collapse(&#39;toggle&#39;)</code> - 切换面板状态</li>
+	<li><code>$().collapse(&#39;open&#39;)</code> - 展开面板</li>
+	<li><code>$().collapse(&#39;close&#39;)</code> - 关闭面板</li>
+</ul>
+
+<h4 id="选项">选项</h4>
+<table class="fn-table fn-table-bordered fn-table-striped">
+	<thead>
+		<tr>
+			<th style="width: 60px">参数</th>
+			<th style="width: 70px">类型</th>
+			<th style="width: 50px">默认</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>parent</code></td>
+			<td>选择符</td>
+			<td><code>false</code></td>
+			<td>如果设置了 <code>parent</code>
+				参数，且该容器下有多个可折叠的面板时，展开一个面板会关闭其它展开的面板。换言之，如果想让多个面板可以都处于展开状态，那不设置这个参数即可。
+			</td>
+		</tr>
+		<tr>
+			<td><code>toggle</code></td>
+			<td>布尔值</td>
+			<td><code>true</code></td>
+			<td>交替执行展开/关闭操作</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4 id="自定义事件">事件</h4>
+<p>
+	事件在<strong>折叠的元素</strong>上触发，以上面的折叠菜单为例，<code>#collapse-nav</code>
+	触发事件：
+</p>
+<script>
+	$(function() {
+		$("#collapse-nav").on("open.collapse", function() {
+			console.log("折叠菜单打开了！")
+		}).on("close.collapse", function() {
+			console.log("折叠菜单关闭！")
+		})
+	});
+</script>
+<div>
+	<pre><code>
+	$(function() {
+		$("#collapse-nav").on("open.collapse", function() {
+			console.log("折叠菜单打开了！")
+		}).on("close.collapse", function() {
+			console.log("折叠菜单关闭！")
+		})
+	});
+</code></pre>
+</div>
+<table class="fn-table fn-table-bordered fn-table-striped">
+	<thead>
+		<tr>
+			<th>事件</th>
+			<th>描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>open.collapse</code></td>
+			<td><code>open</code> 方法被调用时立即触发</td>
+		</tr>
+		<tr>
+			<td><code>opened.collapse</code></td>
+			<td>元素完全展开后触发</td>
+		</tr>
+		<tr>
+			<td><code>close.collapse</code></td>
+			<td><code>close</code> 方法被调用后立即触发</td>
+		</tr>
+		<tr>
+			<td><code>closed.collapse</code></td>
+			<td>元素折叠完成后触发</td>
+		</tr>
+	</tbody>
+</table>

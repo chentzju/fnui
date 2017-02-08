@@ -1,0 +1,503 @@
+
+	<h1 id="input-group">
+		Input Group <a href="#input-group" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>Input group 基于 Form 组件和 Button 组件扩展，依赖这两个组件。</p>
+	<p>
+		在容器上添加
+		<code>.fn-input-group</code>
+		，在标签文字上添加
+		<code>.fn-input-group-label</code>
+		，具体请查看示例代码。
+	</p>
+	<h2 id="基本使用">
+		基本使用 <a href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="输入框与标签">
+		输入框与标签 <a
+			href="#%E8%BE%93%E5%85%A5%E6%A1%86%E4%B8%8E%E6%A0%87%E7%AD%BE"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>下面的代码中演示了结合 Icon 组件及添加文字的样式。</p>
+	<div>
+		<div class="fn-input-group">
+			<span class="fn-input-group-label"><i class="fn-icon-user fn-icon-fw"></i>
+			</span> <input type="text" class="fn-form-field"
+				placeholder="Username">
+		</div>
+		<div class="fn-input-group">
+			<span class="fn-input-group-label"><i class="fn-icon-lock fn-icon-fw"></i>
+			</span> <input type="text" class="fn-form-field"
+				placeholder="Password">
+		</div>
+		<div class="fn-input-group">
+			<input type="text" class="fn-form-field"> <span
+				class="fn-input-group-label">.00</span>
+		</div>
+		<div class="fn-input-group">
+			<span class="fn-input-group-label">$</span> <input type="text"
+				class="fn-form-field"> <span class="fn-input-group-label">.00</span>
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">i</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-user fn-icon-fw"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span> <span
+					class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Username"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">i</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-lock fn-icon-fw"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span> <span
+					class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Password"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span>.00<span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span>$<span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span>.00<span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+
+	<h3 id="输入框与标签">
+		圆角输入框与标签 <a
+			href="#%E8%BE%93%E5%85%A5%E6%A1%86%E4%B8%8E%E6%A0%87%E7%AD%BE"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>下面的代码中演示了结合 Icon 组件及添加文字的样式。</p>
+	<div>
+
+		<div class="fn-form-group fn-form-icon">
+			<i class="fn-icon-pencil fn-color-blue"></i> <input type="text"
+				class="fn-form-field fn-radius">
+		</div>
+
+	</div>
+
+	<div>
+		<pre>
+ <code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div </span><span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-group fn-form-icon"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">i </span><span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-pencil fn-color-blue"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input </span><span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field fn-radius"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span> 
+</code>
+</pre>
+	</div>
+
+	<h3 id="复选-单选框与输入框">
+		复选/单选框与输入框 <a
+			href="#%E5%A4%8D%E9%80%89-%E5%8D%95%E9%80%89%E6%A1%86%E4%B8%8E%E8%BE%93%E5%85%A5%E6%A1%86"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		将单选框与复选框放入
+		<code>.fn-input-group-label</code>
+		内。
+	</p>
+	<div>
+		<div class="fn-g">
+			<div class="fn-u-lg-6">
+				<div class="fn-input-group">
+					<span class="fn-input-group-label"><input type="checkbox"> </span>
+					<input type="text" class="fn-form-field">
+				</div>
+			</div>
+			<div class="fn-u-lg-6">
+				<div class="fn-input-group">
+					<span class="fn-input-group-label"><input type="radio"> </span> <input
+						type="text" class="fn-form-field">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="输入框结合-button">
+		输入框结合 Button <a
+			href="#%E8%BE%93%E5%85%A5%E6%A1%86%E7%BB%93%E5%90%88-button"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		需要用
+		<code>.fn-input-group-btn</code>
+		包住按钮，而不是
+		<code>.fn-input-group-label</code>
+		。
+	</p>
+
+	<div>
+		<div class="fn-g">
+			<div class="fn-u-lg-6">
+				<div class="fn-input-group">
+					<span class="fn-input-group-btn"><button
+							class="fn-btn fn-btn-default" type="button">
+							<span class="fn-icon-search"></span>
+						</button> </span> <input type="text" class="fn-form-field">
+				</div>
+			</div>
+			<div class="fn-u-lg-6">
+				<div class="fn-input-group">
+					<input type="text" class="fn-form-field"> <span
+						class="fn-input-group-btn"><button class="fn-btn fn-btn-default"
+							type="button">手气还行</button> </span>
+				</div>
+			</div>
+		</div>
+
+		<div class="fn-input-group fn-input-group-sm fn-input-gyjsearch "
+			id="">
+			<input type="text" class="fn-form-field" placeholder="关键字搜索"> <span
+				class="fn-input-group-btn">
+				<button class="fn-btn" type="button" onclick="">
+					<span class="fn-icon-search"></span>
+				</button>
+			</span>
+		</div>
+
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-btn"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-default"</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-search"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-btn"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-default"</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span>手气还行<span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-sm fn-input-gyjsearch "</span> <span
+					class="hljs-attribute">id</span>=<span class="hljs-value">""</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span> <span
+					class="hljs-attribute">placeholder</span>="关键字搜索"&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-btn"</span>&gt;</span>
+ &lt;button <span class="hljs-attribute">class</span>=<span
+					class="hljs-value">"fn-btn"</span> <span class="hljs-attribute">type</span>=<span
+					class="hljs-value">"button"</span> <span class="hljs-attribute">onclick</span>=<span
+					class="hljs-value">""</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-search"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h2 id="样式变换">
+		样式变换 <a href="#%E6%A0%B7%E5%BC%8F%E5%8F%98%E6%8D%A2"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="尺寸">
+		尺寸 <a href="#%E5%B0%BA%E5%AF%B8" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<p>
+		在
+		<code>.fn-input-group</code>
+		添加标明尺寸的 class 即可。
+	</p>
+	<p>
+		包含
+		<code>.fn-input-group-lg</code>
+		、
+		<code>.fn-input-group-sm</code>
+		。
+	</p>
+	<div>
+		<div class="fn-input-group fn-input-group-lg">
+			<span class="fn-input-group-label">@</span> <input type="text"
+				class="fn-form-field" placeholder="Large Username">
+		</div>
+		<div class="fn-input-group">
+			<span class="fn-input-group-label">@</span> <input type="text"
+				class="fn-form-field" placeholder="Default Username">
+		</div>
+		<div class="fn-input-group fn-input-group-sm">
+			<span class="fn-input-group-label">@</span> <input type="text"
+				class="fn-form-field" placeholder="Small Username">
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-lg"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span>@<span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span> <span
+					class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Username"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span>@<span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span> <span
+					class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Username"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-sm"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span>@<span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span> <span
+					class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Username"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<h3 id="颜色">
+		颜色 <a href="#%E9%A2%9C%E8%89%B2" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<div>
+		<div class="fn-input-group fn-input-group-primary">
+			<span class="fn-input-group-label"><i class="fn-icon-user fn-icon-fw"></i>
+			</span> <input type="text" class="fn-form-field" placeholder="你的大名">
+		</div>
+		<div class="fn-input-group fn-input-group-secondary">
+			<span class="fn-input-group-label"><i
+				class="fn-icon-credit-card fn-icon-fw"></i> </span> <input
+				type="text" class="fn-form-field" placeholder="你的银行卡号">
+		</div>
+		<div class="fn-input-group fn-input-group-success">
+			<span class="fn-input-group-label"><i
+				class="fn-icon-money fn-icon-fw"></i> </span> <input type="text"
+				class="fn-form-field" placeholder="你的银行卡密码">
+		</div>
+		<div class="fn-input-group fn-input-group-warning">
+			<span class="fn-input-group-label"><i class="fn-icon-bank fn-icon-fw"></i>
+			</span> <input type="text" class="fn-form-field" placeholder="开户行">
+		</div>
+		<div class="fn-input-group fn-input-group-danger">
+			<span class="fn-input-group-label"><i
+				class="fn-icon-location-arrow fn-icon-fw"></i> </span> <input
+				type="text" class="fn-form-field" placeholder="你所在城市">
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-primary"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">i</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-user fn-icon-fw"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span> <span
+					class="hljs-attribute">placeholder</span>=<span class="hljs-value">"你的大名"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-secondary"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-success"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-warning"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-danger"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<p>使用按钮时除了在容器上设置颜色 class 外，还需要设置按钮的样式。</p>
+	<div>
+		<div class="fn-g">
+			<div class="fn-u-lg-6">
+				<div class="fn-input-group fn-input-group-danger">
+					<span class="fn-input-group-label"><input type="checkbox"> </span>
+					<input type="text" class="fn-form-field">
+				</div>
+			</div>
+			<div class="fn-u-lg-6">
+				<div class="fn-input-group fn-input-group-primary">
+					<span class="fn-input-group-btn"><button
+							class="fn-btn fn-btn-primary" type="button">
+							<span class="fn-icon-search"></span>
+						</button> </span> <input type="text" class="fn-form-field">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-danger"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-label"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group fn-input-group-primary"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-input-group-btn"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-btn fn-btn-primary"</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span
+					class="hljs-tag">&lt;<span class="hljs-title">span</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-icon-search"</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span
+					class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span
+					class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span
+					class="hljs-attribute">class</span>=<span class="hljs-value">"fn-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>

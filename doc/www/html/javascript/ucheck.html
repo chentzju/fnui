@@ -1,0 +1,304 @@
+
+<script>
+	$(function() {
+		$('[data-fn-ucheck]').uCheck();
+	});
+</script>
+<h1 id="ucheck">
+	uCheck <a href="#ucheck" title="Heading anchor" class="doc-anchor"></a>
+</h1>
+<hr />
+<p>
+	<code>radio</code>
+	、
+	<code>checkbox</code>
+	样式重写。
+</p>
+<h2 id="使用演示">使用演示</h2>
+<h3 id="默认样式">默认样式</h3>
+<div>
+<style>
+.fn-ucheck-icons [class*=fn-icon]+[class*=fn-icon] {
+	margin-left: 0
+}
+</style>
+	<div class="fn-g">
+		<div class="fn-u-sm-6">
+			<h3>复选框</h3>
+			<label class="fn-checkbox needsclick"><input type="checkbox"
+				value="" data-fn-ucheck> 没有选中</label><label
+				class="fn-checkbox needsclick"><input type="checkbox"
+				checked="checked" value="" data-fn-ucheck checked="checked">
+				已选中</label><label class="fn-checkbox"><input type="checkbox"
+				value="" data-fn-ucheck disabled="disabled"> 禁用/未选中</label><label
+				class="fn-checkbox"><input type="checkbox" checked="checked"
+				value="" data-fn-ucheck disabled="disabled" checked="checked">
+				禁用/已选中</label>
+		</div>
+		<div class="fn-u-sm-6">
+			<h3>单选框</h3>
+			<label class="fn-radio needsclick"><input type="radio"
+				name="radio1" value="" data-fn-ucheck> 未选中</label><label
+				class="fn-radio needsclick"><input type="radio"
+				name="radio1" value="" data-fn-ucheck checked="checked"> 已选中</label><label
+				class="fn-radio"><input type="radio" name="radio2" value=""
+				data-fn-ucheck disabled="disabled"> 禁用/未选中</label><label
+				class="fn-radio"><input type="radio" name="radio2" value=""
+				data-fn-ucheck checked="checked" disabled="disabled"> 禁用/已选中</label>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+//复选框
+&lt;label class="fn-checkbox"&gt; &lt;input type="checkbox" value="" data-fn-ucheck&gt; 没有选中&lt;/label&gt;
+&lt;label class="fn-checkbox"&gt;&lt;input type="checkbox" checked="checked" value="" data-fn-ucheck checked="checked"&gt; 已选中&lt;/label&gt;
+&lt;label class="fn-checkbox"&gt;&lt;input type="checkbox" value="" data-fn-ucheck disabled="disabled"&gt; 禁用/未选中&lt;/label&gt;
+&lt;label class="fn-checkbox"&gt;&lt;input type="checkbox" checked="checked" value="" data-fn-ucheck disabled="disabled" checked="checked"&gt;禁用/已选中&lt;/label&gt;
+	
+//单选框
+&lt;label class="fn-radio"&gt;&lt;input type="radio" name="radio1" value="" data-fn-ucheck&gt; 未选中&lt;/label&gt;
+&lt;label class="fn-radio"&gt;&lt;input type="radio" name="radio1" value="" data-fn-ucheck checked="checked"&gt; 已选中&lt;/label&gt;
+&lt;label class="fn-radio"&gt;&lt;input type="radio" name="radio2" value="" data-fn-ucheck disabled="disabled"&gt; 禁用/未选中&lt;/label&gt;
+&lt;label class="fn-radio"&gt;&lt;input type="radio" name="radio2" value="" data-fn-ucheck checked="checked" disabled="disabled"&gt; 禁用/已选中&lt;/label&gt;
+</code>
+	</pre>
+</div>
+
+<h3 id="颜色变化">颜色变化</h3>
+<p>
+	默认使用主色，如果需要调整颜色在
+	<code>.fn-checkbox</code>
+	/
+	<code>.fn-checkbox</code>
+	上添加颜色 class。
+</p>
+<ul>
+	<li><code>.fn-secondary</code></li>
+	<li><code>.fn-success</code></li>
+	<li><code>.fn-warning</code></li>
+	<li><code>.fn-danger</code></li>
+</ul>
+<div>
+	<div class="fn-g">
+		<div class="fn-u-sm-6 fn-u-md-3">
+			<h3>复选框</h3>
+			<label class="fn-checkbox fn-secondary"><input
+				type="checkbox" value="" data-fn-ucheck> 没有选中</label>
+			<label
+				class="fn-checkbox fn-secondary"><input type="checkbox"
+				checked="checked" value="" data-fn-ucheck checked="checked">
+				已选中</label>
+		</div>
+		<div class="fn-u-sm-6 fn-u-md-3">
+			<h3>单选框</h3>
+			<label class="fn-radio fn-secondary"><input type="radio"
+				name="radio3" value="" data-fn-ucheck> 未选中</label><label
+				class="fn-radio fn-secondary"><input type="radio"
+				name="radio3" value="" data-fn-ucheck checked="checked"> 已选中</label>
+		</div>
+		<div class="fn-u-sm-6 fn-u-md-3">
+			<h3>复选框</h3>
+			<label class="fn-checkbox fn-success"><input type="checkbox"
+				value="" data-fn-ucheck> 没有选中</label><label
+				class="fn-checkbox fn-success"><input type="checkbox"
+				checked="checked" value="" data-fn-ucheck checked="checked">
+				已选中</label>
+		</div>
+		<div class="fn-u-sm-6 fn-u-md-3">
+			<h3>单选框</h3>
+			<label class="fn-radio fn-success"><input type="radio"
+				name="radio7" value="" data-fn-ucheck> 未选中</label><label
+				class="fn-radio fn-success"><input type="radio"
+				name="radio7" value="" data-fn-ucheck checked="checked"> 已选中</label>
+		</div>
+		<div class="fn-u-sm-6 fn-u-md-3">
+			<h3>复选框</h3>
+			<label class="fn-checkbox fn-warning"><input type="checkbox"
+				value="" data-fn-ucheck> 没有选中</label><label
+				class="fn-checkbox fn-warning"><input type="checkbox"
+				checked="checked" value="" data-fn-ucheck checked="checked">
+				已选中</label>
+		</div>
+		<div class="fn-u-sm-6 fn-u-md-3">
+			<h3>单选框</h3>
+			<label class="fn-radio fn-warning"><input type="radio"
+				name="radio4" value="" data-fn-ucheck> 未选中</label><label
+				class="fn-radio fn-warning"><input type="radio"
+				name="radio4" value="" data-fn-ucheck checked="checked"> 已选中</label>
+		</div>
+		<div class="fn-u-sm-6 fn-u-md-3">
+			<h3>复选框</h3>
+			<label class="fn-checkbox fn-danger"><input type="checkbox"
+				value="" data-fn-ucheck> 没有选中</label><label
+				class="fn-checkbox fn-danger"><input type="checkbox"
+				checked="checked" value="" data-fn-ucheck checked="checked">
+				已选中</label>
+		</div>
+		<div class="fn-u-sm-6 fn-u-md-3">
+			<h3>单选框</h3>
+			<label class="fn-radio fn-danger"><input type="radio"
+				name="radio5" value="" data-fn-ucheck> 未选中</label><label
+				class="fn-radio fn-danger"><input type="radio" name="radio5"
+				value="" data-fn-ucheck checked="checked"> 已选中</label>
+		</div>
+	</div>
+</div>
+<div>
+	<pre>
+		<code>
+//复选框
+&lt;label class="fn-checkbox fn-danger"&gt;
+	&lt;input type="checkbox" value="" data-fn-ucheck&gt; 没有选中
+&lt;/label&gt;
+&lt;label class="fn-checkbox fn-danger"&gt;
+	&lt;input type="checkbox" checked="checked" value="" data-fn-ucheck checked="checked"&gt; 已选中
+&lt;/label&gt;
+
+//单选框
+&lt;label class="fn-radio fn-danger"&gt;
+	&lt;input type="radio" name="radio5" value="" data-fn-ucheck&gt; 未选中
+&lt;/label&gt;
+&lt;label class="fn-radio fn-danger"&gt;
+	&lt;input type="radio" name="radio5" value="" data-fn-ucheck checked="checked"&gt; 已选中
+&lt;/label&gt;
+</code>
+	</pre>
+</div>
+
+<!--  
+<h3 id="圆角按钮">按钮单选框</h3>
+<p>在 input 上添加 check 属性。</p>
+<div>
+	<label class="fn-btn fn-btn-check"> <input type="radio"
+		value="1" name="area" data-fn-ucheck class="fn-ucheck-radio" checked>
+		<font class="fn-ucheck-font">杭州八达库</font>
+	</label> <label class="fn-btn fn-btn-check"> <input type="radio"
+		value="2" name="area" data-fn-ucheck class="fn-ucheck-radio">
+		<font class="fn-ucheck-font">杭州八达库</font>
+	</label>
+</div>
+<div>
+	<pre>
+		<code>	
+			
+</code>
+	</pre>
+</div>
+-->
+<h3 id="结合表单验证插件">结合表单验证插件</h3>
+<div>
+	<form class="fn-form" data-fn-validator>
+		<div class="fn-form-group">
+			<h3>
+				装备<sup class="fn-text-danger">*</sup> （至少 2 项，至多 4 项）
+			</h3>
+			<label class="fn-checkbox"><input type="checkbox" name="cbx"
+				value="ip" data-fn-ucheck required minchecked="2" maxchecked="4">
+				iPhone</label><label class="fn-checkbox"><input type="checkbox"
+				name="cbx" value="im" data-fn-ucheck> iMac</label><label
+				class="fn-checkbox"><input type="checkbox" name="cbx"
+				value="mbp" data-fn-ucheck> Macbook Pro</label><label class="fn-checkbox"><input
+				type="checkbox" name="cbx" value="sur" data-fn-ucheck>
+				Surface</label><label class="fn-checkbox"><input type="checkbox"
+				name="cbx" value="rb" data-fn-ucheck> Razer Blade</label>
+		</div>
+		<div class="fn-form-group">
+			<h3>
+				性别 <sup class="fn-text-danger">*</sup>
+			</h3>
+			<label class="fn-radio"><input type="radio" name="radio10"
+				value="male" data-fn-ucheck required> 男</label><label
+				class="fn-radio"><input type="radio" name="radio10"
+				value="female" data-fn-ucheck> 女</label><label class="fn-radio"><input
+				type="radio" name="radio10" value="pig" data-fn-ucheck> 人妖</label>
+			<div>
+				<div>
+					<button type="submit" class="fn-btn fn-btn-primary">提交</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div>
+	<pre>
+		<code>
+&lt;form class="fn-form" data-fn-validator&gt;
+	&lt;div class="fn-form-group"&gt;
+		&lt;h3&gt;
+			装备&lt;sup class="fn-text-danger"&gt;*&lt;/sup&gt; （至少 2 项，至多 4 项）
+		&lt;/h3&gt;
+		&lt;label class="fn-checkbox"&gt;&lt;input type="checkbox" name="cbx"
+			value="ip" data-fn-ucheck required minchecked="2" maxchecked="4"&gt;
+			iPhone&lt;/label&gt;&lt;label class="fn-checkbox"&gt;&lt;input type="checkbox"
+			name="cbx" value="im" data-fn-ucheck&gt; iMac&lt;/label&gt;&lt;label
+			class="fn-checkbox"&gt;&lt;input type="checkbox" name="cbx"
+			value="mbp" data-fn-ucheck&gt; Macbook Pro&lt;/label&gt;&lt;label
+			class="fn-checkbox"&gt;&lt;input type="checkbox" name="cbx"
+			value="sf" data-fn-ucheck&gt; 苏菲·麻索&lt;/label&gt;&lt;label class="fn-checkbox"&gt;&lt;input
+			type="checkbox" name="cbx" value="sur" data-fn-ucheck&gt;
+			Surface&lt;/label&gt;&lt;label class="fn-checkbox"&gt;&lt;input type="checkbox"
+			name="cbx" value="rb" data-fn-ucheck&gt; Razer Blade&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="fn-form-group"&gt;
+		&lt;h3&gt;
+			性别 &lt;sup class="fn-text-danger"&gt;*&lt;/sup&gt;
+		&lt;/h3&gt;
+		&lt;label class="fn-radio"&gt;&lt;input type="radio" name="radio10"
+			value="male" data-fn-ucheck required&gt; 男&lt;/label&gt;&lt;label
+			class="fn-radio"&gt;&lt;input type="radio" name="radio10"
+			value="female" data-fn-ucheck&gt; 女&lt;/label&gt;&lt;label class="fn-radio"&gt;&lt;input
+			type="radio" name="radio10" value="pig" data-fn-ucheck&gt; 人妖&lt;/label&gt;
+		&lt;div&gt;
+			&lt;div&gt;
+				&lt;button type="submit" class="fn-btn fn-btn-primary"&gt;提交&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;	
+</code>
+	</pre>
+</div>
+<h2 id="使用方式">使用方式</h2>
+<h3 id="通过-data-api">通过 Data API</h3>
+<p>
+	在
+	<code>radio</code>
+	/
+	<code>checkbox</code>
+	上添加
+	<code>data-fn-ucheck</code>
+	属性。
+</p>
+<div>
+	<pre>
+		<code>
+&lt;label class="fn-checkbox"&gt;
+  &lt;input type="checkbox" value="" data-fn-ucheck&gt; 没有选中
+&lt;/label&gt;
+
+&lt;label class="fn-radio"&gt;
+  &lt;input type="radio" value="" data-fn-ucheck&gt; 没有选中
+&lt;/label&gt;
+</code>
+	</pre>
+</div>
+<h3 id="通过-js">通过 JS</h3>
+<div>
+	<pre>
+		<code>
+$(function() {
+  $('input[type='checkbox'], input[type='radio']').uCheck();
+});
+</code>
+	</pre>
+</div>
+<h4 id="方法">方法</h4>
+<ul>
+	<li><code>$().uCheck(&#39;check&#39;)</code>: 选中</li>
+	<li><code>$().uCheck(&#39;uncheck&#39;)</code>: 取消选中</li>
+	<li><code>$().uCheck(&#39;toggle&#39;)</code>: 切换选中状态</li>
+	<li><code>$().uCheck(&#39;disable&#39;)</code>: 禁用</li>
+	<li><code>$().uCheck(&#39;enable&#39;)</code>: 启动</li>
+</ul>

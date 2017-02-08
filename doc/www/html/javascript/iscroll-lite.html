@@ -1,0 +1,69 @@
+
+	
+	<h1 id="iscroll-lite">
+		iScroll Lite <a href="#iscroll-lite" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>	
+		打包了 iScroll<code>lite</code>（当前版本为 5.1.3），参考官网。
+	</p>
+	<p>iScroll 主要用来实现平滑的垂直、水平的拖动操作及控制。</p>
+	<p>
+		通过
+		<code>$.AMUI.iScroll</code>
+		访问
+		<code>IScroll</code>
+		对象。
+	</p>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span
+					class="hljs-attribute">id</span>=<span class="hljs-value">"wrapper"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span
+					class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code>
+					</pre>
+	</div>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-keyword">var</span> IScroll = $.AMUI.iScroll;
+<span class="hljs-keyword">var</span> myScroll = <span
+					class="hljs-keyword">new</span> IScroll(<span class="hljs-string">'#wrapper'</span>);
+</code>
+					</pre>
+	</div>
+
+	<h2 id="常见问题">
+		常见问题 <a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="使用-iscroll-以后链接无法点击？">
+		使用 iScroll 以后链接无法点击？ <a
+			href="#%E4%BD%BF%E7%94%A8-iscroll-%E4%BB%A5%E5%90%8E%E9%93%BE%E6%8E%A5%E6%97%A0%E6%B3%95%E7%82%B9%E5%87%BB%EF%BC%9F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>
+		初始化 iScroll 的时候加上
+		<code>click: true</code>
+		参数即可
+	</p>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-keyword">var</span> myScroll = <span
+					class="hljs-keyword">new</span> IScroll(<span class="hljs-string">'#wrapper'</span>, {
+  click: <span class="hljs-literal">true</span>
+});
+</code>
+					</pre>
+	</div>
+

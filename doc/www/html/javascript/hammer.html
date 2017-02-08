@@ -1,0 +1,58 @@
+
+	<h1 id="hammer-js">
+		Hammer.js <a href="#hammer-js" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h1>
+	<hr />
+	<p>
+		选择了 Hammer.js 2.0</a> 作为触控操作库，更多细节参见官方文档</a>。
+	</p>
+	<h2 id="调用方式">
+		调用方式 <a href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"
+			title="Heading anchor" class="doc-anchor"></a>
+	</h2>
+	<h3 id="hammer">
+		<code>$().hammer()</code>
+		<a href="#hammer" title="Heading anchor" class="doc-anchor"></a>
+	</h3>
+	<p>可以通过插件的形式调用 Hammer.js。</p>
+	<div>
+		<pre>
+						<code>
+$(element).hammer(options).on(<span
+					class="hljs-string">'pan'</span>, myPanHandler);
+</code>
+					</pre>
+	</div>
+	<p>
+		Hammer 实例存储在
+		<code>$(element).data(&#39;hammer&#39;)</code>
+		上。
+	</p>
+	<h3 id="hammer-对象">
+		Hammer 对象 <a href="#hammer-%E5%AF%B9%E8%B1%A1" title="Heading anchor"
+			class="doc-anchor"></a>
+	</h3>
+	<p>
+		可以通过
+		<code>$.AMUI.Hammer</code>
+		访问
+		<code>Hammer</code>
+		对象。
+	</p>
+	<div>
+		<pre>
+						<code>
+<span class="hljs-keyword">var</span> Hammer = $.AMUI.Hammer;
+<span class="hljs-keyword">var</span> hammertime = <span
+					class="hljs-keyword">new</span> Hammer(myElement, myOptions);
+hammertime.on(<span class="hljs-string">'pan'</span>, <span
+					class="hljs-function"><span class="hljs-keyword">function</span><span
+					class="hljs-params">(e)</span> </span>{
+  <span class="hljs-built_in">console</span>.log(e);
+});
+</code>
+					</pre>
+	</div>
+
+
