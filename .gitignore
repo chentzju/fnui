@@ -38,3 +38,6 @@ bower_components
 
 # doc
 test
+.zip
+r.js
+build.js
