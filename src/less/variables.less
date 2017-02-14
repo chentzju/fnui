@@ -69,13 +69,13 @@
 
 // apple.com: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana,
 
-@font-family-sans-serif: "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+@font-family-sans-serif: "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", sans-serif;
 
 @font-family-serif: Georgia, "Times New Roman", Times, SimSun, "FontAwesome", serif; //FangSong, STFangSong
 
 @font-family-monospace: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
 
-@font-family-kai: Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
+@font-family-kai: Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai,  serif;
 
 
 // Font  size
@@ -141,11 +141,11 @@
 // Breakpoint
 // -----------------------------------------------------------------------------
 
-@breakpoint-small:            767px;  // 0 - 767px
-@breakpoint-medium:           1199px; // 768 - 1199px
-@breakpoint-large:            1439px; // 1200-1439px
-@breakpoint-xl:               1919px; // 1440 - 1919px
-@breakpoint-xxl:              1920px; // 1920+px
+@breakpoint-small:            320px;  // 0 - 320px   iphone 5 -
+@breakpoint-medium:           414px; // 320 - 416px   
+@breakpoint-large:            640px; // 416-640px
+@breakpoint-xl:               768px; // 640 - 768px
+@breakpoint-xxl:              1200px; // 1200+px
 
 @breakpoint-small-max:        @breakpoint-small;
 @breakpoint-md:               @breakpoint-small-max; // legacy var, DO NOT USE IT
@@ -272,7 +272,7 @@
 // =============================================================================
 
 @btn-font-weight:                normal;
-@btn-line-height:                1.2;
+@btn-line-height:                1.3;
 @btn-font-size:                  @global-font-size;
 
 @btn-default-color:              #444;
@@ -365,6 +365,7 @@
 // Input-group variables
 // =============================================================================
 
+@input-group-height: 3.8rem;
 @input-group-label-bg:            @gray-lighter;
 @input-group-label-border-color:  #ccc;
 
@@ -497,7 +498,6 @@
 
 @icon-btn-active-background: 	  #ddd;
 @icon-btn-active-color: 				@gray-dark;
-
 
 
 @fa-var-500px: "\f26e";
@@ -1194,9 +1194,6 @@
 @fa-var-youtube: "\f167";
 @fa-var-youtube-play: "\f16a";
 @fa-var-youtube-square: "\f166";
-
-
-
 // =============================================================================
 // List variables
 // =============================================================================
@@ -1254,11 +1251,11 @@
 // Topbar variables
 // =============================================================================
 
-@topbar-height:                    50px;
-@topbar-padding:                   0 10px;
+@topbar-height:                    5rem;
+@topbar-padding:                   0 1rem;
 @topbar-margin-bottom:             @global-spacing;
-@topbar-padding-horizontal:        10px;
-@topbar-padding-vertical:          10px;
+@topbar-padding-horizontal:        1rem;
+@topbar-padding-vertical:          1rem;
 @topbar-collapse-max-height:       280px;
 
 @topbar-spacing-vertical:          8px;

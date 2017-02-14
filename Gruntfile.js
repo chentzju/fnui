@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 		// 开始任务配置
 		clean:{
 			dist: {
-				src: ['dist']
+				src: ['dist/js/*','dist/css/*']
 			},
 			doc:{
 				src:['doc/www/js/fnui*','doc/www/css/fnui*']
@@ -173,12 +173,12 @@ module.exports = function(grunt) {
 		copy: {
 			dist:{
 				files : [
-							// {
-							// 	expand : true,
-							// 	cwd : 'src/fonts',
-							// 	src : [ '*' ],
-							// 	dest : 'dist/fonts/'
-							// },
+							{
+								expand : true,
+								cwd : 'src/fonts',
+								src : [ '*' ],
+								dest : 'dist/fonts/'
+							},
 							{
 								expand : true,
 								cwd : 'src/js',
@@ -189,18 +189,18 @@ module.exports = function(grunt) {
 			},
 			fonts: {
 						files : [
-								// {
-								// 	expand : true,
-								// 	cwd : 'dist/fonts',
-								// 	src : [ '*' ],
-								// 	dest : 'doc/www/fonts/'
-								// },
-								// {
-								// 	expand : true,
-								// 	cwd : 'dist/fonts',
-								// 	src : [ '*' ],
-								// 	dest : 'generator-fnui/generators/app/templates/www/fonts/'
-								// }
+								{
+									expand : true,
+									cwd : 'dist/fonts',
+									src : [ '*' ],
+									dest : 'doc/www/fonts/'
+								},
+								{
+									expand : true,
+									cwd : 'dist/fonts',
+									src : [ '*' ],
+									dest : 'generator-fnui/generators/app/templates/www/fonts/'
+								}
 
 						]
 			},
@@ -271,7 +271,7 @@ module.exports = function(grunt) {
 				       {
 				    	   expand:true,
 				    	   cwd:'dist/',
-				    	   src:['css/*','js/*'],  //delete fonts
+				    	   src:['css/*','fonts/*','js/*'],
 				    	   dest:'dist/'
 				       }
 				     ]
@@ -309,4 +309,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('build',buildtask);
 	// 默认被执行的任务列表
 	grunt.registerTask('default',['build']);
+
+	grunt.registerTask('buildcss',['less','cssmin','copy:css'])
 };

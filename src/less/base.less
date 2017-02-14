@@ -503,8 +503,9 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
+
 body {
-  font-size: 1.6rem;
   position: relative;
   background: @base-background;
   font-family: @base-font-family;
@@ -559,6 +560,45 @@ button {
     hyphens: auto;
   }
 }
+
+
+
+@media @medium-up {
+  html {
+    font-size:0.75rem;
+  }
+}
+
+@media only screen and (min-width:384px){
+  html{
+    font-size:0.81rem;
+  }
+}
+
+@media only screen and (min-width:448px){
+  html{
+    font-size:0.875rem;
+  }
+}
+@media only screen and (min-width:480px){
+  html{
+    font-size:0.94rem;
+  }
+}
+
+@media @large-up {
+  html{
+      font-size:1.25rem;
+  }
+}
+
+@media @xl-up {
+  html{
+      font-size:0.625rem;
+  }
+}
+
+
 
 
 /**
