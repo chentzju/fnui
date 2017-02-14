@@ -7716,6 +7716,27 @@ img.fn-thumbnail,
 .fn-text-danger {
   color: #dd514c;
 }
+.fn-color-gray {
+  color: #555555;
+}
+.fn-color-org {
+  color: #F37B1D;
+}
+.fn-color-red {
+  color: #DD514C;
+}
+.fn-color-blue {
+  color: #0e90d2;
+}
+.fn-color-blue {
+  color: #6ac6f5;
+}
+.fn-color-black {
+  color: #000;
+}
+.fn-color-white {
+  color: #fff;
+}
 .fn-link-muted {
   color: #666;
 }
