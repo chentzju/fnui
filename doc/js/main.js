@@ -54,7 +54,7 @@ var jsobj = [
 				{id:'switch',name:'单选开关',url:'switch.html'},
 				{id:'tabs',name:'选项卡',url:'tabs.html'},
 				{id:'toast',name:'对话框',url:'toast.html'},
-				{id:'uCheck',name:'单/多选框',url:'uCheck.html'},
+				{id:'ucheck',name:'单/多选框',url:'ucheck.html'},
 				
 				{name:'实用工具',head:true},
 				{id:'dimmer',name:'遮罩',url:'dimmer.html'},
