@@ -273,7 +273,6 @@ module.exports = function(grunt) {
 	// 默认被执行的任务列表
 	grunt.registerTask('default',['build']);
 
-
 	//css 构建任务
 	grunt.registerTask('build-css',['clean:css','clean:zip','less','cssmin','compress','copy:zip']);
 };
