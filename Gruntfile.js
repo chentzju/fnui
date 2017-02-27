@@ -35,6 +35,9 @@ module.exports = function(grunt) {
 				src:['generator-fnui/generators/app/templates/www/js/fnui*',
 				     'generator-fnui/generators/app/templates/www/css/fnui*'
 				     ]
+			},
+			zip:{
+				src:['*.zip']
 			}
 		},
 		

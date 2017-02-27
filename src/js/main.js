@@ -1,5 +1,5 @@
 require.config({
-	 baseUrl:"../js",
+	 baseUrl:"../src/js/",
 	 paths:{
 		jquery:'jquery.min',
 		fnui:'fnui'
@@ -7,7 +7,6 @@ require.config({
 });
 require(['jquery','fnui'],function($,UI){
 	$(function(){
-		
 		$('.btn-loading-example').click(function () {
 			  var $btn = $(this)
 			  $btn.button('loading');
@@ -21,6 +20,20 @@ require(['jquery','fnui'],function($,UI){
 		    animation: 'slide-left',
 		    delay: 500
 		  });
+
+
+		$("form").validator({
+			validateOnSubmit:true,
+			onValid:function(a,b){
+				console.log("print")
+			},
+			onInValid:function(a,c){
+				console.log('invalid')
+			},
+			onSuccess:function(a,b){
+				console.log('success');
+			}
+		})
 	});
 });
 

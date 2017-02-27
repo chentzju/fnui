@@ -9130,7 +9130,10 @@ Validator.DEFAULTS = {
     // return validity;
   },
 
-  submit: null
+  submit: null,
+  onSuccess:function(){
+
+  }
 };
 
 Validator.VERSION = '{{VERSION}}';
@@ -9220,6 +9223,8 @@ Validator.prototype.init = function() {
 
       // sync validate, return result
       if ($.type(formValidity) === 'boolean') {
+        if(formValidity && typeof options.onSuccess == 'function')
+            options.onSuccess();
         return formValidity;
       }
 
@@ -9295,7 +9300,7 @@ Validator.prototype.validate = function(field) {
   var $field = $(field);
 
   // Validate equal, e.g. confirm password
-  var equalTo = $field.data('equalTo');
+  var equalTo = $field.attr('equalTo');
   if (equalTo) {
     $field.attr('pattern', '^' + $element.find(equalTo).val() + '$');
   }

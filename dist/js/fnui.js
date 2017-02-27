@@ -7423,7 +7423,9 @@ fnui_validator = function ($, UI) {
     },
     validate: function (validity) {
     },
-    submit: null
+    submit: null,
+    onSuccess: function () {
+    }
   };
   Validator.VERSION = '{{VERSION}}';
   Validator.patterns = {
@@ -7496,6 +7498,8 @@ fnui_validator = function ($, UI) {
         var formValidity = _this.isFormValid();
         // sync validate, return result
         if ($.type(formValidity) === 'boolean') {
+          if (formValidity && typeof options.onSuccess == 'function')
+            options.onSuccess();
           return formValidity;
         }
         if ($element.data('fnui.checked')) {
@@ -7557,7 +7561,7 @@ fnui_validator = function ($, UI) {
     var options = this.options;
     var $field = $(field);
     // Validate equal, e.g. confirm password
-    var equalTo = $field.data('equalTo');
+    var equalTo = $field.attr('equalTo');
     if (equalTo) {
       $field.attr('pattern', '^' + $element.find(equalTo).val() + '$');
     }
