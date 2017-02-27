@@ -23,24 +23,11 @@ module.exports = function(grunt) {
             ' * Licensed under the <%= pkg.license %> license\n' +
             ' */\n',
 
+
+
 		// 开始任务配置
-		clean:{
-			dist: {
-				src: ['dist/js/*','dist/css/*']
-			},
-			doc:{
-				src:['doc/www/js/fnui*','doc/www/css/fnui*']
-			},
-			yeoman:{
-				src:['generator-fnui/generators/app/templates/www/js/fnui*',
-				     'generator-fnui/generators/app/templates/www/css/fnui*'
-				     ]
-			},
-			zip:{
-				src:['*.zip']
-			}
-		},
-		
+
+
 		// 代码检验
 		jshint: {
 		  options: {
@@ -60,6 +47,30 @@ module.exports = function(grunt) {
 			src: ['src/js/fnui.js','src/js/fnui/*.js']
 		  }
 		},
+
+
+		clean:{
+			css: {
+				src: ['dist/css/*']
+			},
+
+			fonts:{
+				src:['dist/fonts']
+			},
+			js:{
+				src:['dist/js/*']
+			},
+
+			doc:{
+				src:['doc/download/*.zip']
+			},
+
+			zip:{
+				src:['*.zip']
+			}
+		},
+		
+
 		
 		// 配置requirejs
 		requirejs: {
@@ -102,7 +113,8 @@ module.exports = function(grunt) {
 			}
 		  }
 		},
-  
+
+
 		// replace吧jquery替换为jQuery
 		replace:{
 			fnui:{
@@ -112,20 +124,7 @@ module.exports = function(grunt) {
 			}
 		},
 		
-		
-		// less编译任务
-		less:{
-			options: {
-				banner:  '<%= banner %>\n'
-			},
-			compileCore: {
-				files:[
-						{src: 'src/less/fnuitheme.less',dest:'dist/css/<%= pkg.name %>theme.css'},
-				        {src: 'src/less/fnuiall.less',dest: 'dist/css/<%= pkg.name %>.css'}
-				       ]
 
-			}
-		},
 
 		// uglify压缩任务
 		uglify:{
@@ -142,6 +141,25 @@ module.exports = function(grunt) {
 				       ]
 			}
 		},
+
+
+
+		
+		// less编译任务
+		less:{
+			options: {
+				banner:  '<%= banner %>\n'
+			},
+			compileCore: {
+				files:[
+						{src: 'src/less/fnuitheme.less',dest:'dist/css/<%= pkg.name %>theme.css'},
+				        {src: 'src/less/fnuiall.less',dest: 'dist/css/<%= pkg.name %>.css'}
+				       ]
+
+			}
+		},
+
+
 		// cssmin 压缩css
 		cssmin:{
 			dist: {
@@ -152,105 +170,39 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// html 压缩HTML
-		htmlmin: {
-		   options: {
-			 removeComments: true,
-			 removeCommentsFromCDATA: true,
-			 collapseWhitespace: true,
-			 collapseBooleanAttributes: true,
-			 removeAttributeQuotes: true,
-			 removeRedundantAttributes: true,
-			 useShortDoctype: true,
-			 removeEmptyAttributes: true,
-			 removeOptionalTags: true
-		   },
-		   html: {
-			 files: [
-			   {expand: true, cwd: 'dist/html', src: ['*.html'], dest: 'dist/html'}
-			 ]
-		   }
-		},
 
 		// copy 直接拷贝的文件
 		copy: {
-			dist:{
+			fonts:{
 				files : [
 							{
 								expand : true,
 								cwd : 'src/fonts',
 								src : [ '*' ],
 								dest : 'dist/fonts/'
-							},
-							{
-								expand : true,
-								cwd : 'src/js',
-								src : [ 'fnuiloader.js' ],
-								dest : 'dist/js/'
 							}
 				        ]
-			},
-			fonts: {
-						files : [
-								{
-									expand : true,
-									cwd : 'dist/fonts',
-									src : [ '*' ],
-									dest : 'doc/www/fonts/'
-								},
-								{
-									expand : true,
-									cwd : 'dist/fonts',
-									src : [ '*' ],
-									dest : 'generator-fnui/generators/app/templates/www/fonts/'
-								}
-
-						]
 			},
 			js:{
 						files : [
 								{
 									expand : true,
 									cwd : 'src/js',
-									src : [ 'jquery.min.js', 'require.js'],
+									src : [ 'fnuiloader.js' ],
 									dest : 'dist/js/'
-								},
-								{
-									expand : true,
-									cwd : 'dist/js',
-									src : [ 'fnui.min.js', 'fnuiamd.min.js' ],
-									dest : 'doc/www/js/'
-								},
-								{
-									expand : true,
-									cwd : 'dist/js',
-									src : [ 'fnui.min.js', 'fnuiamd.min.js' ],
-									dest : 'generator-fnui/generators/app/templates/www/js/'
-								} ]
+								}
+								 ]
 			},
-			css:{
-						files : [
-								{
-									expand : true,
-									cwd : 'dist/css',
-									src : [ 'fnui.min.css', 'fnuitheme.min.css' ],
-									dest : 'doc/www/css/'
-								},
-								{
-									expand : true,
-									cwd : 'dist/css',
-									src : [ 'fnui.min.css', 'fnuitheme.min.css' ],
-									dest : 'generator-fnui/generators/app/templates/www/css/'
-								}]
-					},
 			zip:{
 				files:[{
 					expand : true,
-					src : ['fnui-2.0.0-dist.zip'],
-					dest : 'doc/www/download/'
+					src : ['*.zip'],
+					dest : 'doc/download/'
 				}]
 			}
 		},
+
+
 
 		// watch 检测文件变化
 		watch: {
@@ -293,16 +245,23 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-text-replace');
 	grunt.loadNpmTasks('grunt-contrib-compress');
 	
+
+
+	//task
 	var buildtask = [];
 	buildtask.push('clean');
+
+	buildtask.push('copy:fonts');
+	buildtask.push('copy:js');
+
 	buildtask.push('requirejs');
 	buildtask.push('replace');
-	buildtask.push('less');
-	buildtask.push('copy:dist');
 	buildtask.push('uglify');
+
+
+	buildtask.push('less');
 	buildtask.push('cssmin');
-	buildtask.push('copy:js');
-	buildtask.push('copy:css');
+
 	buildtask.push('compress');
 	buildtask.push('copy:zip');
 	
@@ -310,8 +269,11 @@ module.exports = function(grunt) {
 	grunt.registerTask('test',['jshint']);
 	// 构建任务
 	grunt.registerTask('build',buildtask);
+
 	// 默认被执行的任务列表
 	grunt.registerTask('default',['build']);
 
-	grunt.registerTask('buildcss',['less','cssmin','copy:css'])
+
+	//css 构建任务
+	grunt.registerTask('build-css',['clean:css','clean:zip','less','cssmin','compress','copy:zip']);
 };

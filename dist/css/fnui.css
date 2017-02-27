@@ -1,5 +1,5 @@
 /*!
- * FNUI v2.0.13 (http://ui.gyj.com)
+ * FNUI v2.0.14 (http://ui.gyj.com)
  * Copyright 2013-2017 gongyinju front-team,ICBC Inc.
  * Licensed under the MIT license
  */
@@ -10119,7 +10119,7 @@ tbody.fn-collapse.fn-in {
   display: inline-block;
   direction: ltr;
   cursor: pointer;
-  border-radius: 1px;
+  border-radius: 20px;
   border: 1px solid;
   border-color: #e6e6e6;
   position: relative;

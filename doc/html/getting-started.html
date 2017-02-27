@@ -2,21 +2,36 @@
 <hr>
 <p>蜂鸟UI(以下称FNUI) 2.0 是基于FNUI 1.0版本的基础上，针对框架过重、加载过多、
 	模板引擎过于复杂等因素，重新构造的新版现代浏览器框架。</p>
-<p>框架重写了核心内容，同时参考bootstrap和amaze ui的控件书写规范，定义了新的组件和控件，并使用自己的命名空间fn。</p>
+<p>框架重写了核心内容，同时参考bootstrap控件书写规范，定义了新的组件和控件，并使用自己的命名空间fn。</p>
 <p>FNUI 2.0 采用requirejs管理模块，实现模块的自动加载，使用less管理样式表模块，实现样式可复制性；
 	同时FNUI2.0使用grunt进行发布，兼容requirejs和普通加载两种加载模式，开发者可以根据自己的工作习惯 使用FNUI的功能。</p>
-<p>yeoman脚手架能够为开发者生成基于FNUI的基础框架和结构，并且内嵌了grunt，能轻松实现web服务和版本发布。</p>
 
 
-<h2>直接引用</h2>
+
+
+<h2>1、使用fnui的主题</h2>
 <hr>
-<p>你也可以通过直接将FNUI的文件引用到页面的方式引入FNUI 2.0。</p>
+<p>如果你仅仅喜欢fnui的主题、布局和风格，而不需要使用fnui的js插件,那么仅需要使用fnui的主题就可以了，在页面中引用fnui的方法如下</p>
+
+<code>&lt;link href = "your path/fnuitheme.min.css" rel="stylesheet"&gt;</code>
+
+<h2>2、引用风格和插件</h2>
+<hr>
+<p>如果你想使用fnui的主题、布局风格，以及js插件，除了引用fnui的主题文件外，还需要引用fnui的js文件。</p>
 <p>通过link标签引用CSS样式表</p>
 <code>&lt;link href = "your path/fnui.min.css" rel="stylesheet"&gt;</code>
 <p>如果你还想使用FNUI的js功能</p>
-<code>&lt;script src = "your path/fnui.min.js"&gt;
+
+<code>&lt;script src = "your path/jquery.min.js"&gt;
+	&lt;/script&gt;
+&lt;script src = "your path/fnui.min.js"&gt;
 	&lt;/script&gt;</code>
+
+
+<h2>使用AMD规范按需加载</h2>
+<hr>
 <p>如果你是AMD规范和模块化加载的拥护者，你还可以使用requirejs来加载，此时，你的代码看起来应该是这样的</p>
+<p><i class="fn-icon-warning"></i>由于FNUI依赖于jquery,请注意在加载fnui之前需要加载jquery</p>
 <code>&lt;script data-main="your main file path/main" src = "your
 	path/require.js"&gt; &lt;/script&gt;</code>
 <p>当然，如果你觉得requirejs太重了，你可以使用FNUI团队专门为AMD模块化加载支持而开发的fnuiloader，
@@ -29,41 +44,6 @@
 <code>&lt;script src = "your path/main.js"&gt; &lt;/script&gt;</code>
 
 
-<h2>使用yeoman脚手架</h2>
-<hr>
-<p>使用yeoman脚手架构建，能够实现一键自动化搭建fnui 2.0前端目录，并且自动加载内嵌依赖，自动生成grunt文件，
-可以用来实现web服务器、实时刷新、打包发布等功能</p>
-<h3>安装node.js</h3>
-开发者可以根据node.js官网的安装指引获取并安装node.js，也可以在ftp://109.5.13.213/6-Software/NODEJS/获取node
-<h3>安装grunt-cli和yeoman</h3>
-<p>grunt-cli能确保在cmd命令行中运行grunt,安装yeoman确保我们能正常使用yo命令。通过node.js的包管理器npm来安装即可，-g表示安装为全局依赖。</p>
-<p>安装grunt-cli</p>
-<code>npm install -g grunt-cli</code>
-<p>安装yeoman</p>
-<code>npm install -g yo</code>
-<p>
-	<i class="fn-icon-check"></i>如果你是离线环境，可以到ftp://109.5.13.213/6-Software/NODEJS/获取node.js、grunt-cli和yo。
-	安装完node.js后，将grunt-cli和yo解压缩到在C:\\用户目录\AppData\Roaming\npm下
-</p>
-<h3>安装脚手架工具</h3>
-<p>请确保将FNUI的脚手架工具下载到本地，并且链接到全局依赖中。</p>
-<code>cd your-fnui-generator-path/generator-fnui</code>
-<p>添加链接</p>
-<code>npm link</code>
-
-<p>
-	<i class="fn-icon-warning"></i>如果没有联网，也可以直接将generator-fnui文件夹放到C:\\用户目录\AppData\Roaming\npm\node_modules
-</p>
-<h3>运行脚手架</h3>
-<p>通过运行脚手架，并且跟着脚手架指引进行，就可以构建一个FNUI 2.0的前端。</p>
-<code>yo fnui</code>
-<p>如果你能看到fnui脚手架的欢迎页面，说明你已经成功安装了fnui的yeoman脚手架，一起来yo吧！</p>
-<p>
-<img src='img/fn-generator.png'>
-</p>
-<p>当项目代码完全生成后，在项目路径下，运行命令，就可以在本地的9002端口上开始一个web服务器，该服务器支持实时刷新，便于实时修正和加载前端的样式。</p>
-<code>grunt server</code>
-<p>至此，你已经使用yeoman脚手架生成了你的项目，你可以对你的项目进行自主开发了。</p>
 <h2>自定义源代码</h2>
 <hr>
 <p>当然，如果你对FNUI 2.0的表现仍然不满意，我们提供了FNUI的源代码，你可以根据自己的喜好进行修改。也欢迎提出更优秀的方案。详情请见，自定义开发。
