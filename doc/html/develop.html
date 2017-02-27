@@ -2,15 +2,17 @@
 <!-- 自定义开发 -->
 <h1>自定义开发</h1>
 <hr>
-<p>资源库地址：<code>http://109.5.13.213:8090/svn/gyj1/branches/front-end/fnui</code></p>
+<p>资源库地址：<code>https://github.com/chentzju/fnui.git</code></p>
 <p><i class="fn-icon-warning"></i>请确保下载了fnui的源代码后，立刻从FNUI的资源库断开，
-并进行本地源码自定义，请勿提交你的自定义代码到svn，以免与开发团队发生冲突。</p>
+并进行本地源码自定义，请勿提交你的自定义代码到git，开发团队不会合并你提交的任何代码。</p>
 
 <h3>CSS样式</h3>
 <p>FNUI 2.0样式表采用LESS开发，通过定义全局变量、公共函数、局部变量的方式，
 来实现样式表的复用。只要你懂得LESS的基本语法，就可以对我们的代码进行更改。</p>
 
 <p>LESS语言的编译采用了grunt-ctrib-less插件包，能够实现一旦改动，一键编译的功能。</p>
+
+<code>grunt build-dev</code>
 
 <h3>Javascript</h3>
 FNUI 2.0的javascript源码采用AMD规范开发，使用requirejs管理模块和依赖。
@@ -42,12 +44,7 @@ fnui
  |   |--less   //less文件集
  |   |--js     //js源码
  |   |--fonts   //fonts  字符集（无需更改)
- |
- |--test/
- |   |
- |   |--xxx.html  //测试文件
- |
- |
+ |		
  |--Gruntfile.js   //grunt任务配置
  |--package.json   //包依赖
  |--LICENSE
